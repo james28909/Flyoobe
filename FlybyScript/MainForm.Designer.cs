@@ -1,4 +1,4 @@
-﻿namespace FlybyScript
+﻿namespace Flyby11
 {
     partial class MainForm
     {
@@ -28,253 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.rtbDescription = new System.Windows.Forms.RichTextBox();
-            this.btnTogglePatch = new System.Windows.Forms.Button();
-            this.linkGitHub = new System.Windows.Forms.LinkLabel();
-            this.btnMountRun = new System.Windows.Forms.Button();
-            this.lblHeader = new System.Windows.Forms.Label();
+            this.panelDragDrop = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkCompPatch = new System.Windows.Forms.LinkLabel();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.panelFAQ = new System.Windows.Forms.Panel();
+            this.linkAppDev = new System.Windows.Forms.LinkLabel();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.treeSettings = new System.Windows.Forms.TreeView();
-            this.checkInstallationMedia = new System.Windows.Forms.CheckBox();
-            this.linkChangeExperience = new System.Windows.Forms.LinkLabel();
-            this.panelForm = new System.Windows.Forms.Panel();
+            this.panelDragDrop.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.panelForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // rtbDescription
+            // panelDragDrop
             // 
-            this.rtbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbDescription.BackColor = System.Drawing.Color.White;
-            this.rtbDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbDescription.Font = new System.Drawing.Font("Segoe UI Variable Small Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDescription.ForeColor = System.Drawing.Color.Black;
-            this.rtbDescription.Location = new System.Drawing.Point(34, 346);
-            this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbDescription.Size = new System.Drawing.Size(867, 123);
-            this.rtbDescription.TabIndex = 199;
-            this.rtbDescription.TabStop = false;
-            this.rtbDescription.Text = "";
-            // 
-            // btnTogglePatch
-            // 
-            this.btnTogglePatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTogglePatch.BackColor = System.Drawing.Color.White;
-            this.btnTogglePatch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTogglePatch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.btnTogglePatch.FlatAppearance.BorderSize = 2;
-            this.btnTogglePatch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.btnTogglePatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTogglePatch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTogglePatch.Location = new System.Drawing.Point(629, 484);
-            this.btnTogglePatch.Name = "btnTogglePatch";
-            this.btnTogglePatch.Size = new System.Drawing.Size(222, 40);
-            this.btnTogglePatch.TabIndex = 201;
-            this.btnTogglePatch.TabStop = false;
-            this.btnTogglePatch.Text = "Start";
-            this.btnTogglePatch.UseCompatibleTextRendering = true;
-            this.btnTogglePatch.UseVisualStyleBackColor = false;
-            this.btnTogglePatch.Click += new System.EventHandler(this.btnTogglePatch_Click);
-            // 
-            // linkGitHub
-            // 
-            this.linkGitHub.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkGitHub.AutoEllipsis = true;
-            this.linkGitHub.AutoSize = true;
-            this.linkGitHub.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.75F);
-            this.linkGitHub.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkGitHub.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(65)))), ((int)(((byte)(17)))));
-            this.linkGitHub.Location = new System.Drawing.Point(167, 558);
-            this.linkGitHub.Name = "linkGitHub";
-            this.linkGitHub.Size = new System.Drawing.Size(45, 16);
-            this.linkGitHub.TabIndex = 202;
-            this.linkGitHub.TabStop = true;
-            this.linkGitHub.Text = "GitHub";
-            this.linkGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGitHub_LinkClicked);
-            // 
-            // btnMountRun
-            // 
-            this.btnMountRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMountRun.AutoEllipsis = true;
-            this.btnMountRun.BackColor = System.Drawing.Color.White;
-            this.btnMountRun.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMountRun.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnMountRun.FlatAppearance.BorderSize = 2;
-            this.btnMountRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.btnMountRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMountRun.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMountRun.Location = new System.Drawing.Point(403, 484);
-            this.btnMountRun.Name = "btnMountRun";
-            this.btnMountRun.Size = new System.Drawing.Size(220, 40);
-            this.btnMountRun.TabIndex = 203;
-            this.btnMountRun.TabStop = false;
-            this.btnMountRun.Text = "Mount and Run ISO";
-            this.btnMountRun.UseVisualStyleBackColor = false;
-            this.btnMountRun.Click += new System.EventHandler(this.btnMountRun_Click);
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHeader.AutoEllipsis = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI Variable Small Light", 21.25F);
-            this.lblHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(115)))), ((int)(((byte)(193)))));
-            this.lblHeader.Location = new System.Drawing.Point(30, 38);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(780, 82);
-            this.lblHeader.TabIndex = 205;
-            this.lblHeader.Text = "Use FlybyScript to bypass Windows 11 restrictions and install on unsupported devi" +
-    "ces";
+            this.panelDragDrop.AllowDrop = true;
+            this.panelDragDrop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDragDrop.Controls.Add(this.linkLabel1);
+            this.panelDragDrop.Controls.Add(this.linkCompPatch);
+            this.panelDragDrop.Controls.Add(this.statusLabel);
+            this.panelDragDrop.Location = new System.Drawing.Point(47, 184);
+            this.panelDragDrop.Name = "panelDragDrop";
+            this.panelDragDrop.Size = new System.Drawing.Size(436, 256);
+            this.panelDragDrop.TabIndex = 0;
+            this.panelDragDrop.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelDragDrop_DragDrop);
+            this.panelDragDrop.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelDragDrop_DragEnter);
+            this.panelDragDrop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDragDrop_Paint);
             // 
             // linkLabel1
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.linkLabel1.AutoEllipsis = true;
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.75F);
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.25F);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(31, 558);
+            this.linkLabel1.Location = new System.Drawing.Point(141, 230);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(119, 16);
-            this.linkLabel1.TabIndex = 206;
+            this.linkLabel1.Size = new System.Drawing.Size(157, 15);
+            this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "A Belim app creation";
+            this.linkLabel1.Text = "Can I upgrade to Windows 11?";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel2
+            // linkCompPatch
             // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel2.AutoEllipsis = true;
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.75F);
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(186)))), ((int)(((byte)(0)))));
-            this.linkLabel2.Location = new System.Drawing.Point(233, 558);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(51, 16);
-            this.linkLabel2.TabIndex = 208;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "0.14.107";
+            this.linkCompPatch.ActiveLinkColor = System.Drawing.Color.BlueViolet;
+            this.linkCompPatch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.linkCompPatch.AutoSize = true;
+            this.linkCompPatch.BackColor = System.Drawing.Color.Transparent;
+            this.linkCompPatch.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkCompPatch.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkCompPatch.LinkColor = System.Drawing.Color.DimGray;
+            this.linkCompPatch.Location = new System.Drawing.Point(95, 208);
+            this.linkCompPatch.Name = "linkCompPatch";
+            this.linkCompPatch.Size = new System.Drawing.Size(244, 15);
+            this.linkCompPatch.TabIndex = 211;
+            this.linkCompPatch.TabStop = true;
+            this.linkCompPatch.Text = "Apply Compatibility Patch to ISO (Clean Install)";
+            this.linkCompPatch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCompPatch_LinkClicked);
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.statusLabel.AutoEllipsis = true;
+            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.statusLabel.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(39, 44);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(352, 139);
+            this.statusLabel.TabIndex = 0;
+            this.statusLabel.Text = "Move ISO here";
+            this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelFAQ
+            // 
+            this.panelFAQ.AutoScroll = true;
+            this.panelFAQ.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelFAQ.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelFAQ.Location = new System.Drawing.Point(561, 0);
+            this.panelFAQ.Name = "panelFAQ";
+            this.panelFAQ.Size = new System.Drawing.Size(359, 585);
+            this.panelFAQ.TabIndex = 207;
+            // 
+            // linkAppDev
+            // 
+            this.linkAppDev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkAppDev.AutoSize = true;
+            this.linkAppDev.BackColor = System.Drawing.Color.Gainsboro;
+            this.linkAppDev.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAppDev.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkAppDev.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(115)))), ((int)(((byte)(193)))));
+            this.linkAppDev.Location = new System.Drawing.Point(821, -1);
+            this.linkAppDev.Name = "linkAppDev";
+            this.linkAppDev.Size = new System.Drawing.Size(99, 15);
+            this.linkAppDev.TabIndex = 208;
+            this.linkAppDev.TabStop = true;
+            this.linkAppDev.Text = "We live on GitHub";
+            this.linkAppDev.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAppDev_LinkClicked);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.panelMain);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(561, 585);
+            this.panelContainer.TabIndex = 209;
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.treeSettings);
-            this.panelMain.Controls.Add(this.checkInstallationMedia);
-            this.panelMain.Controls.Add(this.linkLabel2);
-            this.panelMain.Controls.Add(this.linkChangeExperience);
-            this.panelMain.Controls.Add(this.lblHeader);
-            this.panelMain.Controls.Add(this.linkLabel1);
-            this.panelMain.Controls.Add(this.rtbDescription);
-            this.panelMain.Controls.Add(this.btnMountRun);
-            this.panelMain.Controls.Add(this.btnTogglePatch);
-            this.panelMain.Controls.Add(this.linkGitHub);
+            this.panelMain.Controls.Add(this.panelDragDrop);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(943, 592);
-            this.panelMain.TabIndex = 209;
-            // 
-            // treeSettings
-            // 
-            this.treeSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeSettings.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeSettings.CheckBoxes = true;
-            this.treeSettings.Font = new System.Drawing.Font("Segoe UI Variable Text Light", 11.25F);
-            this.treeSettings.FullRowSelect = true;
-            this.treeSettings.HotTracking = true;
-            this.treeSettings.Location = new System.Drawing.Point(36, 168);
-            this.treeSettings.Name = "treeSettings";
-            this.treeSettings.ShowLines = false;
-            this.treeSettings.ShowNodeToolTips = true;
-            this.treeSettings.ShowPlusMinus = false;
-            this.treeSettings.Size = new System.Drawing.Size(865, 172);
-            this.treeSettings.TabIndex = 210;
-            this.treeSettings.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeSettings_AfterCheck);
-            this.treeSettings.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeSettings_NodeMouseClick);
-            // 
-            // checkInstallationMedia
-            // 
-            this.checkInstallationMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkInstallationMedia.AutoSize = true;
-            this.checkInstallationMedia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkInstallationMedia.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkInstallationMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.checkInstallationMedia.Location = new System.Drawing.Point(34, 527);
-            this.checkInstallationMedia.Name = "checkInstallationMedia";
-            this.checkInstallationMedia.Size = new System.Drawing.Size(249, 18);
-            this.checkInstallationMedia.TabIndex = 209;
-            this.checkInstallationMedia.Text = "I want to create Windows 11 installation media";
-            this.checkInstallationMedia.UseVisualStyleBackColor = true;
-            this.checkInstallationMedia.CheckedChanged += new System.EventHandler(this.checkInstallationMedia_CheckedChanged);
-            // 
-            // linkChangeExperience
-            // 
-            this.linkChangeExperience.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkChangeExperience.AutoEllipsis = true;
-            this.linkChangeExperience.AutoSize = true;
-            this.linkChangeExperience.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkChangeExperience.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkChangeExperience.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(112)))), ((int)(((byte)(192)))));
-            this.linkChangeExperience.Location = new System.Drawing.Point(33, 139);
-            this.linkChangeExperience.Name = "linkChangeExperience";
-            this.linkChangeExperience.Size = new System.Drawing.Size(209, 16);
-            this.linkChangeExperience.TabIndex = 1;
-            this.linkChangeExperience.TabStop = true;
-            this.linkChangeExperience.Text = "Change how you experience Windows";
-            this.linkChangeExperience.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkChangeExperience_LinkClicked);
-            this.linkChangeExperience.Paint += new System.Windows.Forms.PaintEventHandler(this.linkChangeExperience_Paint);
-            // 
-            // panelForm
-            // 
-            this.panelForm.Controls.Add(this.panelMain);
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(0, 0);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(943, 592);
-            this.panelForm.TabIndex = 210;
+            this.panelMain.Size = new System.Drawing.Size(561, 585);
+            this.panelMain.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(943, 592);
-            this.Controls.Add(this.panelForm);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(920, 585);
+            this.Controls.Add(this.linkAppDev);
+            this.Controls.Add(this.panelContainer);
+            this.Controls.Add(this.panelFAQ);
             this.Name = "MainForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Flyby11 Upgrading Assistant";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panelDragDrop.ResumeLayout(false);
+            this.panelDragDrop.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
-            this.panelForm.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        public System.Windows.Forms.RichTextBox rtbDescription;
-        private System.Windows.Forms.Button btnTogglePatch;
-        private System.Windows.Forms.LinkLabel linkGitHub;
-        private System.Windows.Forms.Button btnMountRun;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+
+        private System.Windows.Forms.Panel panelDragDrop;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Panel panelFAQ;
+        private System.Windows.Forms.LinkLabel linkAppDev;
+        private System.Windows.Forms.LinkLabel linkCompPatch;
+        private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.LinkLabel linkChangeExperience;
-        private System.Windows.Forms.Panel panelForm;
-        private System.Windows.Forms.CheckBox checkInstallationMedia;
-        private System.Windows.Forms.TreeView treeSettings;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

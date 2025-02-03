@@ -16,7 +16,7 @@
             Entfernen Sie dieses Element, wenn diese Virtualisierung aus Gründen der Abwärtskompatibilität
             für die Anwendung erforderlich ist.
         -->
-        <requestedExecutionLevel level="highestAvailable" uiAccess="false" />
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>
@@ -51,7 +51,6 @@
        auch die Einstellung "'EnableWindowsFormsHighDpiAutoResizing" in der Datei "app.config" auf TRUE festgelegt werden. 
        
        Hierdurch können für die Anwendung lange Pfade verwendet werden. Weitere Informationen finden Sie unter https://docs.microsoft.com/windows/win32/fileio/maximum-file-path-limitation.-->
-
   <application xmlns="urn:schemas-microsoft-com:asm.v3">
     <windowsSettings>
       <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>

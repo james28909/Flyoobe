@@ -1,18 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66DDC36A-9095-4053-941C-8829D44F5F20}</ProjectGuid>
+    <ProjectGuid>{503AF34B-7544-4C43-A099-2B948C3FF49A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FlybyScript</RootNamespace>
+    <RootNamespace>Flyby11</RootNamespace>
     <AssemblyName>Flyby11</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -40,9 +39,6 @@
     <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,63 +52,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Experience\ActivityHistory.cs" />
-    <Compile Include="Experience\FeaturePanel.cs">
-      <SubType>Component</SubType>
+    <Compile Include="CanIUpgradeView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Experience\FileExplorerAds.cs" />
-    <Compile Include="Experience\FinishSetupAds.cs" />
-    <Compile Include="Experience\LocationTracking.cs" />
-    <Compile Include="Experience\LockScreenAds.cs" />
-    <Compile Include="Experience\PersonalizedAds.cs" />
-    <Compile Include="Experience\PrivacyExperience.cs" />
-    <Compile Include="Experience\SettingsAds.cs" />
-    <Compile Include="Experience\StartmenuAds.cs" />
-    <Compile Include="Experience\TailoredExperiences.cs" />
-    <Compile Include="Experience\Telemetry.cs" />
-    <Compile Include="Experience\TipsAndSuggestions.cs" />
-    <Compile Include="Experience\WelcomeExperienceAds.cs" />
-    <Compile Include="Helper\Utils.cs" />
-    <Compile Include="Helper\Views.cs" />
-    <Compile Include="Patcher\ScriptPatcher.cs" />
-    <Compile Include="Helper\Logger.cs" />
+    <Compile Include="CanIUpgradeView.Designer.cs">
+      <DependentUpon>CanIUpgradeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FAQHandler.cs" />
+    <Compile Include="IsoHandler.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PluginsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PluginsForm.Designer.cs">
-      <DependentUpon>PluginsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Patcher\PSPatcher.cs" />
-    <Compile Include="Patcher\NativePatcher.cs" />
-    <Compile Include="Experience\FeatureBase.cs" />
-    <Compile Include="Experience\FeatureNode.cs" />
-    <Compile Include="USBManagement.cs" />
-    <Compile Include="Views\ExperienceView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ExperienceView.Designer.cs">
-      <DependentUpon>ExperienceView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MediaView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\MediaView.Designer.cs">
-      <DependentUpon>MediaView.cs</DependentUpon>
-    </Compile>
+    <Compile Include="SwitchView.cs" />
+    <EmbeddedResource Include="CanIUpgradeView.resx">
+      <DependentUpon>CanIUpgradeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PluginsForm.resx">
-      <DependentUpon>PluginsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,14 +85,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\ExperienceView.resx">
-      <DependentUpon>ExperienceView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\MediaView.resx">
-      <DependentUpon>MediaView.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.manifest" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

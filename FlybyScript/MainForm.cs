@@ -1,276 +1,150 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Views;
 
-namespace FlybyScript
+namespace Flyby11
 {
     public partial class MainForm : Form
     {
-        private Dictionary<TreeNode, bool> pendingChanges = new Dictionary<TreeNode, bool>(); // Store pending changes
-        private PSPatcher PSPatcher;
-
-        private Logger logger;
+        private readonly IsoHandler _isoHandler;
+        private readonly FAQHandler _faqHandler;
 
         public MainForm()
         {
             InitializeComponent();
+            _isoHandler = new IsoHandler(UpdateStatusLabel);
+            _faqHandler = new FAQHandler(panelFAQ, UpdateStatusLabel);
+            _faqHandler.InitializeFAQ();
 
-            // Initialize the logger
-            logger = new Logger(rtbDescription);
-
-            // Set the default view to the main panel
-            SwitchView.DefaultView = panelMain;
-
-            // Subscribe to the AfterSelect event for importing plugins
-            treeSettings.AfterSelect += TreeSettings_AfterSelect;
+            UpdateStatusLabel("Drag and drop the Windows 11 ISO to patch it and install on unsupported hardware (Inplace Upgrade).");
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void panelDragDrop_Paint(object sender, PaintEventArgs e)
         {
-            // Add NativePatcher parent node
-            TreeNode nativePatcherNode = new TreeNode("Native (Recommended)");
-            treeSettings.Nodes.Add(nativePatcherNode);
+            var borderColor = Color.DodgerBlue;
+            var borderThickness = 6;
 
-            // Add Method 1 as a child of NativePatcher
-            TreeNode method1Node = new TreeNode("(Method 1) Inplace Upgrade via Server Setup")
+            // Draw a dotted border
+            var dashPattern = new float[] { 4, 2 }; // Dots and gaps
+            using (var pen = new Pen(borderColor, borderThickness))
             {
-                Tag = "Method1",
-                BackColor = Color.LightBlue
-            };
-            nativePatcherNode.Nodes.Add(method1Node);
+                pen.DashPattern = dashPattern;
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
 
-            // Load plugins
-            await ScriptPatcher.LoadPlugins("upgraider", treeSettings.Nodes, logger);
+                var rect = new Rectangle(
+                    borderThickness / 2,
+                    borderThickness / 2,
+                    panelDragDrop.Width - borderThickness,
+                    panelDragDrop.Height - borderThickness
+                );
 
-            // Load PowerShell plugins
-            PSPatcher = new PSPatcher();
-            PSPatcher.LoadPowerShellPlugins(treeSettings);
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                e.Graphics.DrawRectangle(pen, rect);
+            }
 
-            // Add the Import node at the end
-            TreeNode importNode = new TreeNode("Import [...]")
+            using (var shadowBrush = new SolidBrush(Color.FromArgb(30, 0, 0, 0))) // Transparent shadow
             {
-                NodeFont = new Font(treeSettings.Font, FontStyle.Italic),
-                Checked = false,
-                ForeColor = Color.Black
-            };
-            treeSettings.Nodes.Add(importNode);
-
-            // Expand all nodes
-            ExpandAllNodes(treeSettings.Nodes);
-        }
-
-        private void TreeSettings_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if (e.Node.Text == "Import [...]")
-            {
-                OpenPluginsForm();
+                var shadowRect = new Rectangle(6, 6, panelDragDrop.Width, panelDragDrop.Height);
+                e.Graphics.FillRectangle(shadowBrush, shadowRect);
             }
         }
 
-        private void OpenPluginsForm()
+        private void panelDragDrop_DragEnter(object sender, DragEventArgs e)
         {
-            var pluginsForm = new PluginsForm(this);
-            pluginsForm.ShowDialog();
-        }
-
-        // Refresh the tree view
-        public void RefreshTreeView()
-        {
-            treeSettings.Nodes.Clear();
-
-            // Reload
-            MainForm_Load(this, EventArgs.Empty);
-        }
-
-        // Expand all nodes
-        private void ExpandAllNodes(TreeNodeCollection nodes)
-        {
-            foreach (TreeNode node in nodes)
+            // Check if the file is an ISO
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                node.Expand();
-                ExpandAllNodes(node.Nodes);
-            }
-        }
-
-        private async void btnTogglePatch_Click(object sender, EventArgs e)
-        {
-            btnTogglePatch.Enabled = false;
-            foreach (var entry in pendingChanges)
-            {
-                var node = entry.Key; // The TreeNode
-                bool shouldApply = entry.Value; // Whether this patch should be applied (true) or undone (false)
-
-                // Check if the entry is Method2 and if the patch is enabled
-                if (node.Tag?.ToString() == "Method1" && shouldApply)
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files.Length == 1 && Path.GetExtension(files[0]).Equals(".iso", StringComparison.OrdinalIgnoreCase))
                 {
-                    // Start Method2 (Setup Server variant)
-                    logger.Log("(Method 1) Automating Windows 11 Inplace Upgrade...", Color.Blue);
-                    NativePatcher automation = new NativePatcher(logger);
-                    await automation.AutomateWindowsInstallation();
-
-                    node.BackColor = Color.LightGreen;
-                    logger.Log("Method 1 Started: Windows 11 Installation Automated", Color.Black);
+                    e.Effect = DragDropEffects.Copy;
                 }
-                else if (node.Tag is ScriptPatcher plugin)
+                else
                 {
-                    if (shouldApply)
-                    {
-                        // Apply the patch
-                        logger.Log($"Applying patch: {plugin.PlugID}", Color.Blue);
-                        plugin.PlugDoFeature();
-                        node.BackColor = Color.LightGreen;
-                        logger.Log($"Activated patch: {plugin.PlugID}", Color.Black);
-                    }
-                    else
-                    {
-                        // Undo the patch
-                        logger.Log($"Undoing patch: {plugin.PlugID}", Color.Blue);
-                        plugin.PlugUndoFeature();
-                        node.BackColor = Color.LightGray;
-                        logger.Log($"Deactivated patch: {plugin.PlugID}", Color.Crimson);
-                    }
-                }
-                // Handle PowerShell scripts
-                else if (node.Tag is string psScriptPath)
-                {
-                    if (shouldApply)
-                    {
-                        // Log and execute the PowerShell script
-                        logger.Log($"Executing PowerShell script: {Path.GetFileName(psScriptPath)}", Color.Blue);
-
-                        var PSPatcher = new PSPatcher();
-                        await PSPatcher.ExecutePlugin(psScriptPath, logger);
-
-                        node.BackColor = Color.LightGreen;
-                        logger.Log($"Executed PowerShell script: {Path.GetFileName(psScriptPath)}", Color.Black);
-                    }
-                    else
-                    {
-                        // Log for deactivation (not reversible for PS scripts)
-                        logger.Log($"PowerShell script cannot be undone: {Path.GetFileName(psScriptPath)}", Color.Crimson);
-                        node.BackColor = Color.LightGray;
-                    }
-                }
-            }
-
-            // Clear pending changes after applying
-            pendingChanges.Clear();
-            btnTogglePatch.Enabled = true;
-        }
-
-        private void treeSettings_AfterCheck(object sender, TreeViewEventArgs e)
-        {
-            // Check if the node's checked status has changed
-            if (e.Node.Checked)
-            {
-                // Add the node and set its status to true (enabled)
-                pendingChanges[e.Node] = true;
-                e.Node.BackColor = Color.LightGreen; // Mark the node as active
-
-                // Check the type of node (either JSONPluginLoader/Patch or PowerShell script)
-                if (e.Node.Tag is ScriptPatcher jsonPlugin)
-                {
-                    logger.Log($"Patch activated: {jsonPlugin.PlugID}", Color.Black);
-                }
-                else if (e.Node.Tag is string psScriptPath)
-                {
-                    logger.Log($"PowerShell script activated: {Path.GetFileName(psScriptPath)}", Color.Black);
-                }
-            }
-            else
-            {
-                // Add the node and set its status to false (disabled)
-                pendingChanges[e.Node] = false;
-                e.Node.BackColor = Color.LightGray; // Mark the node as inactive
-
-                // Check the type of node again (either JSONPluginLoader or PowerShell script)
-                if (e.Node.Tag is ScriptPatcher jsonPlugin)
-                {
-                    logger.Log($"Patch deactivated: {jsonPlugin.PlugID}", Color.Crimson);
-                }
-                else if (e.Node.Tag is string psScriptPath)
-                {
-                    logger.Log($"PowerShell script deactivated: {Path.GetFileName(psScriptPath)}", Color.Crimson);
-                }
-            }
-
-            // Synchronize parent-child node states, so when a child node is checked or unchecked, its parent node automatically reflects this change
-            if (e.Node.Parent != null)
-            {
-                e.Node.Parent.Checked = e.Node.Checked;
-            }
-        }
-
-        private void treeSettings_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            TreeNode node = treeSettings.GetNodeAt(e.Location);
-
-            if (node != null)
-            {
-                // Check if the node's Tag is the native "Method1"
-                if (node.Tag?.ToString() == "Method1")
-                {
-                    rtbDescription.Text = "(Current release: Windows 11 2024 Update l Version 24H2)\nThis method leverages the Windows Server variant of the Windows setup, " +
-                        "which skips most hardware compatibility checks. It allows Windows 11 to be installed on unsupported PCs, " +
-                        "bypassing the usual system requirements. Importantly, while the setup runs in server mode, " +
-                        "it installs the standard Windows 11 (not the server version).\n\nHow it works:\n1. " +
-                        "The app automatically downloads the Windows 11 version 24H2 ISO using the 'Fido' dependency script.\n2. " +
-                        "The ISO image is mounted automatically.\n3. Simply follow the on-screen instructions to complete the upgrade.\n\n" +
-                        "**Technical Note:** The POPCNT requirement cannot be bypassed; it is essential for running Windows 11 (24H2), as the operating system requires this feature to be supported by the CPU. " +
-                        "POPCNT has been included in CPUs since around 2010. However, the patch is expected to work for most users with compatible hardware." +
-                        "Please do not blame me; I am working within the constraints of what is technically possible."
-;
-                }
-                else if (node.Tag is ScriptPatcher plugin)                     // Handle JSON plugin description
-                {
-                    string pluginInfo = $"ID: {plugin.PlugID}\nHow-to:\n{plugin.PlugInfo}";
-                    rtbDescription.Text = pluginInfo;
-                }
-                else if (node.Tag is string psScriptPath)                // Handle PowerShell script description
-                {
-                    rtbDescription.Clear();
-                    string scriptInfo = $"PowerShell Script: {Path.GetFileName(psScriptPath)}\nPath: {psScriptPath}";
-                    rtbDescription.Text = scriptInfo;
-                }
-                else                                                 // Clear description if no node is hovered
-                {
-                    rtbDescription.Clear();
+                    e.Effect = DragDropEffects.None;
                 }
             }
         }
 
-        private void linkGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void panelDragDrop_DragDrop(object sender, DragEventArgs e)
+        {
+            // Get the dropped file path
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files.Length == 1)
+            {
+                string isoPath = files[0]; // Full path to the ISO file
+                await _isoHandler.HandleIso(isoPath); // Mount the ISO and start the setup process
+            }
+        }
+
+        // Update the status label
+        private void UpdateStatusLabel(string message)
+        {
+            statusLabel.Text = message;
+            statusLabel.Refresh(); // Ensure the label updates in real-time
+        }
+
+        private void linkAppDev_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/builtbybel/Flyby11");
         }
 
-        private async void btnMountRun_Click(object sender, EventArgs e)
+        private void linkCompPatch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NativePatcher patcher = new NativePatcher(logger);
-            await patcher.RunSetupFromMountedISO();
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                folderDialog.Description = "Select the USB drive containing your Windows 11 installation files. " +
+                    "This feature adds a compatibility patch to bypass certain system requirements. " +
+                    "Compatible with drives prepared by any tool, including Rufus. Ensure the drive is ready!";
+
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedPath = folderDialog.SelectedPath;
+                    var driveInfo = new DriveInfo(Path.GetPathRoot(selectedPath));
+
+                    if (driveInfo.DriveType == DriveType.Removable && driveInfo.IsReady)
+                    {
+                        if (MessageBox.Show("This will apply compatibility bypass settings on the selected USB drive. Continue?",
+                            "Apply Bypass Patch", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                _isoHandler.CreateUnattendXml(selectedPath);
+                                MessageBox.Show("Bypass patch applied successfully!", "Apply Bypass Patch", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                UpdateStatusLabel("Bypass patch applied successfully!");
+                            }
+                            catch (Exception ex)
+                            {
+                                UpdateStatusLabel($"Failed to apply bypass patch: {ex.Message}");
+                            }
+                        }
+                        else
+                        {
+                            UpdateStatusLabel("Bypass patch canceled by user.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The selected path is not a removable drive. Please select a USB drive.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        UpdateStatusLabel("User attempted to select a non-removable drive.");
+                    }
+                }
+                else
+                {
+                    UpdateStatusLabel("No USB drive selected for patching.");
+                }
+            }
         }
 
-        private void linkChangeExperience_Paint(object sender, PaintEventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Linkoption gains focus, so trigger a vivid focus rectangle
-            ControlPaint.DrawFocusRectangle(e.Graphics, linkChangeExperience.ClientRectangle);
+            CanIUpgradeView canIUpgradeView = new CanIUpgradeView();
+            SwitchView.SetView(canIUpgradeView, panelContainer);
         }
 
-        private void linkChangeExperience_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ExperienceView experienceView = new ExperienceView();
-            SwitchView.SetView(experienceView, panelForm);
-        }
-
-        private void checkInstallationMedia_CheckedChanged(object sender, EventArgs e)
-        {
-            checkInstallationMedia.Checked = false;
-            MediaView installMediaView = new MediaView();
-            SwitchView.SetView(installMediaView, panelForm);
-        }
+   
     }
 }

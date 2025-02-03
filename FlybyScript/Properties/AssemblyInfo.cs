@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
@@ -7,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Flyby11")]
 [assembly: AssemblyDescription("Bypassing Windows 11 hardware requirements")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Builtbybel")]
+[assembly: AssemblyCompany("A Belim app creation")]
 [assembly: AssemblyProduct("Flyby11")]
 [assembly: AssemblyCopyright("Copyright ©  2024 A Belim app creation")]
 [assembly: AssemblyTrademark("Builtbybel")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("66ddc36a-9095-4053-941c-8829d44f5f20")]
+[assembly: Guid("503af34b-7544-4c43-a099-2b948c3ff49a")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
@@ -28,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Buildnummer
 //      Revision
 //
-[assembly: AssemblyVersion("0.14.107")]
-[assembly: AssemblyFileVersion("0.14.107")]
+[assembly: AssemblyVersion("1.2.100.0")]
+[assembly: AssemblyFileVersion("1.2.100.0")]
