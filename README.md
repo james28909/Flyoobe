@@ -14,3 +14,5 @@ Manual ISO Preparation: Flyby11 automates the download and mounting of the ISO, 
 This method is the same approach described in the official Windows documentation for upgrading unsupported systems, as [detailed in this article](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e)
 
 _Flyby11 offers all the currently working methods to bypass the restrictions for installing Windows 11 24H2 on unsupported hardware. The internet is full of guides showing how to get around the TPM, Secure Boot, and processor requirements, but Flyby11 does all that automatically for you._
+
+**Technical Note:** The POPCNT requirement cannot be bypassed; it is essential for running Windows 11 (24H2), as the operating system requires this feature to be supported by the CPU. POPCNT has been included in CPUs since around 2010. However, the patch is expected to work for most users with compatible hardware.Please do not blame me; I am working within the constraints of what is technically possible.
