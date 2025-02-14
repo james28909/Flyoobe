@@ -313,6 +313,15 @@ namespace Flyby11.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Select from computer ähnelt.
+        /// </summary>
+        public static string ctl_linkSelectComputer {
+            get {
+                return ResourceManager.GetString("ctl_linkSelectComputer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Did the upgrade work? ähnelt.
         /// </summary>
         public static string ctl_linkVote {

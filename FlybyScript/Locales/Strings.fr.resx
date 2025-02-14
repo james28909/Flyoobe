@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,165 +118,161 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="compPatch_debugCancel" xml:space="preserve">
-    <value>Bypass patch canceled by user.</value>
+    <value>Patch de contournement annulé par l'utilisateur.</value>
   </data>
   <data name="compPatch_debugNotRemovableDrive" xml:space="preserve">
-    <value>User attempted to select a non-removable drive.</value>
+    <value>L'utilisateur a tenté de sélectionner un lecteur non amovible.</value>
   </data>
   <data name="compPatch_debugNoUSBDrive" xml:space="preserve">
-    <value>No USB drive selected for patching.</value>
+    <value>Aucune clé USB sélectionnée pour le correctif.</value>
   </data>
   <data name="compPatch_msgFailedEx" xml:space="preserve">
-    <value>Failed to apply bypass patch:</value>
+    <value>Échec de l'application du correctif de contournement :</value>
   </data>
   <data name="compPatch_msgNotRemovableDrive" xml:space="preserve">
-    <value>The selected path is not a removable drive. Please select a USB drive.</value>
+    <value>Le chemin sélectionné n'est pas un lecteur amovible. Veuillez sélectionner une clé USB.</value>
   </data>
   <data name="compPatch_msgSelectDrive" xml:space="preserve">
-    <value>Select the USB drive containing your Windows 11 installation files.\nThis feature adds a compatibility patch to bypass certain system requirements.\nCompatible with drives prepared by any tool, including Rufus. Ensure the drive is ready!</value>
+    <value>Sélectionnez la clé USB contenant vos fichiers d'installation de Windows 11.\nCette fonctionnalité ajoute un correctif de compatibilité pour contourner certaines exigences système.\nCompatible avec les lecteurs préparés par n'importe quel outil, y compris Rufus. Assurez-vous que le lecteur est prêt !</value>
   </data>
   <data name="compPatch_msgSelectDriveConfirm" xml:space="preserve">
-    <value>This will apply compatibility bypass settings on the selected USB drive. Continue?</value>
+    <value>Cela appliquera les paramètres de contournement de compatibilité sur la clé USB sélectionnée. Continuer ?</value>
   </data>
   <data name="compPatch_msgSuccess" xml:space="preserve">
-    <value>Bypass patch applied successfully!</value>
+    <value>Le patch de contournement a été appliqué avec succès !</value>
   </data>
   <data name="ctl_FormTitle" xml:space="preserve">
-    <value>Flyby11 Upgrading Assistant</value>
+    <value>Assistant de mise à niveau Flyby11</value>
   </data>
   <data name="ctl_inkCompPatch" xml:space="preserve">
-    <value>Apply Compatibility Patch to ISO (Clean Install)</value>
+    <value>Appliquer le correctif de compatibilité à l'ISO (installation propre)</value>
   </data>
   <data name="ctl_linkCiuv" xml:space="preserve">
-    <value>Can I upgrade to Windows 11?</value>
+    <value>Puis-je passer à Windows 11 ?</value>
   </data>
   <data name="ctl_linkVote" xml:space="preserve">
-    <value>Did the upgrade work?</value>
+    <value>La mise à niveau a-t-elle fonctionné ?</value>
   </data>
   <data name="ctl_statusLabel" xml:space="preserve">
-    <value>Drag and drop the Windows 11 ISO to patch it and install on unsupported hardware (Inplace Upgrade).</value>
+    <value>Glissez et déposez l'ISO Windows 11 pour le corriger et l'installer sur du matériel non pris en charge (mise à niveau sur place).</value>
   </data>
   <data name="faq_a1" xml:space="preserve">
-    <value>A: You can download the latest ISO from the official Microsoft website or use the Fido Downloader.</value>
+    <value>R : Vous pouvez télécharger la dernière version ISO à partir du site Web officiel de Microsoft ou utiliser Fido Downloader.</value>
   </data>
   <data name="faq_a2" xml:space="preserve">
-    <value>A: If you've successfully installed Windows 11 and saved some money, feel free to leave a little something as a thank-you here.</value>
+    <value>R : Si vous avez réussi à installer Windows 11 et à économiser de l'argent, n'hésitez pas à laisser un petit quelque chose en guise de remerciement ici.</value>
   </data>
   <data name="faq_a2Link" xml:space="preserve">
-    <value>Click here to donate and show your support.</value>
+    <value>Cliquez ici pour faire un don et montrer votre soutien.</value>
   </data>
   <data name="faq_a3" xml:space="preserve">
-    <value>A: Once the ISO is mounted, the setup process runs in the background. The Windows installer starts, guiding you through the steps required to install Windows 11 on your machine.</value>
+    <value>R : Une fois l'ISO monté, le processus d'installation s'exécute en arrière-plan. Le programme d'installation de Windows démarre et vous guide à travers les étapes requises pour installer Windows 11 sur votre ordinateur.</value>
   </data>
   <data name="faq_a4" xml:space="preserve">
-    <value>A: Please check the error messages and report it on GitHub.</value>
+    <value>R : Veuillez vérifier les messages d’erreur et les signaler sur GitHub.</value>
   </data>
   <data name="faq_a5" xml:space="preserve">
-    <value>A: Yes, Microsoft has left a backdoor open. This method leverages a feature of the Windows 11 setup process that uses the Windows Server variant of the installation. Unlike the regular Windows 11 setup, this variant skips most hardware compatibility checks.</value>
+    <value>R : Oui, Microsoft a laissé une porte dérobée ouverte. Cette méthode exploite une fonctionnalité du processus d’installation de Windows 11 qui utilise la variante Windows Server de l’installation. Contrairement à l’installation standard de Windows 11, cette variante ignore la plupart des vérifications de compatibilité matérielle.</value>
   </data>
   <data name="faq_a6" xml:space="preserve">
-    <value>A: According to Microsoft, you should throw your PC away. I would suggest installing Linux on it and moving away from Windows.</value>
+    <value>R : Selon Microsoft, vous devriez jeter votre PC. Je vous suggère d'installer Linux dessus et d'abandonner Windows.</value>
   </data>
   <data name="faq_a7" xml:space="preserve">
-    <value>A: The developer is Belim, also known as Builtbybel, who has contributed a lot of code to the Windows community.</value>
+    <value>R : Le développeur est Belim, également connu sous le nom de Builtbybel, qui a contribué de nombreux codes à la communauté Windows.</value>
   </data>
   <data name="faq_a7Link" xml:space="preserve">
-    <value>Click here to learn more about the developer's work.</value>
+    <value>Cliquez ici pour en savoir plus sur le travail du développeur.</value>
   </data>
   <data name="faq_downloadFido" xml:space="preserve">
-    <value>Download via Fido (Recommended)</value>
+    <value>Télécharger via Fido (recommandé)</value>
   </data>
   <data name="faq_downloadMS" xml:space="preserve">
-    <value>Microsoft Site</value>
+    <value>Site Microsoft</value>
   </data>
   <data name="faq_header" xml:space="preserve">
-    <value>Frequently Asked Questions (FAQ)</value>
+    <value>Questions fréquemment posées (FAQ)</value>
   </data>
   <data name="faq_q1" xml:space="preserve">
-    <value>Q: Where can I get the latest Windows 11 ISO?</value>
+    <value>Q : Où puis-je obtenir la dernière version ISO de Windows 11 ?</value>
   </data>
   <data name="faq_q2" xml:space="preserve">
-    <value>Q: How can I support the developer?</value>
+    <value>Q : Comment puis-je soutenir le développeur ?</value>
   </data>
   <data name="faq_q3" xml:space="preserve">
-    <value>Q: How does the setup process work once the ISO is mounted?</value>
+    <value>Q : Comment fonctionne le processus de configuration une fois l'ISO monté ?</value>
   </data>
   <data name="faq_q4" xml:space="preserve">
-    <value>Q: What if I encounter issues during installation?</value>
+    <value>Q : Que faire si je rencontre des problèmes lors de l’installation ?</value>
   </data>
   <data name="faq_q5" xml:space="preserve">
-    <value>Q: Is it legal to use this method?</value>
+    <value>Q : Est-il légal d’utiliser cette méthode ?</value>
   </data>
   <data name="faq_q6" xml:space="preserve">
-    <value>Q: What are my alternatives if my PC is not supported?</value>
+    <value>Q : Quelles sont mes alternatives si mon PC n’est pas pris en charge ?</value>
   </data>
   <data name="faq_q7" xml:space="preserve">
-    <value>Q: Who is the developer?</value>
+    <value>Q : Qui est le développeur ?</value>
   </data>
   <data name="ciuView_lblPtAns" xml:space="preserve">
-    <value>1. The device is running a currently supported version of Windows 10. If the device isn't currently running a supported version of Windows 10, upgrade to a supported version of Windows 10.</value>
+    <value>1. L'appareil exécute une version actuellement prise en charge de Windows 10. Si l'appareil n'exécute pas actuellement une version prise en charge de Windows 10, effectuez une mise à niveau vers une version prise en charge de Windows 10.</value>
   </data>
   <data name="ciuView_lblPtAns2" xml:space="preserve">
-    <value>2. The device meets</value>
+    <value>2. L'appareil répond</value>
   </data>
   <data name="ciuView_lblPtAns3" xml:space="preserve">
-    <value>1. Download and run the</value>
+    <value>1. Téléchargez et exécutez le</value>
   </data>
   <data name="ciuView_lblPtAns4" xml:space="preserve">
-    <value>2. Select the following Windows Update shortcut and then select the Check for updates button:</value>
+    <value>2. Sélectionnez le raccourci Windows Update suivant, puis sélectionnez le bouton Rechercher les mises à jour :</value>
   </data>
   <data name="ciuView_lblPtAns5" xml:space="preserve">
-    <value>3. Your device does not meet the official requirements for Windows 11? You can apply a compatibility patch to enable the Inplace Upgrade via Windows Update.</value>
+    <value>3. Votre appareil ne répond pas aux exigences officielles de Windows 11 ? Vous pouvez appliquer un correctif de compatibilité pour activer la mise à niveau sur place via Windows Update.</value>
   </data>
   <data name="ciuView_lblPtHdr" xml:space="preserve">
-    <value>An existing Windows 10 device can be upgraded to Windows 11 if it meets the following criteria:</value>
+    <value>Un appareil Windows 10 existant peut être mis à niveau vers Windows 11 s'il répond aux critères suivants :</value>
   </data>
   <data name="ciuView_lblPtHdr2" xml:space="preserve">
-    <value>To see if a Windows 10 device is eligible to upgrade to Windows 11, follow one of these options:</value>
+    <value>Pour voir si un appareil Windows 10 est éligible à la mise à niveau vers Windows 11, suivez l'une de ces options :</value>
   </data>
   <data name="ciuView_linkPtAns2" xml:space="preserve">
-    <value>the minimum hardware specifications to run Windows 11.</value>
+    <value>les spécifications matérielles minimales pour exécuter Windows 11.</value>
   </data>
   <data name="ciuView_linkPtAns3" xml:space="preserve">
-    <value>WhyNotWin11 app to confirm your device meets the minimum system requirements</value>
+    <value>Application WhyNotWin11 pour confirmer que votre appareil répond à la configuration minimale requise</value>
   </data>
   <data name="msg_InstallReady" xml:space="preserve">
-    <value>Windows 11 installation can now proceed. Please follow the instructions in the setup window.</value>
+    <value>L'installation de Windows 11 peut maintenant commencer. Veuillez suivre les instructions dans la fenêtre d'installation.</value>
     <comment>Install</comment>
   </data>
   <data name="_debugInstallReady" xml:space="preserve">
-    <value>You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!</value>
+    <value>Vous êtes prêt à installer Windows 11 sur du matériel non pris en charge ! Ignorez l'invite « Windows Server » : vous êtes prêt !</value>
     <comment>Install</comment>
   </data>
   <data name="_debugInstallRunElevated" xml:space="preserve">
-    <value>Starting the setup process with elevated privileges...</value>
+    <value>Démarrage du processus de configuration avec des privilèges élevés...</value>
     <comment>Install</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
-    <value>Oops! Something went wrong:</value>
+    <value>Oups ! Une erreur s'est produite :</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
-    <value>Mounting the ISO... Hang tight!</value>
+    <value>Montage de l'ISO... Accrochez-vous !</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
-    <value>Failed to mount the ISO. Please try again.</value>
+    <value>Impossible de monter l'ISO. Veuillez réessayer.</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMountingSuccess" xml:space="preserve">
-    <value>ISO mounted successfully! Let's get this Windows 11 ready!</value>
+    <value>L'ISO a été monté avec succès ! Préparons ce Windows 11 !</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusRunning" xml:space="preserve">
-    <value>Almost there! We're getting the setup ready...</value>
-    <comment>Install</comment>
+    <value>Nous y sommes presque ! préparation de l'installation...</value>
   </data>
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
-    <value>Setup file not found in</value>
+    <value>Fichier d'installation introuvable dans</value>
     <comment>Mounting</comment>
-  </data>
-  <data name="ctl_linkSelectComputer" xml:space="preserve">
-    <value>Select from computer</value>
   </data>
 </root>

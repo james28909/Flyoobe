@@ -118,165 +118,161 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="compPatch_debugCancel" xml:space="preserve">
-    <value>Bypass patch canceled by user.</value>
+    <value>バイパスパッチはユーザーによってキャンセルされました。</value>
   </data>
   <data name="compPatch_debugNotRemovableDrive" xml:space="preserve">
-    <value>User attempted to select a non-removable drive.</value>
+    <value>ユーザーがリムーバブルでないドライブを選択しようとしました。</value>
   </data>
   <data name="compPatch_debugNoUSBDrive" xml:space="preserve">
-    <value>No USB drive selected for patching.</value>
+    <value>パッチを適用する USB ドライブが選択されていません。</value>
   </data>
   <data name="compPatch_msgFailedEx" xml:space="preserve">
-    <value>Failed to apply bypass patch:</value>
+    <value>バイパスパッチの適用に失敗しました:</value>
   </data>
   <data name="compPatch_msgNotRemovableDrive" xml:space="preserve">
-    <value>The selected path is not a removable drive. Please select a USB drive.</value>
+    <value>選択したパスはリムーバブルドライブではありません。USB ドライブを選択してください。</value>
   </data>
   <data name="compPatch_msgSelectDrive" xml:space="preserve">
-    <value>Select the USB drive containing your Windows 11 installation files.\nThis feature adds a compatibility patch to bypass certain system requirements.\nCompatible with drives prepared by any tool, including Rufus. Ensure the drive is ready!</value>
+    <value>Windows 11 インストールファイルを含む USB ドライブを選択します。\nこの機能は、特定のシステム要件を回避するための互換性パッチを追加します。\nRufus を含む任意のツールで準備されたドライブと互換性があります。\nドライブの準備ができていることを確認してください！</value>
   </data>
   <data name="compPatch_msgSelectDriveConfirm" xml:space="preserve">
-    <value>This will apply compatibility bypass settings on the selected USB drive. Continue?</value>
+    <value>選択した USB ドライブに互換性バイパス設定が適用されます。続行しますか？</value>
   </data>
   <data name="compPatch_msgSuccess" xml:space="preserve">
-    <value>Bypass patch applied successfully!</value>
+    <value>バイパスパッチが正常に適用されました。</value>
   </data>
   <data name="ctl_FormTitle" xml:space="preserve">
-    <value>Flyby11 Upgrading Assistant</value>
+    <value>Flyby11 アップグレードアシスタント</value>
   </data>
   <data name="ctl_inkCompPatch" xml:space="preserve">
-    <value>Apply Compatibility Patch to ISO (Clean Install)</value>
+    <value>ISO に互換性パッチを適用する (クリーンインストール)</value>
   </data>
   <data name="ctl_linkCiuv" xml:space="preserve">
-    <value>Can I upgrade to Windows 11?</value>
+    <value>Windows 11 にアップグレードしますか？</value>
   </data>
   <data name="ctl_linkVote" xml:space="preserve">
-    <value>Did the upgrade work?</value>
+    <value>アップグレードは成功しましたか？</value>
   </data>
   <data name="ctl_statusLabel" xml:space="preserve">
-    <value>Drag and drop the Windows 11 ISO to patch it and install on unsupported hardware (Inplace Upgrade).</value>
+    <value>Windows 11 の ISO をドラッグ アンド ドロップでパッチを適用してサポートされていないハードウェアにインストール (インプレース アップグレード)</value>
   </data>
   <data name="faq_a1" xml:space="preserve">
-    <value>A: You can download the latest ISO from the official Microsoft website or use the Fido Downloader.</value>
+    <value>A: 最新の ISO は Microsoft の公式 ウェブサイトからダウンロードか、Fido Downloader が使用できます。</value>
   </data>
   <data name="faq_a2" xml:space="preserve">
-    <value>A: If you've successfully installed Windows 11 and saved some money, feel free to leave a little something as a thank-you here.</value>
+    <value>A: Windows 11 を正常にインストールできてコストが節約できた場合は、ぜひこちらで感謝の気持ちをお伝えください。</value>
   </data>
   <data name="faq_a2Link" xml:space="preserve">
-    <value>Click here to donate and show your support.</value>
+    <value>寄付をして開発をサポートするには、ここをクリックしてください。</value>
   </data>
   <data name="faq_a3" xml:space="preserve">
-    <value>A: Once the ISO is mounted, the setup process runs in the background. The Windows installer starts, guiding you through the steps required to install Windows 11 on your machine.</value>
+    <value>A: ISO がマウントされるとセットアップ プロセスがバックグラウンドで実行されます。Windows インストーラーが起動し、マシンに Windows 11 をインストールするための必要な手順が案内されます。</value>
   </data>
   <data name="faq_a4" xml:space="preserve">
-    <value>A: Please check the error messages and report it on GitHub.</value>
+    <value>A: エラーメッセージを確認して GitHub で報告してください。</value>
   </data>
   <data name="faq_a5" xml:space="preserve">
-    <value>A: Yes, Microsoft has left a backdoor open. This method leverages a feature of the Windows 11 setup process that uses the Windows Server variant of the installation. Unlike the regular Windows 11 setup, this variant skips most hardware compatibility checks.</value>
+    <value>A: はい、Microsoft は、このバックドアを開いたままにしています。この方法は、Windows Server バリアントのインストールを使用する Windows 11 セットアップ プロセスの機能を活用します。通常の Windows 11 セットアップと異なり、このバリアントはほとんどのハードウェア互換性のチェックをスキップします。</value>
   </data>
   <data name="faq_a6" xml:space="preserve">
-    <value>A: According to Microsoft, you should throw your PC away. I would suggest installing Linux on it and moving away from Windows.</value>
+    <value>A: Microsoft によると PC を廃棄した方が良いそうです。Linux をインストールして Windows から離れることを推奨します。</value>
   </data>
   <data name="faq_a7" xml:space="preserve">
-    <value>A: The developer is Belim, also known as Builtbybel, who has contributed a lot of code to the Windows community.</value>
+    <value>A: 開発者は、Windows コミュニティに多くのコードを提供してきた、Builtbybel としても知られている Belim 氏です。</value>
   </data>
   <data name="faq_a7Link" xml:space="preserve">
-    <value>Click here to learn more about the developer's work.</value>
+    <value>開発者の作業の詳細については、ここをクリックしてください。</value>
   </data>
   <data name="faq_downloadFido" xml:space="preserve">
-    <value>Download via Fido (Recommended)</value>
+    <value>Fido を使用してダウンロード (推奨)</value>
   </data>
   <data name="faq_downloadMS" xml:space="preserve">
-    <value>Microsoft Site</value>
+    <value>Microsoft のサイト</value>
   </data>
   <data name="faq_header" xml:space="preserve">
-    <value>Frequently Asked Questions (FAQ)</value>
+    <value>よくある質問 (FAQ)</value>
   </data>
   <data name="faq_q1" xml:space="preserve">
-    <value>Q: Where can I get the latest Windows 11 ISO?</value>
+    <value>Q: 最新の Windows 11 ISO はどこから入手できますか？</value>
   </data>
   <data name="faq_q2" xml:space="preserve">
-    <value>Q: How can I support the developer?</value>
+    <value>Q: 開発者に寄付するにはどうすればいいですか？</value>
   </data>
   <data name="faq_q3" xml:space="preserve">
-    <value>Q: How does the setup process work once the ISO is mounted?</value>
+    <value>Q: ISO がマウントされた後、セットアップ プロセスはどのように機能しますか？</value>
   </data>
   <data name="faq_q4" xml:space="preserve">
-    <value>Q: What if I encounter issues during installation?</value>
+    <value>Q: インストール中に問題が発生した場合はどうすれば良いですか？</value>
   </data>
   <data name="faq_q5" xml:space="preserve">
-    <value>Q: Is it legal to use this method?</value>
+    <value>Q: この方法を使用することは合法ですか？</value>
   </data>
   <data name="faq_q6" xml:space="preserve">
-    <value>Q: What are my alternatives if my PC is not supported?</value>
+    <value>Q: 使用している PC がサポートされていない場合の代替手段は何でしょうか？</value>
   </data>
   <data name="faq_q7" xml:space="preserve">
-    <value>Q: Who is the developer?</value>
+    <value>Q: 開発者は誰ですか？</value>
   </data>
   <data name="ciuView_lblPtAns" xml:space="preserve">
-    <value>1. The device is running a currently supported version of Windows 10. If the device isn't currently running a supported version of Windows 10, upgrade to a supported version of Windows 10.</value>
+    <value>1. デバイスは現在サポートされているバージョンの Windows 10 を実行しています。デバイスが現在サポートされている Windows 10 を実行していない場合は、サポートされている Windows 10 にアップグレードしてください。</value>
   </data>
   <data name="ciuView_lblPtAns2" xml:space="preserve">
-    <value>2. The device meets</value>
+    <value>2. このデバイス</value>
   </data>
   <data name="ciuView_lblPtAns3" xml:space="preserve">
-    <value>1. Download and run the</value>
+    <value>1. ダウンロードして実行する</value>
   </data>
   <data name="ciuView_lblPtAns4" xml:space="preserve">
-    <value>2. Select the following Windows Update shortcut and then select the Check for updates button:</value>
+    <value>2. 次の Windows Update ショートカットを選択して「更新プログラムの確認」ボタンを選択します:</value>
   </data>
   <data name="ciuView_lblPtAns5" xml:space="preserve">
-    <value>3. Your device does not meet the official requirements for Windows 11? You can apply a compatibility patch to enable the Inplace Upgrade via Windows Update.</value>
+    <value>3. 使用しているデバイスは Windows 11 の公式要件を満たしていませんか？互換性パッチを適用して、Windows Update 経由でのインプレース アップグレードを有効化することができます。</value>
   </data>
   <data name="ciuView_lblPtHdr" xml:space="preserve">
-    <value>An existing Windows 10 device can be upgraded to Windows 11 if it meets the following criteria:</value>
+    <value>既存の Windows 10 デバイスは、次の条件を満たしている場合に Windows 11 にアップグレードできます:</value>
   </data>
   <data name="ciuView_lblPtHdr2" xml:space="preserve">
-    <value>To see if a Windows 10 device is eligible to upgrade to Windows 11, follow one of these options:</value>
+    <value>Windows 10 デバイスが Windows 11 にアップグレードできるかどうかを確認するには、次のいずれかのオプションに従ってください。</value>
   </data>
   <data name="ciuView_linkPtAns2" xml:space="preserve">
-    <value>the minimum hardware specifications to run Windows 11.</value>
+    <value>Windows 11 を実行するための最小ハードウェア仕様である。</value>
   </data>
   <data name="ciuView_linkPtAns3" xml:space="preserve">
-    <value>WhyNotWin11 app to confirm your device meets the minimum system requirements</value>
+    <value>WhyNotWin11 アプリは、デバイスが最小のシステム要件を満たしているかどうかを確認できます</value>
   </data>
   <data name="msg_InstallReady" xml:space="preserve">
-    <value>Windows 11 installation can now proceed. Please follow the instructions in the setup window.</value>
-    <comment>Install</comment>
+    <value>Windows 11 のインストールを続行できます。セットアップ ウィンドウの指示に従ってください。</value>
+    <comment>インストール</comment>
   </data>
   <data name="_debugInstallReady" xml:space="preserve">
-    <value>You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!</value>
-    <comment>Install</comment>
+    <value>サポートされていないハードウェアに Windows 11 をインストールする準備ができました。「Windows Server」のプロンプトは無視してください。これで準備完了です！</value>
+    <comment>インストール</comment>
   </data>
   <data name="_debugInstallRunElevated" xml:space="preserve">
-    <value>Starting the setup process with elevated privileges...</value>
-    <comment>Install</comment>
+    <value>昇格された権限でセットアップ プロセスを開始しています...</value>
+    <comment>インストール</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
-    <value>Oops! Something went wrong:</value>
-    <comment>Mounting</comment>
+    <value>おっと！問題が発生しました:</value>
+    <comment>マウント中</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
-    <value>Mounting the ISO... Hang tight!</value>
-    <comment>Mounting</comment>
+    <value>ISO をマウント中です... しばらくお待ちください！</value>
+    <comment>マウント中</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
-    <value>Failed to mount the ISO. Please try again.</value>
-    <comment>Mounting</comment>
+    <value>ISO のマウントに失敗しました。再度お試しください。</value>
+    <comment>マウント中</comment>
   </data>
   <data name="_debugStatusMountingSuccess" xml:space="preserve">
-    <value>ISO mounted successfully! Let's get this Windows 11 ready!</value>
-    <comment>Mounting</comment>
+    <value>ISO のマウントに成功しました！ Windows 11 を準備します！</value>
+    <comment>マウント中</comment>
   </data>
   <data name="_debugStatusRunning" xml:space="preserve">
-    <value>Almost there! We're getting the setup ready...</value>
-    <comment>Install</comment>
+    <value>もうすぐです！セットアップを準備しています...</value>
   </data>
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
-    <value>Setup file not found in</value>
-    <comment>Mounting</comment>
-  </data>
-  <data name="ctl_linkSelectComputer" xml:space="preserve">
-    <value>Select from computer</value>
+    <value>セットアップファイルが見つかりません</value>
+    <comment>マウント中</comment>
   </data>
 </root>

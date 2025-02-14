@@ -118,165 +118,161 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="compPatch_debugCancel" xml:space="preserve">
-    <value>Bypass patch canceled by user.</value>
+    <value>Baypas yaması kullanıcı tarafından iptal edildi.</value>
   </data>
   <data name="compPatch_debugNotRemovableDrive" xml:space="preserve">
-    <value>User attempted to select a non-removable drive.</value>
+    <value>Kullanıcı çıkarılamayan bir sürücü seçmeye çalıştı.</value>
   </data>
   <data name="compPatch_debugNoUSBDrive" xml:space="preserve">
-    <value>No USB drive selected for patching.</value>
+    <value>Yama için USB sürücüsü seçilmedi.</value>
   </data>
   <data name="compPatch_msgFailedEx" xml:space="preserve">
-    <value>Failed to apply bypass patch:</value>
+    <value>Baypas yaması uygulanamadı:</value>
   </data>
   <data name="compPatch_msgNotRemovableDrive" xml:space="preserve">
-    <value>The selected path is not a removable drive. Please select a USB drive.</value>
+    <value>Seçilen yol çıkarılabilir bir sürücü değil. Lütfen bir USB sürücüsü seçin.</value>
   </data>
   <data name="compPatch_msgSelectDrive" xml:space="preserve">
-    <value>Select the USB drive containing your Windows 11 installation files.\nThis feature adds a compatibility patch to bypass certain system requirements.\nCompatible with drives prepared by any tool, including Rufus. Ensure the drive is ready!</value>
+    <value>Windows 11 kurulum dosyalarınızı içeren USB sürücüsünü seçin.\nBu özellik, belirli sistem gereksinimlerini atlatmak için bir uyumluluk yaması ekler.\nRufus dahil olmak üzere herhangi bir araç tarafından hazırlanan sürücülerle uyumludur. Sürücünün hazır olduğundan emin olun!</value>
   </data>
   <data name="compPatch_msgSelectDriveConfirm" xml:space="preserve">
-    <value>This will apply compatibility bypass settings on the selected USB drive. Continue?</value>
+    <value>Bu, seçili USB sürücüsünde uyumluluk atlama ayarlarını uygulayacaktır. Devam etmek istiyor musunuz?</value>
   </data>
   <data name="compPatch_msgSuccess" xml:space="preserve">
-    <value>Bypass patch applied successfully!</value>
+    <value>Baypas yaması başarıyla uygulandı!</value>
   </data>
   <data name="ctl_FormTitle" xml:space="preserve">
-    <value>Flyby11 Upgrading Assistant</value>
+    <value>Flyby11 Yükseltme Asistanı</value>
   </data>
   <data name="ctl_inkCompPatch" xml:space="preserve">
-    <value>Apply Compatibility Patch to ISO (Clean Install)</value>
+    <value>Uyumluluk Yaması'nı ISO'ya Uygula (Temiz Kurulum)</value>
   </data>
   <data name="ctl_linkCiuv" xml:space="preserve">
-    <value>Can I upgrade to Windows 11?</value>
+    <value>Windows 11'e yükseltebilir miyim?</value>
   </data>
   <data name="ctl_linkVote" xml:space="preserve">
-    <value>Did the upgrade work?</value>
+    <value>Yükseltme işe yaradı mı?</value>
   </data>
   <data name="ctl_statusLabel" xml:space="preserve">
-    <value>Drag and drop the Windows 11 ISO to patch it and install on unsupported hardware (Inplace Upgrade).</value>
+    <value>Windows 11 ISO'yu sürükleyip bırakarak yama yapın ve desteklenmeyen donanımlara yükleyin (Yerinde Yükseltme).</value>
   </data>
   <data name="faq_a1" xml:space="preserve">
-    <value>A: You can download the latest ISO from the official Microsoft website or use the Fido Downloader.</value>
+    <value>C: En son ISO'yu resmi Microsoft web sitesinden indirebilir veya Fido Downloader'ı kullanabilirsiniz.</value>
   </data>
   <data name="faq_a2" xml:space="preserve">
-    <value>A: If you've successfully installed Windows 11 and saved some money, feel free to leave a little something as a thank-you here.</value>
+    <value>C: Windows 11'i başarıyla kurduysanız ve biraz para biriktirdiyseniz, buraya teşekkür amaçlı küçük bir şey bırakmaktan çekinmeyin.</value>
   </data>
   <data name="faq_a2Link" xml:space="preserve">
-    <value>Click here to donate and show your support.</value>
+    <value>Bağışta bulunmak ve desteğinizi göstermek için buraya tıklayın.</value>
   </data>
   <data name="faq_a3" xml:space="preserve">
-    <value>A: Once the ISO is mounted, the setup process runs in the background. The Windows installer starts, guiding you through the steps required to install Windows 11 on your machine.</value>
+    <value>C: ISO yüklendikten sonra kurulum süreci arka planda çalışır. Windows yükleyicisi başlar ve makinenize Windows 11'i yüklemek için gereken adımlarda size rehberlik eder.</value>
   </data>
   <data name="faq_a4" xml:space="preserve">
-    <value>A: Please check the error messages and report it on GitHub.</value>
+    <value>C: Lütfen hata mesajlarını kontrol edin ve GitHub'a bildirin.</value>
   </data>
   <data name="faq_a5" xml:space="preserve">
-    <value>A: Yes, Microsoft has left a backdoor open. This method leverages a feature of the Windows 11 setup process that uses the Windows Server variant of the installation. Unlike the regular Windows 11 setup, this variant skips most hardware compatibility checks.</value>
+    <value>C: Evet, Microsoft bir arka kapıyı açık bıraktı. Bu yöntem, kurulumun Windows Server varyantını kullanan Windows 11 kurulum sürecinin bir özelliğinden yararlanır. Normal Windows 11 kurulumunun aksine, bu varyant çoğu donanım uyumluluk denetimini atlar.</value>
   </data>
   <data name="faq_a6" xml:space="preserve">
-    <value>A: According to Microsoft, you should throw your PC away. I would suggest installing Linux on it and moving away from Windows.</value>
+    <value>C: Microsoft'a göre, bilgisayarınızı atmalısınız. Ben ona Linux kurmanızı ve Windows'tan uzaklaşmanızı öneririm.</value>
   </data>
   <data name="faq_a7" xml:space="preserve">
-    <value>A: The developer is Belim, also known as Builtbybel, who has contributed a lot of code to the Windows community.</value>
+    <value>C: Geliştirici, Windows topluluğuna çok sayıda kod katkıda bulunan, aynı zamanda Builtbybel olarak da bilinen Belim'dir.</value>
   </data>
   <data name="faq_a7Link" xml:space="preserve">
-    <value>Click here to learn more about the developer's work.</value>
+    <value>Geliştiricinin çalışmaları hakkında daha fazla bilgi edinmek için buraya tıklayın.</value>
   </data>
   <data name="faq_downloadFido" xml:space="preserve">
-    <value>Download via Fido (Recommended)</value>
+    <value>Fido üzerinden indirin (Önerilen)</value>
   </data>
   <data name="faq_downloadMS" xml:space="preserve">
     <value>Microsoft Site</value>
   </data>
   <data name="faq_header" xml:space="preserve">
-    <value>Frequently Asked Questions (FAQ)</value>
+    <value>Sıkça Sorulan Sorular (SSS)</value>
   </data>
   <data name="faq_q1" xml:space="preserve">
-    <value>Q: Where can I get the latest Windows 11 ISO?</value>
+    <value>S: En son Windows 11 ISO'sunu nereden edinebilirim?</value>
   </data>
   <data name="faq_q2" xml:space="preserve">
-    <value>Q: How can I support the developer?</value>
+    <value>S: Geliştiriciye nasıl destek olabilirim?</value>
   </data>
   <data name="faq_q3" xml:space="preserve">
-    <value>Q: How does the setup process work once the ISO is mounted?</value>
+    <value>S: ISO yüklendikten sonra kurulum süreci nasıl işliyor?</value>
   </data>
   <data name="faq_q4" xml:space="preserve">
-    <value>Q: What if I encounter issues during installation?</value>
+    <value>S: Kurulum sırasında sorunlarla karşılaşırsam ne olur?</value>
   </data>
   <data name="faq_q5" xml:space="preserve">
-    <value>Q: Is it legal to use this method?</value>
+    <value>S: Bu yöntemi kullanmak yasal mı?</value>
   </data>
   <data name="faq_q6" xml:space="preserve">
-    <value>Q: What are my alternatives if my PC is not supported?</value>
+    <value>S: Bilgisayarım desteklenmiyorsa alternatiflerim nelerdir?</value>
   </data>
   <data name="faq_q7" xml:space="preserve">
-    <value>Q: Who is the developer?</value>
+    <value>S: Geliştirici kimdir?</value>
   </data>
   <data name="ciuView_lblPtAns" xml:space="preserve">
-    <value>1. The device is running a currently supported version of Windows 10. If the device isn't currently running a supported version of Windows 10, upgrade to a supported version of Windows 10.</value>
+    <value>1. Cihaz şu anda desteklenen bir Windows 10 sürümü çalıştırıyor. Cihaz şu anda desteklenen bir Windows 10 sürümü çalıştırmıyorsa, desteklenen bir Windows 10 sürümüne yükseltin.</value>
   </data>
   <data name="ciuView_lblPtAns2" xml:space="preserve">
-    <value>2. The device meets</value>
+    <value>2. Cihaz karşılar</value>
   </data>
   <data name="ciuView_lblPtAns3" xml:space="preserve">
-    <value>1. Download and run the</value>
+    <value>1. İndirin ve çalıştırın</value>
   </data>
   <data name="ciuView_lblPtAns4" xml:space="preserve">
-    <value>2. Select the following Windows Update shortcut and then select the Check for updates button:</value>
+    <value>2. Aşağıdaki Windows Update kısayolunu seçin ve ardından Güncelleştirmeleri denetle düğmesini seçin:</value>
   </data>
   <data name="ciuView_lblPtAns5" xml:space="preserve">
-    <value>3. Your device does not meet the official requirements for Windows 11? You can apply a compatibility patch to enable the Inplace Upgrade via Windows Update.</value>
+    <value>3. Cihazınız Windows 11'in resmi gereksinimlerini karşılamıyor mu? Windows Update aracılığıyla Yerinde Yükseltmeyi etkinleştirmek için bir uyumluluk yaması uygulayabilirsiniz.</value>
   </data>
   <data name="ciuView_lblPtHdr" xml:space="preserve">
-    <value>An existing Windows 10 device can be upgraded to Windows 11 if it meets the following criteria:</value>
+    <value>Mevcut bir Windows 10 cihazı, aşağıdaki ölçütleri karşılıyorsa Windows 11'e yükseltilebilir:</value>
   </data>
   <data name="ciuView_lblPtHdr2" xml:space="preserve">
-    <value>To see if a Windows 10 device is eligible to upgrade to Windows 11, follow one of these options:</value>
+    <value>Bir Windows 10 cihazının Windows 11'e yükseltmeye uygun olup olmadığını görmek için şu seçeneklerden birini izleyin:</value>
   </data>
   <data name="ciuView_linkPtAns2" xml:space="preserve">
-    <value>the minimum hardware specifications to run Windows 11.</value>
+    <value>Windows 11'i çalıştırmak için gereken minimum donanım özellikleri.</value>
   </data>
   <data name="ciuView_linkPtAns3" xml:space="preserve">
-    <value>WhyNotWin11 app to confirm your device meets the minimum system requirements</value>
+    <value>Cihazınızın minimum sistem gereksinimlerini karşıladığını doğrulamak için WhyNotWin11 uygulaması</value>
   </data>
   <data name="msg_InstallReady" xml:space="preserve">
-    <value>Windows 11 installation can now proceed. Please follow the instructions in the setup window.</value>
-    <comment>Install</comment>
+    <value>Windows 11 kurulumu artık devam edebilir. Lütfen kurulum penceresindeki talimatları izleyin.</value>
+    <comment>Kur</comment>
   </data>
   <data name="_debugInstallReady" xml:space="preserve">
-    <value>You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!</value>
-    <comment>Install</comment>
+    <value>Desteklenmeyen donanıma Windows 11 yüklemeye hazırsınız! 'Windows Server' istemini görmezden gelin; artık hazırsınız!</value>
+    <comment>Kur</comment>
   </data>
   <data name="_debugInstallRunElevated" xml:space="preserve">
-    <value>Starting the setup process with elevated privileges...</value>
-    <comment>Install</comment>
+    <value>Kurulum süreci yükseltilmiş ayrıcalıklarla başlatılıyor...</value>
+    <comment>Kur</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
-    <value>Oops! Something went wrong:</value>
-    <comment>Mounting</comment>
+    <value>Oops! Bir şeyler ters gitti:</value>
+    <comment>Yükle</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
-    <value>Mounting the ISO... Hang tight!</value>
-    <comment>Mounting</comment>
+    <value>ISO montajı... Sıkı durun!</value>
+    <comment>Yükle</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
-    <value>Failed to mount the ISO. Please try again.</value>
-    <comment>Mounting</comment>
+    <value>ISO bağlanamadı. Lütfen tekrar deneyin.</value>
+    <comment>Yükle</comment>
   </data>
   <data name="_debugStatusMountingSuccess" xml:space="preserve">
-    <value>ISO mounted successfully! Let's get this Windows 11 ready!</value>
-    <comment>Mounting</comment>
+    <value>ISO başarıyla bağlandı! Hadi Windows 11'i hazırlayalım!</value>
+    <comment>Yükle</comment>
   </data>
   <data name="_debugStatusRunning" xml:space="preserve">
-    <value>Almost there! We're getting the setup ready...</value>
-    <comment>Install</comment>
+    <value>Neredeyse bitti! Kurulumu hazırlıyoruz...</value>
   </data>
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
-    <value>Setup file not found in</value>
-    <comment>Mounting</comment>
-  </data>
-  <data name="ctl_linkSelectComputer" xml:space="preserve">
-    <value>Select from computer</value>
+    <value>Kurulum dosyası bulunamadı</value>
+    <comment>Yükle</comment>
   </data>
 </root>

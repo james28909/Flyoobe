@@ -267,4 +267,7 @@
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
     <value>Setup-Datei nicht gefunden in</value>
   </data>
+  <data name="ctl_linkSelectComputer" xml:space="preserve">
+    <value>Vom Computer auswählen</value>
+  </data>
 </root>
