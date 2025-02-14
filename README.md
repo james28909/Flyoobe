@@ -2,7 +2,7 @@
 Flyby11 is a simple patcher that removes the annoying restrictions preventing you from installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or your processor isn't supported? Flyby11 lets you install Windows 11 24H2 anyway.
 
 No complicated steps. 
-**Just run the tool (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/tag/0.17.160) in the right side of the page, you may need to unpack a zip file), and you'll be running Windows 11 on your outdated machine in no time.**
+**Just run the tool (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest) in the right side of the page, you may need to unpack a zip file), and you'll be running Windows 11 on your outdated machine in no time.**
 Think of it as sneaking through the back door without anyone noticing.
 
 # Technical Overview
