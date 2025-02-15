@@ -257,7 +257,7 @@
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
-    <value>Montowanie obrazu ISO... Trzymaj się!</value>
+    <value>Montowanie obrazu ISO... Trzymaj się mocno!</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
