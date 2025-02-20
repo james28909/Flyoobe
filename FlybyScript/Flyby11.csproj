@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="FAQHandler.cs" />
     <Compile Include="IsoHandler.cs" />
+    <Compile Include="Locales\Strings.Designer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,15 @@
     <EmbeddedResource Include="CanIUpgradeView.resx">
       <DependentUpon>CanIUpgradeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Locales\Strings.ar.resx" />
+    <EmbeddedResource Include="Locales\Strings.cs-CZ.resx" />
+    <EmbeddedResource Include="Locales\Strings.de.resx" />
+    <EmbeddedResource Include="Locales\Strings.fr.resx" />
+    <EmbeddedResource Include="Locales\Strings.it.resx" />
+    <EmbeddedResource Include="Locales\Strings.ja.resx" />
+    <EmbeddedResource Include="Locales\Strings.pl.resx" />
+    <EmbeddedResource Include="Locales\Strings.resx" />
+    <EmbeddedResource Include="Locales\Strings.tr.resx" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
