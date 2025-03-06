@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="compPatch_debugCancel" xml:space="preserve">
+    <value>Установка патча совместимости отменена пользователем.</value>
+  </data>
+  <data name="compPatch_debugNotRemovableDrive" xml:space="preserve">
+    <value>Пользователь пытался выбрать несъемный диск.</value>
+  </data>
+  <data name="compPatch_debugNoUSBDrive" xml:space="preserve">
+    <value>USB-накопитель для установки патча не выбран.</value>
+  </data>
+  <data name="compPatch_msgFailedEx" xml:space="preserve">
+    <value>Не удалось применить патч совместимости:</value>
+  </data>
+  <data name="compPatch_msgNotRemovableDrive" xml:space="preserve">
+    <value>Выбранный путь не является съемным диском. Пожалуйста, выберите USB-накопитель.</value>
+  </data>
+  <data name="compPatch_msgSelectDrive" xml:space="preserve">
+    <value>Выберите USB-накопитель с файлами установки Windows 11.\nЭта функция добавляет патч совместимости для обхода определенных системных требований.\nСовместимо с накопителями, подготовленными любым инструментом, включая Rufus. Убедитесь, что накопитель готов!</value>
+  </data>
+  <data name="compPatch_msgSelectDriveConfirm" xml:space="preserve">
+    <value>Это применит настройки обхода совместимости на выбранном USB-накопителе. Продолжить?</value>
+  </data>
+  <data name="compPatch_msgSuccess" xml:space="preserve">
+    <value>Патч совместимости успешно применен!</value>
+  </data>
+  <data name="ctl_FormTitle" xml:space="preserve">
+    <value>Помощник по обновлению Flyby11</value>
+  </data>
+  <data name="ctl_inkCompPatch" xml:space="preserve">
+    <value>Применить патч совместимости к ISO (чистая установка)</value>
+  </data>
+  <data name="ctl_linkCiuv" xml:space="preserve">
+    <value>Могу ли я обновиться до Windows 11?</value>
+  </data>
+  <data name="ctl_linkVote" xml:space="preserve">
+    <value>Получилось ли обновление?</value>
+  </data>
+  <data name="ctl_statusLabel" xml:space="preserve">
+    <value>Перетащите ISO-файл Windows 11 для применения патча и установки на неподдерживаемом оборудовании (обновление на месте).</value>
+  </data>
+  <data name="faq_a1" xml:space="preserve">
+    <value>О: Вы можете скачать последний ISO-файл с официального сайта Microsoft или использовать Fido Downloader.</value>
+  </data>
+  <data name="faq_a2" xml:space="preserve">
+    <value>О: Если вы успешно установили Windows 11 и сэкономили деньги, не стесняйтесь оставить небольшое пожертвование в знак благодарности здесь.</value>
+  </data>
+  <data name="faq_a2Link" xml:space="preserve">
+    <value>Нажмите здесь, чтобы пожертвовать и поддержать проект.</value>
+  </data>
+  <data name="faq_a3" xml:space="preserve">
+    <value>О: После монтирования ISO-файла процесс установки запускается в фоновом режиме. Установщик Windows запустится и проведет вас через необходимые шаги для установки Windows 11 на ваш компьютер.</value>
+  </data>
+  <data name="faq_a4" xml:space="preserve">
+    <value>О: Пожалуйста, проверьте сообщения об ошибках и сообщите о проблеме на GitHub.</value>
+  </data>
+  <data name="faq_a5" xml:space="preserve">
+    <value>О: Да, Microsoft оставила лазейку. Этот метод использует особенность процесса установки Windows 11, которая использует серверный вариант установки. В отличие от обычной установки Windows 11, этот вариант пропускает большинство проверок совместимости оборудования.</value>
+  </data>
+  <data name="faq_a6" xml:space="preserve">
+    <value>О: По мнению Microsoft, вам следует выбросить свой ПК. Я бы предложил установить на него Linux и отказаться от Windows.</value>
+  </data>
+  <data name="faq_a7" xml:space="preserve">
+    <value>О: Разработчик - Belim, также известный как Builtbybel, который внес большой вклад в сообщество Windows.</value>
+  </data>
+  <data name="faq_a7Link" xml:space="preserve">
+    <value>Нажмите здесь, чтобы узнать больше о работе разработчика.</value>
+  </data>
+  <data name="faq_downloadFido" xml:space="preserve">
+    <value>Скачать через Fido (рекомендуется)</value>
+  </data>
+  <data name="faq_downloadMS" xml:space="preserve">
+    <value>Сайт Microsoft</value>
+  </data>
+  <data name="faq_header" xml:space="preserve">
+    <value>Часто задаваемые вопросы (FAQ)</value>
+  </data>
+  <data name="faq_q1" xml:space="preserve">
+    <value>В: Где взять свежий ISO-файл Windows 11?</value>
+  </data>
+  <data name="faq_q2" xml:space="preserve">
+    <value>В: Как я могу поддержать разработчика?</value>
+  </data>
+  <data name="faq_q3" xml:space="preserve">
+    <value>В: Как работает процесс установки после монтирования ISO?</value>
+  </data>
+  <data name="faq_q4" xml:space="preserve">
+    <value>В: Что делать, если возникли проблемы во время установки?</value>
+  </data>
+  <data name="faq_q5" xml:space="preserve">
+    <value>В: Законно ли использовать этот метод?</value>
+  </data>
+  <data name="faq_q6" xml:space="preserve">
+    <value>В: Какие есть альтернативы, если мой ПК не поддерживается?</value>
+  </data>
+  <data name="faq_q7" xml:space="preserve">
+    <value>В: Кто разработчик?</value>
+  </data>
+  <data name="ciuView_lblPtAns" xml:space="preserve">
+    <value>1. Устройство работает на поддерживаемой версии Windows 10. Если устройство сейчас не работает на поддерживаемой версии Windows 10, обновите его до поддерживаемой версии Windows 10.</value>
+  </data>
+  <data name="ciuView_lblPtAns2" xml:space="preserve">
+    <value>2. Устройство соответствует</value>
+  </data>
+  <data name="ciuView_lblPtAns3" xml:space="preserve">
+    <value>1. Скачайте и запустите</value>
+  </data>
+  <data name="ciuView_lblPtAns4" xml:space="preserve">
+    <value>2. Выберите следующий ярлык Windows Update и нажмите кнопку "Проверить наличие обновлений":</value>
+  </data>
+  <data name="ciuView_lblPtAns5" xml:space="preserve">
+    <value>3. Ваше устройство не соответствует официальным требованиям Windows 11? Вы можете применить патч совместимости для включения обновления на месте через Windows Update.</value>
+  </data>
+  <data name="ciuView_lblPtHdr" xml:space="preserve">
+    <value>Существующее устройство с Windows 10 может быть обновлено до Windows 11, если оно соответствует следующим критериям:</value>
+  </data>
+  <data name="ciuView_lblPtHdr2" xml:space="preserve">
+    <value>Чтобы проверить, может ли устройство с Windows 10 быть обновлено до Windows 11, выполните один из следующих вариантов:</value>
+  </data>
+  <data name="ciuView_linkPtAns2" xml:space="preserve">
+    <value>минимальным требованиям к оборудованию для запуска Windows 11.</value>
+  </data>
+  <data name="ciuView_linkPtAns3" xml:space="preserve">
+    <value>приложение WhyNotWin11, чтобы подтвердить, что ваше устройство соответствует минимальным системным требованиям</value>
+  </data>
+  <data name="msg_InstallReady" xml:space="preserve">
+    <value>Установка Windows 11 может быть продолжена. Пожалуйста, следуйте инструкциям в окне установки.</value>
+    <comment>Install</comment>
+  </data>
+  <data name="_debugInstallReady" xml:space="preserve">
+    <value>Вы готовы к установке Windows 11 на неподдерживаемом оборудовании! Игнорируйте сообщение о 'Windows Server' - всё готово!</value>
+    <comment>Install</comment>
+  </data>
+  <data name="_debugInstallRunElevated" xml:space="preserve">
+    <value>Запуск процесса установки с повышенными привилегиями...</value>
+    <comment>Install</comment>
+  </data>
+  <data name="_debugStatusHandleIsoEx" xml:space="preserve">
+    <value>Упс! Что-то пошло не так:</value>
+    <comment>Mounting</comment>
+  </data>
+  <data name="_debugStatusMounting" xml:space="preserve">
+    <value>Монтирование ISO... Подождите!</value>
+    <comment>Mounting</comment>
+  </data>
+  <data name="_debugStatusMountingFailed" xml:space="preserve">
+    <value>Не удалось смонтировать ISO. Пожалуйста, попробуйте снова.</value>
+    <comment>Mounting</comment>
+  </data>
+  <data name="_debugStatusMountingSuccess" xml:space="preserve">
+    <value>ISO успешно смонтирован! Давайте подготовим эту Windows 11!</value>
+    <comment>Mounting</comment>
+  </data>
+  <data name="_debugStatusRunning" xml:space="preserve">
+    <value>Почти готово! Подготавливаем установку...</value>
+    <comment>Install</comment>
+  </data>
+  <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
+    <value>Файл установки не найден в</value>
+    <comment>Mounting</comment>
+  </data>
+  <data name="ctl_linkSelectComputer" xml:space="preserve">
+    <value>Выбрать с компьютера</value>
+  </data>
+</root>
