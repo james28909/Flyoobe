@@ -208,7 +208,7 @@
     <value>D: è legale usare questo metodo?</value>
   </data>
   <data name="faq_q6" xml:space="preserve">
-    <value>D: quali sono le alternative se l'ahrdware del PC non è supportato?</value>
+    <value>D: quali sono le alternative se l'hardware del PC non è supportato?</value>
   </data>
   <data name="faq_q7" xml:space="preserve">
     <value>D: chi è lo sviluppatore?</value>
@@ -242,37 +242,41 @@
   </data>
   <data name="msg_InstallReady" xml:space="preserve">
     <value>L'installazione di Windows 11 può ora procedere. Segui le istruzioni nella finestra di configurazione.</value>
-    <comment>Install</comment>
+    <comment>Installa</comment>
   </data>
   <data name="_debugInstallReady" xml:space="preserve">
     <value>Sei pronto per installare Windows 11 con hardware non supportato! Ignora il prompt "Windows Server"; tutto è pronto!</value>
-    <comment>Install</comment>
+    <comment>Installa</comment>
   </data>
   <data name="_debugInstallRunElevated" xml:space="preserve">
     <value>Avvio processo configurazione con privilegi elevati ...</value>
-    <comment>Install</comment>
+    <comment>Installa</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
     <value>Oops! Qualcosa è andato storto:</value>
-    <comment>Mounting</comment>
+    <comment>Montaggio</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
     <value>Montaggio file...</value>
-    <comment>Mounting</comment>
+    <comment>Montaggio</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
     <value>Impossibile montare il file ISO. Riprova.</value>
-    <comment>Mounting</comment>
+    <comment>Montaggio</comment>
   </data>
   <data name="_debugStatusMountingSuccess" xml:space="preserve">
     <value>File ISO montato correttamente! Procediamo con l'installazione di Windows 11!</value>
-    <comment>Mounting</comment>
+    <comment>Montaggio</comment>
   </data>
   <data name="_debugStatusRunning" xml:space="preserve">
     <value>Ci siamo quasi! Preparazione installazione ...</value>
+    <comment>Installazione</comment>
   </data>
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
     <value>File configurazione non trovato in</value>
-    <comment>Mounting</comment>
+    <comment>Montaggio</comment>
+  </data>
+  <data name="ctl_linkSelectComputer" xml:space="preserve">
+    <value>Seleziona dal computer</value>
   </data>
 </root>
