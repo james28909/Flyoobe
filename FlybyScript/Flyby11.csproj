@@ -83,6 +83,7 @@
     <EmbeddedResource Include="Locales\Strings.resx" />
     <EmbeddedResource Include="Locales\Strings.ru.resx" />
     <EmbeddedResource Include="Locales\Strings.tr.resx" />
+    <EmbeddedResource Include="Locales\Strings.zh-CN.resx" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
