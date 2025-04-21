@@ -58,8 +58,20 @@
     <Compile Include="CanIUpgradeView.Designer.cs">
       <DependentUpon>CanIUpgradeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClippyUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClippyUI.Designer.cs">
+      <DependentUpon>ClippyUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAQHandler.cs" />
     <Compile Include="IsoHandler.cs" />
+    <Compile Include="Locales\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,23 +80,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SwitchView.cs" />
     <EmbeddedResource Include="CanIUpgradeView.resx">
       <DependentUpon>CanIUpgradeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClippyUI.resx">
+      <DependentUpon>ClippyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locales\Strings.ar.resx" />
+    <EmbeddedResource Include="Locales\Strings.cs-CZ.resx" />
+    <EmbeddedResource Include="Locales\Strings.de.resx" />
+    <EmbeddedResource Include="Locales\Strings.fr.resx" />
+    <EmbeddedResource Include="Locales\Strings.it.resx" />
+    <EmbeddedResource Include="Locales\Strings.ja.resx" />
+    <EmbeddedResource Include="Locales\Strings.pl.resx" />
+    <EmbeddedResource Include="Locales\Strings.sv-SE.resx" />
+    <EmbeddedResource Include="Locales\Strings.tr.resx" />
+    <EmbeddedResource Include="Locales\Strings.zh-CN.resx" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Locales\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,5 +132,6 @@
   <ItemGroup>
     <Content Include="AppIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.linkPCHealthCheckApp = new System.Windows.Forms.LinkLabel();
+            this.lblPtHdr = new System.Windows.Forms.Label();
+            this.lblPtAns = new System.Windows.Forms.Label();
+            this.lblPtHdr2 = new System.Windows.Forms.Label();
+            this.lblPtAns3 = new System.Windows.Forms.Label();
+            this.linkPtAns3 = new System.Windows.Forms.LinkLabel();
             this.statusLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPtAns4 = new System.Windows.Forms.Label();
             this.btnWindowsUpdate = new System.Windows.Forms.Button();
-            this.linkHardwareSpecs = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.linkPtAns2 = new System.Windows.Forms.LinkLabel();
+            this.lblPtAns2 = new System.Windows.Forms.Label();
             this.btnPatch = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPtAns5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBack
@@ -50,7 +50,7 @@
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe MDL2 Assets", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnBack.ForeColor = System.Drawing.Color.DimGray;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(34, 29);
@@ -59,82 +59,80 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label1
+            // lblPtHdr
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtHdr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoEllipsis = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(534, 17);
-            this.label1.TabIndex = 233;
-            this.label1.Text = "An existing Windows 10 device can be upgraded to Windows 11 if it meets the follo" +
+            this.lblPtHdr.AutoEllipsis = true;
+            this.lblPtHdr.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtHdr.ForeColor = System.Drawing.Color.Black;
+            this.lblPtHdr.Location = new System.Drawing.Point(12, 55);
+            this.lblPtHdr.Name = "lblPtHdr";
+            this.lblPtHdr.Size = new System.Drawing.Size(534, 17);
+            this.lblPtHdr.TabIndex = 233;
+            this.lblPtHdr.Text = "An existing Windows 10 device can be upgraded to Windows 11 if it meets the follo" +
     "wing criteria:";
             // 
-            // label2
+            // lblPtAns
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtAns.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoEllipsis = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(513, 36);
-            this.label2.TabIndex = 234;
-            this.label2.Text = "1. The device is running a currently supported version of Windows 10. If the devi" +
+            this.lblPtAns.AutoEllipsis = true;
+            this.lblPtAns.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtAns.Location = new System.Drawing.Point(33, 89);
+            this.lblPtAns.Name = "lblPtAns";
+            this.lblPtAns.Size = new System.Drawing.Size(513, 36);
+            this.lblPtAns.TabIndex = 234;
+            this.lblPtAns.Text = "1. The device is running a currently supported version of Windows 10. If the devi" +
     "ce isn\'t currently running a supported version of Windows 10, upgrade to a suppo" +
     "rted version of Windows 10.";
             // 
-            // label4
+            // lblPtHdr2
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtHdr2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoEllipsis = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(12, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(534, 17);
-            this.label4.TabIndex = 236;
-            this.label4.Text = "To see if a Windows 10 device is eligible to upgrade to Windows 11, follow one of" +
+            this.lblPtHdr2.AutoEllipsis = true;
+            this.lblPtHdr2.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtHdr2.ForeColor = System.Drawing.Color.Black;
+            this.lblPtHdr2.Location = new System.Drawing.Point(12, 161);
+            this.lblPtHdr2.Name = "lblPtHdr2";
+            this.lblPtHdr2.Size = new System.Drawing.Size(534, 17);
+            this.lblPtHdr2.TabIndex = 236;
+            this.lblPtHdr2.Text = "To see if a Windows 10 device is eligible to upgrade to Windows 11, follow one of" +
     " these options:";
+            this.lblPtHdr2.Click += new System.EventHandler(this.lblPtHdr2_Click);
             // 
-            // label5
+            // lblPtAns3
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtAns3.AutoEllipsis = true;
+            this.lblPtAns3.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtAns3.Location = new System.Drawing.Point(33, 194);
+            this.lblPtAns3.Name = "lblPtAns3";
+            this.lblPtAns3.Size = new System.Drawing.Size(135, 16);
+            this.lblPtAns3.TabIndex = 237;
+            this.lblPtAns3.Text = "1. Download and run the";
+            // 
+            // linkPtAns3
+            // 
+            this.linkPtAns3.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
+            this.linkPtAns3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoEllipsis = true;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 16);
-            this.label5.TabIndex = 237;
-            this.label5.Text = "1. Download and run the";
-            // 
-            // linkPCHealthCheckApp
-            // 
-            this.linkPCHealthCheckApp.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkPCHealthCheckApp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkPCHealthCheckApp.AutoEllipsis = true;
-            this.linkPCHealthCheckApp.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkPCHealthCheckApp.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkPCHealthCheckApp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(180)))));
-            this.linkPCHealthCheckApp.Location = new System.Drawing.Point(165, 194);
-            this.linkPCHealthCheckApp.Name = "linkPCHealthCheckApp";
-            this.linkPCHealthCheckApp.Size = new System.Drawing.Size(394, 16);
-            this.linkPCHealthCheckApp.TabIndex = 261;
-            this.linkPCHealthCheckApp.TabStop = true;
-            this.linkPCHealthCheckApp.Text = "WhyNotWin11 app to confirm your device meets the minimum system requirements";
-            this.linkPCHealthCheckApp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPCHealthCheckApp_LinkClicked);
+            this.linkPtAns3.AutoEllipsis = true;
+            this.linkPtAns3.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkPtAns3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkPtAns3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(180)))));
+            this.linkPtAns3.Location = new System.Drawing.Point(167, 194);
+            this.linkPtAns3.Name = "linkPtAns3";
+            this.linkPtAns3.Size = new System.Drawing.Size(394, 16);
+            this.linkPtAns3.TabIndex = 261;
+            this.linkPtAns3.TabStop = true;
+            this.linkPtAns3.Text = "WhyNotWin11 app to confirm your device meets the minimum system requirements";
+            this.linkPtAns3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPCHealthCheckApp_LinkClicked);
             // 
             // statusLabel
             // 
             this.statusLabel.AutoEllipsis = true;
-            this.statusLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.statusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.statusLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.statusLabel.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusLabel.Location = new System.Drawing.Point(0, 552);
@@ -143,17 +141,17 @@
             this.statusLabel.TabIndex = 262;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lblPtAns4
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtAns4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoEllipsis = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 220);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(523, 27);
-            this.label6.TabIndex = 263;
-            this.label6.Text = "2. Select the following Windows Update shortcut and then select the Check for upd" +
+            this.lblPtAns4.AutoEllipsis = true;
+            this.lblPtAns4.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtAns4.Location = new System.Drawing.Point(33, 220);
+            this.lblPtAns4.Name = "lblPtAns4";
+            this.lblPtAns4.Size = new System.Drawing.Size(523, 27);
+            this.lblPtAns4.TabIndex = 263;
+            this.lblPtAns4.Text = "2. Select the following Windows Update shortcut and then select the Check for upd" +
     "ates button:";
             // 
             // btnWindowsUpdate
@@ -176,33 +174,30 @@
             this.btnWindowsUpdate.UseVisualStyleBackColor = false;
             this.btnWindowsUpdate.Click += new System.EventHandler(this.btnWindowsUpdate_Click);
             // 
-            // linkHardwareSpecs
+            // linkPtAns2
             // 
-            this.linkHardwareSpecs.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkHardwareSpecs.AutoEllipsis = true;
-            this.linkHardwareSpecs.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkHardwareSpecs.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkHardwareSpecs.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(180)))));
-            this.linkHardwareSpecs.Location = new System.Drawing.Point(144, 134);
-            this.linkHardwareSpecs.Name = "linkHardwareSpecs";
-            this.linkHardwareSpecs.Size = new System.Drawing.Size(402, 16);
-            this.linkHardwareSpecs.TabIndex = 265;
-            this.linkHardwareSpecs.TabStop = true;
-            this.linkHardwareSpecs.Text = "the minimum hardware specifications to run Windows 11.";
-            this.linkHardwareSpecs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHardwareSpecs_LinkClicked);
+            this.linkPtAns2.ActiveLinkColor = System.Drawing.Color.RoyalBlue;
+            this.linkPtAns2.AutoEllipsis = true;
+            this.linkPtAns2.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkPtAns2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkPtAns2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(180)))));
+            this.linkPtAns2.Location = new System.Drawing.Point(144, 134);
+            this.linkPtAns2.Name = "linkPtAns2";
+            this.linkPtAns2.Size = new System.Drawing.Size(402, 16);
+            this.linkPtAns2.TabIndex = 265;
+            this.linkPtAns2.TabStop = true;
+            this.linkPtAns2.Text = "the minimum hardware specifications to run Windows 11.";
+            this.linkPtAns2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHardwareSpecs_LinkClicked);
             // 
-            // label3
+            // lblPtAns2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoEllipsis = true;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 16);
-            this.label3.TabIndex = 266;
-            this.label3.Text = "2. The device meets";
+            this.lblPtAns2.AutoEllipsis = true;
+            this.lblPtAns2.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtAns2.Location = new System.Drawing.Point(34, 134);
+            this.lblPtAns2.Name = "lblPtAns2";
+            this.lblPtAns2.Size = new System.Drawing.Size(111, 16);
+            this.lblPtAns2.TabIndex = 266;
+            this.lblPtAns2.Text = "2. The device meets";
             // 
             // btnPatch
             // 
@@ -224,17 +219,17 @@
             this.btnPatch.UseVisualStyleBackColor = false;
             this.btnPatch.Click += new System.EventHandler(this.btnPatch_Click);
             // 
-            // label7
+            // lblPtAns5
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblPtAns5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoEllipsis = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 288);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(513, 40);
-            this.label7.TabIndex = 268;
-            this.label7.Text = "3. Your device does not meet the official requirements for Windows 11? You can ap" +
+            this.lblPtAns5.AutoEllipsis = true;
+            this.lblPtAns5.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPtAns5.Location = new System.Drawing.Point(33, 288);
+            this.lblPtAns5.Name = "lblPtAns5";
+            this.lblPtAns5.Size = new System.Drawing.Size(513, 40);
+            this.lblPtAns5.TabIndex = 268;
+            this.lblPtAns5.Text = "3. Your device does not meet the official requirements for Windows 11? You can ap" +
     "ply a compatibility patch to enable the Inplace Upgrade via Windows Update.";
             // 
             // CanIUpgradeView
@@ -242,18 +237,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.Controls.Add(this.label7);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.Controls.Add(this.lblPtAns5);
             this.Controls.Add(this.btnPatch);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkHardwareSpecs);
+            this.Controls.Add(this.lblPtAns2);
+            this.Controls.Add(this.linkPtAns2);
             this.Controls.Add(this.btnWindowsUpdate);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPtAns4);
             this.Controls.Add(this.statusLabel);
-            this.Controls.Add(this.linkPCHealthCheckApp);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkPtAns3);
+            this.Controls.Add(this.lblPtAns3);
+            this.Controls.Add(this.lblPtHdr2);
+            this.Controls.Add(this.lblPtAns);
+            this.Controls.Add(this.lblPtHdr);
             this.Controls.Add(this.btnBack);
             this.Name = "CanIUpgradeView";
             this.Size = new System.Drawing.Size(561, 585);
@@ -265,17 +261,17 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.LinkLabel linkPCHealthCheckApp;
+        private System.Windows.Forms.Label lblPtHdr;
+        private System.Windows.Forms.Label lblPtAns;
+        private System.Windows.Forms.Label lblPtHdr2;
+        private System.Windows.Forms.Label lblPtAns3;
+        private System.Windows.Forms.LinkLabel linkPtAns3;
         private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPtAns4;
         private System.Windows.Forms.Button btnWindowsUpdate;
-        private System.Windows.Forms.LinkLabel linkHardwareSpecs;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkPtAns2;
+        private System.Windows.Forms.Label lblPtAns2;
         private System.Windows.Forms.Button btnPatch;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPtAns5;
     }
 }

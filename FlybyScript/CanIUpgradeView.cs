@@ -15,8 +15,22 @@ namespace Flyby11
         {
             InitializeComponent();
             isoHandler = new IsoHandler(UpdateStatusLabel);
-
+            InitializeLocalizedStrings();
             SetStyle();
+        }
+
+        private void InitializeLocalizedStrings()
+        {
+            lblPtHdr.Text = Locales.Strings.ciuView_lblPtHdr;
+            lblPtHdr2.Text = Locales.Strings.ciuView_lblPtHdr2;
+            lblPtAns.Text = Locales.Strings.ciuView_lblPtAns;
+            lblPtAns2.Text = Locales.Strings.ciuView_lblPtAns2;
+            lblPtAns3.Text = Locales.Strings.ciuView_lblPtAns3;
+            lblPtAns4.Text = Locales.Strings.ciuView_lblPtAns4;
+            lblPtAns5.Text = Locales.Strings.ciuView_lblPtAns5;
+            linkPtAns2.Text = Locales.Strings.ciuView_linkPtAns2; // PC Health Check app
+            linkPtAns3.Text = Locales.Strings.ciuView_linkPtAns3; // Hardware requirements
+
         }
 
         private void SetStyle()
@@ -232,6 +246,11 @@ namespace Flyby11
                 UpdateStatusLabel($"Error applying patch: {ex.Message}");
                 return false;
             }
+        }
+
+        private void lblPtHdr2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("A Belim app creation")]
 [assembly: AssemblyProduct("Flyby11")]
-[assembly: AssemblyCopyright("Copyright ©  2024 A Belim app creation")]
+[assembly: AssemblyCopyright("Copyright © 2025 A Belim app creation")]
 [assembly: AssemblyTrademark("Builtbybel")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Buildnummer
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.100.0")]
-[assembly: AssemblyFileVersion("1.2.100.0")]
+[assembly: AssemblyVersion("2.2.350")]
+[assembly: AssemblyFileVersion("2.2.350")]

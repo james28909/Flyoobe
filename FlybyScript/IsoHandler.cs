@@ -3,8 +3,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Net.Http;
+using System.Runtime.Remoting.Lifetime;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Flyby11
 {
@@ -22,19 +26,32 @@ namespace Flyby11
         {
             try
             {
-                _updateStatus("Mounting the ISO... Hang tight!");
+                // Block Win10 ISOs
+                string isoFileName = Path.GetFileName(isoPath);
+                if (Regex.IsMatch(isoFileName, @"(?i)(win10|windows\s*10)"))
+                {
+                    _updateStatus("Error: Windows 10 ISOs are not supported.");
+                    MessageBox.Show("Windows 10 ISOs are not supported. Please use a Windows 11 ISO.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                _updateStatus(Locales.Strings._debugStatusMounting); //Mounting the ISO... Hang tight!
 
-                await ExecutePowerShellCommand($"Mount-DiskImage -ImagePath \"{isoPath}\"");
+                // Ensure the ISO path is properly quoted
+                string quotedIsoPath = $"\"{isoPath}\"";
+
+                // Pass the quoted path to ExecutePowerShellCommand
+                await ExecutePowerShellCommand($"Mount-DiskImage -ImagePath {quotedIsoPath}");
                 string driveLetter = await GetMountedDriveLetter();
 
                 if (string.IsNullOrEmpty(driveLetter))
                 {
-                    _updateStatus("Failed to mount the ISO. Please try again.");
-                    MessageBox.Show("Failed to mount the ISO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _updateStatus(Locales.Strings._debugStatusMountingFailed); //Failed to mount the ISO. Please try again.
+                    MessageBox.Show(Locales.Strings._debugStatusMountingFailed, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                _updateStatus("ISO mounted successfully! Let's get this Windows 11 ready!");
+                _updateStatus(Locales.Strings._debugStatusMountingSuccess); //ISO mounted successfully! Let's get this Windows 11 ready!
 
                 string setupPath = Path.Combine(driveLetter, "sources", "setupprep.exe");
                 if (File.Exists(setupPath))
@@ -43,13 +60,17 @@ namespace Flyby11
                 }
                 else
                 {
-                    _updateStatus($"Setup file not found in {driveLetter}. Aborting.");
-                    MessageBox.Show($"Setup file not found in {driveLetter}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _updateStatus($"{Locales.Strings._debugStatusSetupFileNotFound} {driveLetter}. Aborting."); // Setup file not found in
+                    MessageBox.Show($"{Locales.Strings._debugStatusSetupFileNotFound} {driveLetter}",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+
                 }
             }
             catch (Exception ex)
             {
-                _updateStatus($"Oops! Something went wrong: {ex.Message}");
+                _updateStatus($"{Locales.Strings._debugStatusHandleIsoEx} {ex.Message}"); //Oops! Something went wrong:
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -71,23 +92,52 @@ namespace Flyby11
         {
             using (var process = new Process())
             {
+                // Escape the command to ensure spaces in paths are handled
+                string escapedCommand = command.Replace("\"", "\\\"");
+
                 process.StartInfo.FileName = "powershell.exe";
-                process.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"{command}\"";
+                process.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"{escapedCommand}\"";
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.CreateNoWindow = true;
 
+                // Capture standard output and error output
+                StringBuilder outputBuilder = new StringBuilder();
+                StringBuilder errorBuilder = new StringBuilder();
+
+                process.OutputDataReceived += (sender, e) => { if (!string.IsNullOrEmpty(e.Data)) outputBuilder.AppendLine(e.Data); };
+                process.ErrorDataReceived += (sender, e) => { if (!string.IsNullOrEmpty(e.Data)) errorBuilder.AppendLine(e.Data); };
+
                 process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
                 await process.WaitForExitAsync();
+
+                string output = outputBuilder.ToString();
+                string error = errorBuilder.ToString();
+
+                // Debug output for logs
+                if (!string.IsNullOrEmpty(output))
+                {
+                    _updateStatus($"PowerShell Output: {output}");
+                }
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    _updateStatus($"PowerShell Error: {error}");
+                    MessageBox.Show($"PowerShell Error: {error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
 
         private async Task RunSetupWithAdminRights(string setupPath)
         {
             try
             {
-                _updateStatus("Starting the setup process with elevated privileges...");
+                _updateStatus(Locales.Strings._debugInstallRunElevated); //Starting the setup process with elevated privileges...
 
                 var startInfo = new ProcessStartInfo
                 {
@@ -98,7 +148,7 @@ namespace Flyby11
                     CreateNoWindow = false
                 };
 
-                _updateStatus("Almost there! We're getting the setup ready...");
+                _updateStatus(Locales.Strings._debugStatusRunning); //Almost there! We're getting the setup ready...
 
                 using (var process = Process.Start(startInfo))
                 {
@@ -108,8 +158,10 @@ namespace Flyby11
                     }
                 }
 
-                _updateStatus("You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!");
-                MessageBox.Show("Windows 11 installation can now proceed. Please follow the instructions in the setup window.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!"
+                _updateStatus(Locales.Strings._debugInstallReady);
+                //Windows 11 installation can now proceed. Please follow the instructions in the setup window.
+                MessageBox.Show(Locales.Strings.msg_InstallReady, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

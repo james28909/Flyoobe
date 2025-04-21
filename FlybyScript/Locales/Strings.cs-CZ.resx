@@ -118,165 +118,165 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="compPatch_debugCancel" xml:space="preserve">
-    <value>Installazione patch bypass annullata dall'utente.</value>
+    <value>Bypass patch zrušen uživatelem.</value>
   </data>
   <data name="compPatch_debugNotRemovableDrive" xml:space="preserve">
-    <value>L'utente ha selezionato un'unità non rimovibile.</value>
+    <value>Uživatel nevybral výměné zařízení.</value>
   </data>
   <data name="compPatch_debugNoUSBDrive" xml:space="preserve">
-    <value>Nessuna unità USB selezionata per l'installazione della patch.</value>
+    <value>Nebyl vybrán USB disk pro záplatování.</value>
   </data>
   <data name="compPatch_msgFailedEx" xml:space="preserve">
-    <value>Impossibile applicare la patch bypass:</value>
+    <value>Chyba při aplikování "bypass" záplaty:</value>
   </data>
   <data name="compPatch_msgNotRemovableDrive" xml:space="preserve">
-    <value>Il percorso selezionato non è un'unità rimovibile.\nSeleziona un'unità USB.</value>
+    <value>Zvolená cesta není vyměnitelný disk. Prosím zvolte USB disk.</value>
   </data>
   <data name="compPatch_msgSelectDrive" xml:space="preserve">
-    <value>Seleziona l'unità USB contenente i file di installazione di Windows 11.\ntQuesta funzione aggiunge una patch di compatibilità per bypassare determinati requisiti di sistema.\nÈ compatibile con le unità preparate da qualsiasi strumento, incluso Rufus.\nAssicurati che l'unità sia pronta!</value>
+    <value>Vyberte USB disk obsahující instalační soubory Windows 11. \nTato funkce přidává kompatibilní záplatu, která obejde určité systémové požadavky. \nKompatibilní s disky připravenými jakýmkoli nástrojem, včetně Rufus. Ujistěte se, že je disk připraven!</value>
   </data>
   <data name="compPatch_msgSelectDriveConfirm" xml:space="preserve">
-    <value>Ciò applicherà le impostazioni di bypass compatibilità nell'unità USB selezionata.\nVuoi continuare?</value>
+    <value>Tímto se na vybraný USB disk použijí nastavení pro obejití kompatibility ("bypass"). Pokračovat?</value>
   </data>
   <data name="compPatch_msgSuccess" xml:space="preserve">
-    <value>Patch bypass applicata correttamente!</value>
+    <value>Záplata pro obejití ("bypass") byla úspěšně aplikována!</value>
   </data>
   <data name="ctl_FormTitle" xml:space="preserve">
-    <value>Assistente aggiornamento Flyby11</value>
+    <value>Asistent pro upgrade Flyby11</value>
   </data>
   <data name="ctl_inkCompPatch" xml:space="preserve">
-    <value>Applica patch compatibilità a file ISO (installazione pulita)</value>
+    <value>Použít záplatu pro kompatibility na ISO (čistá instalace)</value>
   </data>
   <data name="ctl_linkCiuv" xml:space="preserve">
-    <value>Posso eseguire l'aggiornamento a Windows 11?</value>
+    <value>Mohu upgradovat na Windows 11?</value>
   </data>
   <data name="ctl_linkVote" xml:space="preserve">
-    <value>L'aggiornamento ha funzionato? Segnalacelo!</value>
+    <value>Fungoval upgrade?</value>
   </data>
   <data name="ctl_statusLabel" xml:space="preserve">
-    <value>Trascina e rilascia il file ISO di Windows per patcharlo ed installare con hardware non supportato (aggiornamento inplace).</value>
+    <value>Přetáhněte Windows 11 ISO, abyste jej opravili a nainstalovali na nepodporovaný hardware (místní upgrade).</value>
   </data>
   <data name="faq_a1" xml:space="preserve">
-    <value>R: puoi scaricare la versione ISO più recente dal sito web ufficiale di Microsoft o usare il downloader di Fido.</value>
+    <value>O: Můžete si stáhnout nejnovější ISO z oficiálních stránek Microsoftu nebo použít Fido Downloader.</value>
   </data>
   <data name="faq_a2" xml:space="preserve">
-    <value>R: se hai installato correttamente Windows 11 e hai risparmiato un po' di soldi, non esitare a lasciare qualcosa come ringraziamento qui.</value>
+    <value>O: Pokud jste úspěšně nainstalovali Windows 11 a ušetřili nějaké peníze, neváhejte zde zanechat malý příspěvek jako poděkování.</value>
   </data>
   <data name="faq_a2Link" xml:space="preserve">
-    <value>Clic qui per donare e dimostrare il tuo supporto.</value>
+    <value>Klikněte zde, abyste přispěli a vyjádřili svou podporu.</value>
   </data>
   <data name="faq_a3" xml:space="preserve">
-    <value>R: una volta montato il file ISO, il processo di configurazione verrà eseguito in background. Il programma di installazione di Windows si avvia, guidando i passaggi necessari per installare Windows 11 nel dispositivo.</value>
+    <value>O: Jakmile je ISO připojeno, proces instalace běží na pozadí. Instalátor Windows se spustí a provede vás kroky potřebnými k instalaci Windows 11 na váš počítač.</value>
   </data>
   <data name="faq_a4" xml:space="preserve">
-    <value>R: controlla i messaggi di errore e segnalali in GitHub.</value>
+    <value>O: Zkontrolujte prosím chybové zprávy a nahlaste je na GitHubu.</value>
   </data>
   <data name="faq_a5" xml:space="preserve">
-    <value>R: sì, Microsoft ha lasciato aperto un backdoor. Questo metodo sfrutta una funzione del processo di configurazione di Windows 11 che usa la variante di Windows Server dell'installazione. A differenza della normale configurazione di Windows 11, questa variante salta la maggior parte dei controlli di compatibilità hardware.</value>
+    <value>O: Ano, Microsoft nechal otevřená zadní vrátka. Tato metoda využívá funkci instalačního procesu Windows 11, která používá variantu instalace Windows Server. Na rozdíl od běžné instalace Windows 11 tato varianta přeskočí většinu kontrol kompatibility hardwaru.</value>
   </data>
   <data name="faq_a6" xml:space="preserve">
-    <value>R: secondo Microsoft, dovresti buttare via il PC. Io ti suggerisco di installarci Linux e di lasciar stare Windows.</value>
+    <value>O: Podle Microsoftu byste měli svůj počítač vyhodit. Doporučil bych na něj nainstalovat Linux a přejít od Windows.</value>
   </data>
   <data name="faq_a7" xml:space="preserve">
-    <value>R: lo sviluppatore è Belim, noto anche come Buildbybel, che ha contribuito molto al codice alla comunità di Windows.</value>
+    <value>O: Vývojářem je Belim, známý také jako Builtbybel, který přispěl velkým množstvím kódu do komunity Windows.</value>
   </data>
   <data name="faq_a7Link" xml:space="preserve">
-    <value>Fai clic qui per saperne di più sui lavori dello sviluppatore.</value>
+    <value>Klikněte zde, abyste se dozvěděli více o práci vývojáře.</value>
   </data>
   <data name="faq_downloadFido" xml:space="preserve">
-    <value>Scarica tramite Fido (consigliato)</value>
+    <value>Stáhnout přes Fido (doporučeno)</value>
   </data>
   <data name="faq_downloadMS" xml:space="preserve">
-    <value>Download dal sito Microsoft</value>
+    <value>Web Microsoft</value>
   </data>
   <data name="faq_header" xml:space="preserve">
-    <value>Domande frequenti (FAQ)</value>
+    <value>Často kladené dotazy (FAQ)</value>
   </data>
   <data name="faq_q1" xml:space="preserve">
-    <value>D: dove posso scaricare il file ISO della versione più recente di Windows 11?</value>
+    <value>Q: Kde mohu získat nejnovější ISO Windows 11?</value>
   </data>
   <data name="faq_q2" xml:space="preserve">
-    <value>D: come posso supportare lo sviluppatore?</value>
+    <value>Q: Jak mohu podpořit vývojáře?</value>
   </data>
   <data name="faq_q3" xml:space="preserve">
-    <value>D: come funziona il processo di configurazione una volta montato il file ISO?</value>
+    <value>Q: Jak funguje proces instalace, jakmile je ISO připojeno?</value>
   </data>
   <data name="faq_q4" xml:space="preserve">
-    <value>D: e se riscontro problemi durante l'installazione?</value>
+    <value>Q: Co když narazím na problémy během instalace?</value>
   </data>
   <data name="faq_q5" xml:space="preserve">
-    <value>D: è legale usare questo metodo?</value>
+    <value>Q: Je legální použít tuto metodu?</value>
   </data>
   <data name="faq_q6" xml:space="preserve">
-    <value>D: quali sono le alternative se l'hardware del PC non è supportato?</value>
+    <value>Q: Jaké mám alternativy, pokud můj počítač není podporován?</value>
   </data>
   <data name="faq_q7" xml:space="preserve">
-    <value>D: chi è lo sviluppatore?</value>
+    <value>Q: Kdo je vývojář?</value>
   </data>
   <data name="ciuView_lblPtAns" xml:space="preserve">
-    <value>1. Il dispositivo contiene una versione di Windows 10 attualmente supportata. Se nel dispositivo non è attualmente in esecuzione una versione supportata di Windows 10, aggiorna ad una versione supportata di Windows 10.</value>
+    <value>1. Zařízení používá aktuálně podporovanou verzi Windows 10. Pokud zařízení nepoužívá podporovanou verzi Windows 10, upgradujte na podporovanou verzi Windows 10.</value>
   </data>
   <data name="ciuView_lblPtAns2" xml:space="preserve">
-    <value>2. Il dispositivo soddisfa</value>
+    <value>2. Zařízení splňuje...</value>
   </data>
   <data name="ciuView_lblPtAns3" xml:space="preserve">
-    <value>1. Download ed esecuzione di</value>
+    <value>1. Stáhněte a spusťte...</value>
   </data>
   <data name="ciuView_lblPtAns4" xml:space="preserve">
-    <value>2. Seleziona il collegamento di Windows Update, quindi seleziona il pulsante 'Controlla aggiornamenti':</value>
+    <value>2. Vyberte následující zástupce Windows Update a poté vyberte tlačítko Zkontrolovat aktualizace:</value>
   </data>
   <data name="ciuView_lblPtAns5" xml:space="preserve">
-    <value>3. Il dispositivo non soddisfa i requisiti ufficiali per Windows 11? È possibile applicare una patch di compatibilità per abilitare l'aggiornamento inplace tramite Windows Update.</value>
+    <value>3. Vaše zařízení nesplňuje oficiální požadavky pro Windows 11? Můžete použít kompatibilní patch, který umožní Inplace Upgrade prostřednictvím Windows Update.</value>
   </data>
   <data name="ciuView_lblPtHdr" xml:space="preserve">
-    <value>Un dispositivo con una installazione Windows 10 esistente può essere aggiornata a Windows 11 se soddisfa i seguenti criteri:</value>
+    <value>Stávající zařízení s Windows 10 lze upgradovat na Windows 11, pokud splňuje následující kritéria:</value>
   </data>
   <data name="ciuView_lblPtHdr2" xml:space="preserve">
-    <value>Per vedere se un dispositivo Windows 10 è idoneo a passare a Windows 11, segui una di queste opzioni:</value>
+    <value>Chcete-li zjistit, zda je zařízení s Windows 10 způsobilé k upgradu na Windows 11, postupujte podle jedné z těchto možností:</value>
   </data>
   <data name="ciuView_linkPtAns2" xml:space="preserve">
-    <value>Le specifiche hardware minime per eseguire Windows 11.</value>
+    <value>minimální hardwarové požadavky pro spuštění Windows 11.</value>
   </data>
   <data name="ciuView_linkPtAns3" xml:space="preserve">
-    <value>l'app WhyNotwin11 per confermare se il dispositivo soddisfa i requisiti minimi di sistema</value>
+    <value>Aplikace WhyNotWin11 pro potvrzení, že vaše zařízení splňuje minimální systémové požadavky.</value>
   </data>
   <data name="msg_InstallReady" xml:space="preserve">
-    <value>L'installazione di Windows 11 può ora procedere. Segui le istruzioni nella finestra di configurazione.</value>
-    <comment>Installa</comment>
+    <value>Instalace Windows 11 může nyní pokračovat. Postupujte prosím podle pokynů v okně nastavení.</value>
+    <comment>Install</comment>
   </data>
   <data name="_debugInstallReady" xml:space="preserve">
-    <value>Sei pronto per installare Windows 11 con hardware non supportato! Ignora il prompt "Windows Server"; tutto è pronto!</value>
-    <comment>Installa</comment>
+    <value>Jste připraveni nainstalovat Windows 11 na nepodporovaný hardware! Ignorujte výzvu 'Windows Server'; jste připraveni!</value>
+    <comment>Install</comment>
   </data>
   <data name="_debugInstallRunElevated" xml:space="preserve">
-    <value>Avvio processo configurazione con privilegi elevati ...</value>
-    <comment>Installa</comment>
+    <value>Zahájení procesu instalace s vyššími oprávněními...</value>
+    <comment>Install</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
-    <value>Oops! Qualcosa è andato storto:</value>
-    <comment>Montaggio</comment>
+    <value>Jejda! Něco se pokazilo:</value>
+    <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
-    <value>Montaggio file...</value>
-    <comment>Montaggio</comment>
+    <value>Připojování ISO... Vydržte!</value>
+    <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMountingFailed" xml:space="preserve">
-    <value>Impossibile montare il file ISO. Riprova.</value>
-    <comment>Montaggio</comment>
+    <value>Nepodařilo se připojit ISO. Zkuste to prosím znovu.</value>
+    <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMountingSuccess" xml:space="preserve">
-    <value>File ISO montato correttamente! Procediamo con l'installazione di Windows 11!</value>
-    <comment>Montaggio</comment>
+    <value>ISO úspěšně připojeno! Pojďme připravit tento Windows 11!</value>
+    <comment>Mounting</comment>
   </data>
   <data name="_debugStatusRunning" xml:space="preserve">
-    <value>Ci siamo quasi! Preparazione installazione ...</value>
-    <comment>Installazione</comment>
+    <value>Skoro hotovo! Připravujeme instalaci...</value>
+    <comment>Install</comment>
   </data>
   <data name="_debugStatusSetupFileNotFound" xml:space="preserve">
-    <value>File configurazione non trovato in</value>
-    <comment>Montaggio</comment>
+    <value>Instalační soubor nebyl nalezen v...</value>
+    <comment>Mounting</comment>
   </data>
   <data name="ctl_linkSelectComputer" xml:space="preserve">
-    <value>Seleziona dal computer</value>
+    <value>Vyberte z počítače.</value>
   </data>
 </root>
