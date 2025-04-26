@@ -21,4 +21,8 @@ This method is the same approach described in the official Windows documentation
 # Disclaimer
 _Flyby11 offers all the currently working methods to bypass the restrictions for installing Windows 11 24H2 on unsupported hardware. The internet is full of guides showing how to get around the TPM, Secure Boot, and processor requirements, but Flyby11 does all that automatically for you._
 
-**Technical Note:** The POPCNT requirement cannot be bypassed; it is essential for running Windows 11 (24H2), as the operating system requires this feature to be supported by the CPU. POPCNT has been included in CPUs since around 2010. However, the patch is expected to work for most users with compatible hardware.Please do not blame me; I am working within the constraints of what is technically possible.
+**Technical Note:** 
+The POPCNT requirement cannot be bypassed; it is essential for running Windows 11 (24H2), as the operating system requires this feature to be supported by the CPU. POPCNT has been included in CPUs since around 2010. However, the patch is expected to work for most users with compatible hardware. Please do not blame me; I am working within the constraints of what is technically possible.
+
+**Starting from version 2.3 of Flyby11, I have introduced a compatibility checker specifically for this issue. If you see two green checkmarks, I’m happy for you! Otherwise, unfortunately, it won’t work — and as of now, there’s no way for me to bypass this limitation.**
+
