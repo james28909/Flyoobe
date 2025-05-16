@@ -518,5 +518,14 @@ namespace Flyby11.Locales {
                 return ResourceManager.GetString("msg_InstallReady", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Thank you for using my app!\n\nI developed this application in my free time to help you upgrade from Windows 10 to Windows 11 – even on PCs that, according to Microsoft&apos;s hardware requirements, would normally not be supported.\n\nMy app helps you avoid purchasing a new computer and actively contributes to reducing unnecessary electronic waste.\n\nNormally, I do not charge anything for my projects – neither for development nor for support.\nHowever, since this app is significantly more comprehensive, offers  [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        public static string msgClosing {
+            get {
+                return ResourceManager.GetString("msgClosing", resourceCulture);
+            }
+        }
     }
 }

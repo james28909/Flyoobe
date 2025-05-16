@@ -279,4 +279,7 @@
   <data name="ctl_linkSelectComputer" xml:space="preserve">
     <value>Wybierz z komputera</value>
   </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -275,4 +275,7 @@
     <value>セットアップファイルが見つかりません</value>
     <comment>マウント中</comment>
   </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value />
+  </data>
 </root>

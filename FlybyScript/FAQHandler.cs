@@ -68,8 +68,8 @@ namespace Flyby11
                 var last = _faqContentPanel.Controls[_faqContentPanel.Controls.Count - 1];
                 _faqContentPanel.ScrollControlIntoView(last);
                 // Add some space below the last element
-                var m =last.Margin;
-               last.Margin = new Padding(m.Left, m.Top, m.Right, 20);
+                var m = last.Margin;
+                last.Margin = new Padding(m.Left, m.Top, m.Right, 20);
             }
             else
             {
@@ -237,10 +237,54 @@ namespace Flyby11
         }
 
         // -- Individual FAQ entries --
-
+        // Donation
         private void AddFaq2(FlowLayoutPanel panel)
         {
-            AddFAQItem(panel, Locales.Strings.faq_q2, Locales.Strings.faq_a2, Locales.Strings.faq_a2Link, "https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG");
+            var donateContainer = new FlowLayoutPanel
+            {
+                FlowDirection = FlowDirection.TopDown,
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink,
+                BackColor = Color.FromArgb(255, 182, 193),
+                Padding = new Padding(10),
+                Margin = new Padding(0, 10, 0, 10),
+                WrapContents = false
+            };
+
+            var qLabel = new Label
+            {
+                Text = Locales.Strings.faq_q2,
+                Font = new Font("Comic Sans MS", 11.5f, FontStyle.Bold),
+                AutoSize = true,
+                Padding = new Padding(0, 0, 0, 5),
+                UseCompatibleTextRendering = true
+            };
+
+            var aLabel = new Label
+            {
+                Text = Locales.Strings.faq_a2,
+                Font = new Font("Segoe UI Variable Display", 11),
+                AutoSize = true,
+                Padding = new Padding(0, 0, 0, 5),
+                UseCompatibleTextRendering = true
+            };
+
+            var donateLink = new LinkLabel
+            {
+                Text = Locales.Strings.faq_a2Link,
+                Font = new Font("Comic Sans MS", 10.5f, FontStyle.Underline),
+                LinkColor = Color.MediumBlue,
+                AutoSize = true,
+                UseCompatibleTextRendering = true
+            };
+            donateLink.LinkClicked += (sender, e) => Process.Start("https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG");
+
+            donateContainer.Controls.Add(qLabel);
+            donateContainer.Controls.Add(aLabel);
+            donateContainer.Controls.Add(donateLink);
+
+            // Add to parent panel
+            panel.Controls.Add(donateContainer);
         }
 
         private void AddFaq3(FlowLayoutPanel panel)

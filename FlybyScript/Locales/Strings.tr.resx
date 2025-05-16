@@ -275,4 +275,7 @@
     <value>Kurulum dosyası bulunamadı</value>
     <comment>Yükle</comment>
   </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value />
+  </data>
 </root>

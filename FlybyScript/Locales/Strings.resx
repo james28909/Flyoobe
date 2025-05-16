@@ -279,4 +279,7 @@
   <data name="ctl_linkSelectComputer" xml:space="preserve">
     <value>Select from computer</value>
   </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value>Thank you for using my app!\n\nI developed this application in my free time to help you upgrade from Windows 10 to Windows 11 – even on PCs that, according to Microsoft's hardware requirements, would normally not be supported.\n\nMy app helps you avoid purchasing a new computer and actively contributes to reducing unnecessary electronic waste.\n\nNormally, I do not charge anything for my projects – neither for development nor for support.\nHowever, since this app is significantly more comprehensive, offers more features, and requires more support, I would be grateful if you would consider making a small voluntary donation, if you are able to.\n\nOf course, only if you want to and can afford it.\n\nWould you like to donate on PayPal now?</value>
+  </data>
 </root>

@@ -160,7 +160,7 @@
     <value>A: Du kannst die neueste ISO von der offiziellen Microsoft-Website herunterladen oder den Fido Downloader verwenden.</value>
   </data>
   <data name="faq_a2" xml:space="preserve">
-    <value>A: Wenn du Windows 11 erfolgreich installiert hast und dabei etwas Geld gespart hast, kannst du hier gerne ein kleines Dankeschön hinterlassen.</value>
+    <value>A: Wenn du Windows 11 erfolgreich installiert hast und dabei etwas Geld gespart hast, kannst du hier gerne ein kleines Dankeschön hinterlassen. Deine Unterstützung hält das Projekt am Leben – und hilft auch anderen. </value>
   </data>
   <data name="faq_a2Link" xml:space="preserve">
     <value>Klicke hier, um zu spenden und deine Unterstützung zu zeigen.</value>
@@ -269,5 +269,9 @@
   </data>
   <data name="ctl_linkSelectComputer" xml:space="preserve">
     <value>Vom Computer auswählen</value>
+  </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value>Vielen Dank, dass du meine App nutzt!\n\nIch habe diese Anwendung in meiner Freizeit entwickelt, um dir den Umstieg von Windows 10 auf Windows 11 zu erleichtern – auch auf PCs, die laut Microsofts Hardwarevorgaben eigentlich nicht unterstützt werden.\n\nMeine App hilft dir, den Kauf eines neuen Rechners zu vermeiden und trägt aktiv dazu bei, unnötigen Elektroschrott zu verhindern.\n\nNormalerweise verlange ich für meine Projekte keinerlei Geld – weder für die Entwicklung noch für den Support.\nDa diese App jedoch deutlich umfangreicher ist, mehr Funktionen bietet und auch mehr Supportaufwand verursacht, würde ich mich freuen, wenn du – sofern es dir möglich ist – eine kleine freiwillige Spende in Erwägung ziehst.\n\nNatürlich nur, wenn du möchtest und es dir leisten kannst.\n\nMöchtest du jetzt auf PayPal spenden?
+</value>
   </data>
 </root>

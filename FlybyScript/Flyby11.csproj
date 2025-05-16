@@ -64,6 +64,12 @@
     <Compile Include="ClippyUI.Designer.cs">
       <DependentUpon>ClippyUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompatibilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompatibilityForm.Designer.cs">
+      <DependentUpon>CompatibilityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAQHandler.cs" />
     <Compile Include="IsoHandler.cs" />
     <Compile Include="Locales\Strings.Designer.cs">
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClippyUI.resx">
       <DependentUpon>ClippyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompatibilityForm.resx">
+      <DependentUpon>CompatibilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Locales\Strings.ar.resx" />
     <EmbeddedResource Include="Locales\Strings.cs-CZ.resx" />

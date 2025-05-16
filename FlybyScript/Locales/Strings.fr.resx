@@ -275,4 +275,7 @@
     <value>Fichier d'installation introuvable dans</value>
     <comment>Mounting</comment>
   </data>
+  <data name="msgClosing" xml:space="preserve">
+    <value />
+  </data>
 </root>

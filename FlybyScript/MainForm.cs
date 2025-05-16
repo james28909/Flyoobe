@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace Flyby11
 
         public FAQHandler _faqHandler { get; private set; }
 
+        // Import the external function to check for POPCNT and SSE4.2 features
         [DllImport("CpuCheckNative.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern bool HasPopcnt();
 
@@ -28,8 +30,7 @@ namespace Flyby11
         {
             InitializeComponent();
             logger = new Logger(this);
-            // Uncomment lower line and add lang code to run localization test
-            // Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-CN");
+
             _isoHandler = new IsoHandler(UpdateStatusLabel);
             _faqHandler = new FAQHandler(panelFAQ, UpdateStatusLabel);
             _faqHandler.InitializeFAQ();
@@ -40,69 +41,38 @@ namespace Flyby11
             // Drag and drop the Windows 11 ISO to patch it and install on unsupported hardware (Inplace Upgrade).
             UpdateStatusLabel(Locales.Strings.ctl_statusLabel);
 
-            // Perform system compatibility check and show the appropriate message
-            bool? isCompatible = CheckSystemCompatibility();
-
-            if (isCompatible.HasValue)
+            // Check if the DLL exists before performing the compatibility check
+            if (File.Exists("CpuCheckNative.dll"))
             {
-                ShowCompatibilityMessage(isCompatible.Value);
+                // Perform system compatibility check if the DLL is found
+                bool hasPopcnt = CheckHasPopcnt();  // Check if the CPU supports POPCNT
+                bool hasSse42 = hasPopcnt; // If POPCNT is supported, SSE4.2 is likely supported as well
+                new CompatibilityForm(hasPopcnt, hasSse42).ShowDialog();
             }
             else
             {
-                
                 MessageBox.Show(
-           "A preliminary check of the likelihood for a successful upgrade can be performed if you download the 'CpuCheckNative.dll' from the GitHub repository and place it in the app directory.\n" +
-           "Once the DLL is in place, the detailed compatibility check will be enabled, allowing us to evaluate CPU features like SSE4.2 and POPCNT. ",
-           "Flyby11 - Clippy has something to say!",
-           MessageBoxButtons.OK,
-           MessageBoxIcon.Information
-       );
-
+                  "A preliminary compatibility check can be performed by downloading the 'CpuCheckNative.dll' from GitHub " +
+        "and placing it in the app folder.\nYou'll then get detailed feedback about your system's chances for a successful upgrade.",
+        "Flyby11 - Heads-up from Clippy",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
             }
         }
 
-        private bool? CheckSystemCompatibility()
+        // Checks if POPCNT and SSE4.2 are supported by the CPU using the external DLL function
+        private bool CheckHasPopcnt()
         {
             try
             {
-                // Attempt to check for POPCNT support
-                return HasPopcnt();
-            }
-            catch (DllNotFoundException)
-            {
-                // DLL is missing, return null for compatibility
-               // UpdateStatusLabel("Required DLL 'CpuCheckNative.dll' not found. Skipping detailed compatibility check.");
-                return null; // Indicating that compatibility could not be checked
+                return HasPopcnt(); // Call the external function to check for POPCNT and SSE4.2
             }
             catch (Exception ex)
             {
-                // Log false for compatibility
-                UpdateStatusLabel($"An error occurred while checking system compatibility: {ex.Message}");
-                return false; // Defaulting to incompatible if another error occurs
+                UpdateStatusLabel($"Error checking system compatibility: {ex.Message}");
+                return false;
             }
-        }
-
-        private void ShowCompatibilityMessage(bool isCompatible)
-        {
-            if (isCompatible)
-            {
-                string message = "You should be able to upgrade your system to Windows 11, as long as there are no incompatible device drivers or other issues.\n" +
-                                 "Everything looks good for the upgrade, so you're ready to move forward!";
-                ShowMessage("Upgrade Ready", message);
-            }
-            else
-            {
-                string message = "Unfortunately, your system doesn't support a key requirement for upgrading to Windows 11.\n" +
-                                 "The missing feature is POPCNT, which is necessary for the upgrade. Please check your system's hardware to ensure it meets the requirements.";
-                ShowMessage("Upgrade Blocked", message);
-            }
-        }
-
-
-
-        private void ShowMessage(string title, string message)
-        {
-            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void InitializeLocalizedStrings()
@@ -115,7 +85,7 @@ namespace Flyby11
             dropdownOptions.Items.Add(Locales.Strings.ctl_inkCompPatch);
             dropdownOptions.Items.Add(Locales.Strings.ctl_linkCiuv);
             dropdownOptions.Items.Add("(Vote) " + Locales.Strings.ctl_linkVote); //  "Did the upgrade work?"
-            dropdownOptions.Items.Add("(App) Trim down Windows 11 with TidyOS"); // "TidyOS Repository"
+            dropdownOptions.Items.Add("(App) Customize Windows 11 with Crapfixer"); // "Crapfixer Repository"
             dropdownOptions.SelectedIndex = 0;
         }
 
@@ -298,8 +268,8 @@ namespace Flyby11
                         break;
 
                     case 5:
-                        // OPen TidyOS Repository
-                        Process.Start("https://github.com/builtbybel/TidyOS/");
+                        // Open CFixer Repository
+                        Process.Start("https://github.com/builtbybel/Crapfixer/");
                         break;
                 }
                 // Reset selection back to default prompt after action
@@ -371,6 +341,28 @@ namespace Flyby11
         {
             CanIUpgradeView canIUpgradeView = new CanIUpgradeView();
             SwitchView.SetView(canIUpgradeView, panelContainer);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string raw = Locales.Strings.msgClosing;
+            string message = Regex.Unescape(raw);
+
+            DialogResult result = MessageBox.Show(
+                message,
+                "Support @Belim",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG",
+                    UseShellExecute = true
+                });
+            }
         }
     }
 }
