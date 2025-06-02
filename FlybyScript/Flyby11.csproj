@@ -105,6 +105,7 @@
     <EmbeddedResource Include="Locales\Strings.cs-CZ.resx" />
     <EmbeddedResource Include="Locales\Strings.de.resx" />
     <EmbeddedResource Include="Locales\Strings.fr.resx" />
+    <EmbeddedResource Include="Locales\Strings.he.resx" />
     <EmbeddedResource Include="Locales\Strings.it.resx" />
     <EmbeddedResource Include="Locales\Strings.ja.resx" />
     <EmbeddedResource Include="Locales\Strings.pl.resx" />
