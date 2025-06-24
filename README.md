@@ -26,3 +26,27 @@ The POPCNT requirement cannot be bypassed; it is essential for running Windows 1
 
 **Starting from version 2.3 of Flyby11, I have introduced a compatibility checker specifically for this issue. If you see two green checkmarks, I’m happy for you! Otherwise, unfortunately, it won’t work — and as of now, there’s no way for me to bypass this limitation.**
 
+## 📚 FAQ
+
+<details>
+<summary>❓ Will my unsupported device still get Windows 11 updates?</summary>
+
+**Short answer:** Yes — for now. But there are no guarantees.
+
+Microsoft says: _"These devices aren't guaranteed to receive updates."_  
+📄 [Source – Microsoft Support](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-50d52136-c2d7-4013-8c20-067e607dd5f6)
+
+In reality, most unsupported devices **still receive monthly security and quality updates**, just like supported ones.
+
+However:
+
+- 🔄 You likely **won’t get major version/feature updates** (like 24H2) unless you install them manually.
+- ⚙️ Future updates might depend on newer hardware features and fail to install.
+- 🛡️ Regular updates **work for now**, but Microsoft can change that anytime.
+- 🚫 There’s always a risk of updates being blocked in the future.
+
+**Bottom line:** Normal updates work today — but you’re technically on your own.  
+If you’re using unsupported hardware, you probably already know the deal. 😎
+
+</details>
+
