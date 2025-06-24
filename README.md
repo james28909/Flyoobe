@@ -34,7 +34,7 @@ The POPCNT requirement cannot be bypassed; it is essential for running Windows 1
 **Short answer:** Yes — for now. But there are no guarantees.
 
 Microsoft says: _"These devices aren't guaranteed to receive updates."_  
-📄 [Source – Microsoft Support](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-50d52136-c2d7-4013-8c20-067e607dd5f6)
+📄 [Source – Microsoft Support](https://support.microsoft.com/en-us/windows/windows-11-on-devices-that-don-t-meet-minimum-system-requirements-0b2dc4a2-5933-4ad4-9c09-ef0a331518f1)
 
 In reality, most unsupported devices **still receive monthly security and quality updates**, just like supported ones.
 
