@@ -253,7 +253,7 @@
     <comment>Install</comment>
   </data>
   <data name="_debugStatusHandleIsoEx" xml:space="preserve">
-    <value>Oops! Er ging iets mis:</value>
+    <value>Oeps! Er ging iets mis:</value>
     <comment>Mounting</comment>
   </data>
   <data name="_debugStatusMounting" xml:space="preserve">
@@ -280,6 +280,6 @@
     <value>Selecteren van computer</value>
   </data>
   <data name="msgClosing" xml:space="preserve">
-    <value>Bedankt voor het gebruiken van mijn app!\n\nIk heb deze applicatie in mijn vrije tijd ontwikkeld om u te helpen upgraden van Windows 10 naar Windows 11 – zelfs op PC's die volgens Microsoft's hardwarevereisten normaal gesproken niet zouden worden ondersteund.\n\nMijn app helpt u een nieuwe computer te vermijden en draagt actief bij aan het verminderen van onnodige elektronische afval.\n\nNormaal gesproken vraag ik niets voor mijn projecten – noch voor ontwikkeling, noch voor ondersteuning.\nOmdat deze app echter aanzienlijk uitgebreider is, meer functies biedt en meer ondersteuning vereist, zou ik dankbaar zijn als u een kleine vrijwillige donatie zou willen overwegen, indien u dat kunt.\n\nNatuurlijk alleen als u wilt en het zich kunt veroorloven.\n\nWilt u nu doneren op PayPal?</value>
+    <value>Bedankt voor het gebruiken van mijn app! Ik heb deze applicatie in mijn vrije tijd ontwikkeld om u te helpen upgraden van Windows 10 naar Windows 11 – zelfs op PC's die volgens Microsoft's hardwarevereisten normaal gesproken niet zouden worden ondersteund. Mijn app helpt u een nieuwe computer te vermijden en draagt actief bij aan het verminderen van onnodige elektronische afval. Normaal gesproken vraag ik niets voor mijn projecten – noch voor ontwikkeling, noch voor ondersteuning. Omdat deze app echter aanzienlijk uitgebreider is, meer functies biedt en meer ondersteuning vereist, zou ik dankbaar zijn als u een kleine vrijwillige donatie zou willen overwegen, indien u dat kunt. Natuurlijk alleen als u wilt en het zich kunt veroorloven. Wilt u nu doneren op PayPal?</value>
   </data>
 </root>
