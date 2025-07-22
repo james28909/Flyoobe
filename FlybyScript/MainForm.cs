@@ -1,13 +1,9 @@
-﻿using Flyby11.Properties;
-using System;
-using System.Data;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Views;
@@ -77,15 +73,13 @@ namespace Flyby11
 
         private void InitializeLocalizedStrings()
         {
-            // Set localized strings for the UI elements
-            Text = Locales.Strings.ctl_FormTitle;
-
             dropdownOptions.Items.Add("More options...");
             dropdownOptions.Items.Add(Locales.Strings.ctl_linkSelectComputer);
             dropdownOptions.Items.Add(Locales.Strings.ctl_inkCompPatch);
             dropdownOptions.Items.Add(Locales.Strings.ctl_linkCiuv);
             dropdownOptions.Items.Add("(Vote) " + Locales.Strings.ctl_linkVote); //  "Did the upgrade work?"
-            dropdownOptions.Items.Add("(App) Customize Windows 11 with Crapfixer"); // "Crapfixer Repository"
+            dropdownOptions.Items.Add("(App) Customize Windows 11 with CrapFixer"); // "CrapFixer Repository"
+            dropdownOptions.Items.Add("Troubleshoot Compatibility Issues"); // Problems form
             dropdownOptions.SelectedIndex = 0;
         }
 
@@ -187,6 +181,7 @@ namespace Flyby11
         private async Task HandleIsoInput(object sender, EventArgs e)
         {
             string isoPath = null;
+            bool experimentalEnabled = chkAdvancedMode.Checked;
 
             if (e is DragEventArgs dragEvent && dragEvent.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -213,7 +208,7 @@ namespace Flyby11
 
             if (!string.IsNullOrEmpty(isoPath) && File.Exists(isoPath))
             {
-                await _isoHandler.HandleIso(isoPath);
+                await _isoHandler.HandleIso(isoPath, experimentalEnabled);
             }
         }
 
@@ -270,6 +265,12 @@ namespace Flyby11
                     case 5:
                         // Open CFixer Repository
                         Process.Start("https://github.com/builtbybel/Crapfixer/");
+                        break;
+
+                    case 6:
+                        // Open Troubleshoot Compatibility Issues
+                        ProblemsForm problemsForm = new ProblemsForm();
+                        problemsForm.ShowDialog();
                         break;
                 }
                 // Reset selection back to default prompt after action
@@ -362,6 +363,24 @@ namespace Flyby11
                     FileName = "https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG",
                     UseShellExecute = true
                 });
+            }
+        }
+
+        private void chkAdvancedMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAdvancedMode.Checked)
+            {
+                var result = MessageBox.Show(
+                    "You are enabling an advanced setup mode. This option adds extra setup parameters that may improve compatibility on unsupported hardware. " +
+                    "\r\nSuccess may vary depending on your system and drivers.\n\nDo you want to continue?",
+                    "Advanced Mode Warning",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+                    chkAdvancedMode.Checked = false;
+                }
             }
         }
     }

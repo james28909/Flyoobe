@@ -35,6 +35,7 @@
             this.panelFAQ = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.chkAdvancedMode = new System.Windows.Forms.CheckBox();
             this.panelDragDrop.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -48,7 +49,7 @@
             this.panelDragDrop.Controls.Add(this.dropdownOptions);
             this.panelDragDrop.Controls.Add(this.btnExperience);
             this.panelDragDrop.Controls.Add(this.statusLabel);
-            this.panelDragDrop.Location = new System.Drawing.Point(57, 178);
+            this.panelDragDrop.Location = new System.Drawing.Point(57, 190);
             this.panelDragDrop.Name = "panelDragDrop";
             this.panelDragDrop.Size = new System.Drawing.Size(436, 256);
             this.panelDragDrop.TabIndex = 0;
@@ -110,7 +111,7 @@
             this.panelFAQ.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelFAQ.Location = new System.Drawing.Point(589, 0);
             this.panelFAQ.Name = "panelFAQ";
-            this.panelFAQ.Size = new System.Drawing.Size(331, 585);
+            this.panelFAQ.Size = new System.Drawing.Size(331, 609);
             this.panelFAQ.TabIndex = 207;
             // 
             // panelContainer
@@ -120,7 +121,7 @@
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(589, 585);
+            this.panelContainer.Size = new System.Drawing.Size(589, 609);
             this.panelContainer.TabIndex = 209;
             // 
             // panelMain
@@ -129,11 +130,25 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.panelMain.Controls.Add(this.chkAdvancedMode);
             this.panelMain.Controls.Add(this.panelDragDrop);
             this.panelMain.Location = new System.Drawing.Point(5, 3);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(580, 572);
+            this.panelMain.Size = new System.Drawing.Size(580, 596);
             this.panelMain.TabIndex = 1;
+            // 
+            // chkAdvancedMode
+            // 
+            this.chkAdvancedMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAdvancedMode.AutoSize = true;
+            this.chkAdvancedMode.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAdvancedMode.Location = new System.Drawing.Point(8, 566);
+            this.chkAdvancedMode.Name = "chkAdvancedMode";
+            this.chkAdvancedMode.Size = new System.Drawing.Size(397, 17);
+            this.chkAdvancedMode.TabIndex = 1;
+            this.chkAdvancedMode.Text = "Enable advanced upgrade mode (bypass compatibility and driver checks)";
+            this.chkAdvancedMode.UseVisualStyleBackColor = true;
+            this.chkAdvancedMode.CheckedChanged += new System.EventHandler(this.chkAdvancedMode_CheckedChanged);
             // 
             // MainForm
             // 
@@ -141,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(920, 585);
+            this.ClientSize = new System.Drawing.Size(920, 609);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelFAQ);
             this.Name = "MainForm";
@@ -152,6 +167,7 @@
             this.panelDragDrop.ResumeLayout(false);
             this.panelContainer.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -165,6 +181,7 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btnExperience;
         private System.Windows.Forms.ComboBox dropdownOptions;
+        private System.Windows.Forms.CheckBox chkAdvancedMode;
     }
 }
 

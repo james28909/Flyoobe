@@ -18,7 +18,7 @@ namespace Flyby11
 
         private FlowLayoutPanel _faqContentPanel;
 
-        // List of individual FAQ entry steps (to add one by one)
+        // List of individual FAQ entry steps
         private readonly List<Action<FlowLayoutPanel>> _faqSteps = new List<Action<FlowLayoutPanel>>();
 
         private int _currentFaqStep = 0;
@@ -103,68 +103,57 @@ namespace Flyby11
             AddLabel(parent, Locales.Strings.faq_q1, new Font("Segoe UI Variable Display", 10.5f, FontStyle.Bold), ContentAlignment.TopLeft, 11);
             AddLabel(parent, Locales.Strings.faq_a1, new Font("Segoe UI Variable Display", 11), ContentAlignment.TopLeft, 11);
 
-            // Links below the answer
-            var linkPanel = new FlowLayoutPanel
+
+            var downloadOptions = new ComboBox
             {
-                AutoSize = true,
-                FlowDirection = FlowDirection.LeftToRight,
-                WrapContents = true
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Font = new Font("Segoe UI Variable Display", 10.5f),
+                Width = 300,
+                Padding = new Padding(5)
             };
 
-            AddFAQItem(linkPanel, Locales.Strings.faq_downloadMS, "https://www.microsoft.com/software-download/windows11");
-            AddFAQItemWithScript(linkPanel, Locales.Strings.faq_downloadFido, "or", "https://raw.githubusercontent.com/pbatard/Fido/refs/heads/master/Fido.ps1");
+            downloadOptions.Items.Add("Select Download Source"); // Add default placeholder item
+            downloadOptions.Items.Add(Locales.Strings.faq_downloadMS);  // Index 1
+            downloadOptions.Items.Add(Locales.Strings.faq_downloadFido); // Index 2
+            downloadOptions.Items.Add("Media Creation Tool (Beginner-Friendly)");  // Index 3
 
-            parent.Controls.Add(linkPanel);
-        }
+            downloadOptions.SelectedIndex = 0;  // Set default selection
 
-
-        // Simple link-only FAQ entry
-        private void AddFAQItem(FlowLayoutPanel parent, string linkText, string linkUrl)
-        {
-            var linkLabel = new LinkLabel
+            downloadOptions.SelectedIndexChanged += (s, e) =>
             {
-                Text = linkText,
-                Font = new Font("Segoe UI Variable Display", 10.5f, FontStyle.Underline),
-                LinkColor = Color.Blue,
-                AutoSize = true,
-                Padding = new Padding(10),
-                TextAlign = ContentAlignment.TopLeft,
-                UseCompatibleTextRendering = true
+                switch (downloadOptions.SelectedIndex)
+                {
+                    case 1:
+                        // Open Microsoft ISO download page
+                        Process.Start("https://www.microsoft.com/software-download/windows11");
+                        break;
+                    case 2:
+                        // Download and run Fido script
+                        DownloadAndRunFidoScript("https://raw.githubusercontent.com/pbatard/Fido/refs/heads/master/Fido.ps1");
+                        break;
+                    case 3:
+                        // Handle Media Creation Tool download process
+                        HandleMediaCreationToolDownload();
+                        break;
+                }
             };
 
-            linkLabel.LinkClicked += (sender, e) => Process.Start(linkUrl);
-            parent.Controls.Add(linkLabel);
-        }
+            parent.Controls.Add(downloadOptions);
 
-        // Adds a downloadable script link (e.g., Fido.ps1)
-        private void AddFAQItemWithScript(FlowLayoutPanel parent, string linkText, string description, string scriptUrl)
-        {
-            AddLabel(parent, description, new Font("Segoe UI Variable Display", 9), ContentAlignment.TopLeft, 11);
-
-            var linkLabel = new LinkLabel
-            {
-                Text = linkText,
-                Font = new Font("Segoe UI Variable Display", 10.5f, FontStyle.Underline),
-                LinkColor = Color.Blue,
-                AutoSize = true,
-                Padding = new Padding(10),
-                TextAlign = ContentAlignment.TopLeft,
-                UseCompatibleTextRendering = true
-            };
-
-            linkLabel.Click += (sender, e) =>
+            /// <summary>
+            /// Downloads and executes the Fido PowerShell script.
+            /// </summary>
+            void DownloadAndRunFidoScript(string scriptUrl)
             {
                 string tempScriptPath = Path.Combine(Path.GetTempPath(), "Fido.ps1");
 
-                try
+                using (var client = new WebClient())
                 {
-                    using (var client = new WebClient())
+                    try
                     {
-                        // Download script to temp folder
-                        client.DownloadFile(new Uri(scriptUrl), tempScriptPath);
-                        _updateStatus("Fido downloaded successfully! Now running the script...");
+                        client.DownloadFile(scriptUrl, tempScriptPath);
+                       _updateStatus("Fido script downloaded successfully. Running it now...");
 
-                        // Run script using elevated PowerShell
                         Process.Start(new ProcessStartInfo
                         {
                             FileName = "powershell.exe",
@@ -174,16 +163,59 @@ namespace Flyby11
                             UseShellExecute = true
                         });
                     }
+                    catch (Exception ex)
+                    {
+                        _updateStatus("Error downloading or running Fido: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
+            }
+
+            /// <summary>
+            /// Handles download, optional tutorial, and execution of the Media Creation Tool.
+            /// </summary>
+            void HandleMediaCreationToolDownload()
+            {
+                var infoResult = MessageBox.Show(
+                    "With the Media Creation Tool, you can either upgrade your PC or create an ISO file.\n\nImportant: In the step 'Choose which media to use', make sure to select 'ISO file'.\n\nIf you're unsure, would you like to watch a recommended YouTube tutorial on how to do this?",
+                    "Media Creation Tool Information",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
+
+                if (infoResult == DialogResult.Yes)
                 {
-                    _updateStatus("Error downloading or running the script: " + ex.Message);
+                    Process.Start("https://www.youtube.com/watch?v=dNl1FHajW9w");
                 }
-            };
 
-            parent.Controls.Add(linkLabel);
+                using (var saveDialog = new SaveFileDialog())
+                {
+                    saveDialog.Title = "Save Media Creation Tool";
+                    saveDialog.Filter = "Executable|*.exe";
+                    saveDialog.FileName = "MediaCreationTool.exe";
+
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var client = new WebClient())
+                        {
+                            try
+                            {
+                                client.DownloadFile("https://go.microsoft.com/fwlink/?linkid=2156295", saveDialog.FileName);
+                                MessageBox.Show("Media Creation Tool downloaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                var runResult = MessageBox.Show("Do you want to run the Media Creation Tool now?", "Run Tool", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (runResult == DialogResult.Yes)
+                                {
+                                    Process.Start(saveDialog.FileName);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error downloading the Media Creation Tool: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
         }
-
         // Adds any generic label to the flow panel
         private void AddLabel(FlowLayoutPanel parent, string text, Font font, ContentAlignment alignment, int padding = 0)
         {

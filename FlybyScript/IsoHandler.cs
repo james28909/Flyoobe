@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Net.Http;
-using System.Runtime.Remoting.Lifetime;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Flyby11
 {
@@ -22,7 +18,7 @@ namespace Flyby11
             _updateStatus = updateStatus;
         }
 
-        public async Task HandleIso(string isoPath)
+        public async Task HandleIso(string isoPath, bool experimentalEnabled)
         {
             try
             {
@@ -41,8 +37,7 @@ namespace Flyby11
                 string quotedIsoPath = $"\"{isoPath}\"";
 
                 // Pass the quoted path to ExecutePowerShellCommand
-                await ExecutePowerShellCommand($"Mount-DiskImage -ImagePath {quotedIsoPath}");
-                string driveLetter = await GetMountedDriveLetter();
+                string driveLetter = await MountIsoAndGetDriveLetter(isoPath);
 
                 if (string.IsNullOrEmpty(driveLetter))
                 {
@@ -56,7 +51,7 @@ namespace Flyby11
                 string setupPath = Path.Combine(driveLetter, "sources", "setupprep.exe");
                 if (File.Exists(setupPath))
                 {
-                    await RunSetupWithAdminRights(setupPath);
+                    await RunSetupWithAdminRights(setupPath, experimentalEnabled);
                 }
                 else
                 {
@@ -65,7 +60,6 @@ namespace Flyby11
                                     "Error",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
-
                 }
             }
             catch (Exception ex)
@@ -75,74 +69,80 @@ namespace Flyby11
             }
         }
 
-        private async Task<string> GetMountedDriveLetter()
+        private async Task<string> MountIsoAndGetDriveLetter(string isoPath)
         {
-            var drives = DriveInfo.GetDrives();
-            foreach (var drive in drives)
+            try
             {
-                if (drive.DriveType == DriveType.CDRom && drive.IsReady)
+                _updateStatus("Mounting ISO...");
+
+                // PowerShell script to mount ISO and get the assigned drive letter
+                string script = $@"
+$iso = Mount-DiskImage -ImagePath '{isoPath}' -PassThru
+$volumes = Get-Volume -DiskImage $iso
+$volumes.DriveLetter
+";
+
+                using (var process = new Process())
                 {
-                    return drive.Name.Substring(0, 2);
+                    process.StartInfo.FileName = "powershell.exe";
+                    process.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"{script}\"";
+                    process.StartInfo.RedirectStandardOutput = true;
+                    process.StartInfo.RedirectStandardError = true;
+                    process.StartInfo.UseShellExecute = false;
+                    process.StartInfo.CreateNoWindow = true;
+
+                    process.Start();
+
+                    string output = await process.StandardOutput.ReadToEndAsync();
+                    string error = await process.StandardError.ReadToEndAsync();
+
+                    await process.WaitForExitAsync();
+
+                    if (!string.IsNullOrWhiteSpace(error))
+                    {
+                        _updateStatus("PowerShell error during mount: " + error);
+                        return null;
+                    }
+
+                    string driveLetter = output.Trim();
+                    if (!string.IsNullOrWhiteSpace(driveLetter))
+                    {
+                        _updateStatus($"ISO mounted successfully at {driveLetter}:\\");
+                        return $"{driveLetter}:\\";
+                    }
+                    else
+                    {
+                        _updateStatus("Failed to retrieve drive letter after mounting ISO.");
+                        return null;
+                    }
                 }
             }
-            return null;
-        }
-
-        private async Task ExecutePowerShellCommand(string command)
-        {
-            using (var process = new Process())
+            catch (Exception ex)
             {
-                // Escape the command to ensure spaces in paths are handled
-                string escapedCommand = command.Replace("\"", "\\\"");
-
-                process.StartInfo.FileName = "powershell.exe";
-                process.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"{escapedCommand}\"";
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.CreateNoWindow = true;
-
-                // Capture standard output and error output
-                StringBuilder outputBuilder = new StringBuilder();
-                StringBuilder errorBuilder = new StringBuilder();
-
-                process.OutputDataReceived += (sender, e) => { if (!string.IsNullOrEmpty(e.Data)) outputBuilder.AppendLine(e.Data); };
-                process.ErrorDataReceived += (sender, e) => { if (!string.IsNullOrEmpty(e.Data)) errorBuilder.AppendLine(e.Data); };
-
-                process.Start();
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-
-                await process.WaitForExitAsync();
-
-                string output = outputBuilder.ToString();
-                string error = errorBuilder.ToString();
-
-                // Debug output for logs
-                if (!string.IsNullOrEmpty(output))
-                {
-                    _updateStatus($"PowerShell Output: {output}");
-                }
-
-                if (!string.IsNullOrEmpty(error))
-                {
-                    _updateStatus($"PowerShell Error: {error}");
-                    MessageBox.Show($"PowerShell Error: {error}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _updateStatus("Exception during mounting: " + ex.Message);
+                return null;
             }
         }
 
-
-        private async Task RunSetupWithAdminRights(string setupPath)
+        private async Task RunSetupWithAdminRights(string setupPath, bool experimentalEnabled)
         {
             try
             {
                 _updateStatus(Locales.Strings._debugInstallRunElevated); //Starting the setup process with elevated privileges...
 
+                // Default argument
+                string arguments = "/Product Server";
+
+                // If experimental mode is enabled, append additional setup parameters
+                if (experimentalEnabled)
+                {
+                    arguments += " /Compat IgnoreWarning /MigrateDrivers All";
+                }
+
                 var startInfo = new ProcessStartInfo
                 {
                     FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process '{setupPath}' -ArgumentList '/product server' -Verb runas\"",
+                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process '{setupPath}' -ArgumentList '{arguments}' -Verb runas\"",
                     Verb = "runas",
                     UseShellExecute = true,
                     CreateNoWindow = false
@@ -157,9 +157,16 @@ namespace Flyby11
                         await process.WaitForExitAsync();
                     }
                 }
+                // Final status message
+                string finalStatus = Locales.Strings._debugInstallReady;
 
-                //You're ready to install Windows 11 on unsupported hardware! Ignore the 'Windows Server' prompt; you're all set!"
-                _updateStatus(Locales.Strings._debugInstallReady);
+                if (experimentalEnabled)
+                {
+                    finalStatus += " (Advanced mode enabled: Compatibility checks bypassed)";
+                }
+
+                _updateStatus(finalStatus);
+
                 //Windows 11 installation can now proceed. Please follow the instructions in the setup window.
                 MessageBox.Show(Locales.Strings.msg_InstallReady, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -236,8 +243,6 @@ namespace Flyby11
             }
         }
 
-
-
         /// <summary>
         /// Downloads a specified tool (Media Creation Tool or Installation Assistant) from a provided URL.
         /// </summary>
@@ -290,7 +295,6 @@ namespace Flyby11
                 }
             }
         }
-
     }
 
     public static class ProcessExtensions

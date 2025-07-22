@@ -124,7 +124,8 @@ namespace Flyby11
 
             this.Controls.Add(upgradeButton);
             this.Controls.Add(countdownLabel);
-           // this.Controls.Add(additionalInfoLabel);
+            // this.Controls.Add(additionalInfoLabel);
+
         }
 
 
