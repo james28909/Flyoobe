@@ -130,7 +130,9 @@
     <EmbeddedResource Include="Locales\Strings.hu.resx" />
     <EmbeddedResource Include="Locales\Strings.it.resx" />
     <EmbeddedResource Include="Locales\Strings.ja.resx" />
+    <EmbeddedResource Include="Locales\Strings.nl.resx" />
     <EmbeddedResource Include="Locales\Strings.pl.resx" />
+    <EmbeddedResource Include="Locales\Strings.ru.resx" />
     <EmbeddedResource Include="Locales\Strings.sv-SE.resx" />
     <EmbeddedResource Include="Locales\Strings.tr.resx" />
     <EmbeddedResource Include="Locales\Strings.zh-CN.resx" />
