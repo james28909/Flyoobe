@@ -4,6 +4,8 @@ Flyby11 is a simple patcher that removes the annoying restrictions preventing yo
 <img width="1024" height="1024" alt="Flyoobe_mockup2" src="https://github.com/user-attachments/assets/8096fa8f-e1b5-4f88-8dfd-938327177aea" />
 
 
+![472413640-e1686533-2f58-4686-bcf6-9d6b75beb3e3](https://github.com/user-attachments/assets/34b7fd7b-9885-4469-b8e4-1f555fc7e141)
+
 No complicated steps. 
 **Just run the tool (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest) in the right side of the page, you may need to unpack a zip file), and you'll be running Windows 11 on your outdated machine in no time.**
 Think of it as sneaking through the back door without anyone noticing.
