@@ -1,8 +1,18 @@
 # Flyoobe (Flyby11) Windows 11 for All – No Specs, No Problem!
-Flyby11 is a simple patcher that removes the annoying restrictions preventing you from installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or your processor isn't supported? Flyby11 lets you install Windows 11 24H2 anyway.
+
 
 <img width="1024" height="1024" alt="Flyoobe_mockup2" src="https://github.com/user-attachments/assets/8096fa8f-e1b5-4f88-8dfd-938327177aea" />
 
+## 🐝 Why Flyoobe?
+Flyby11 was a simple patcher that removes the annoying restrictions preventing you from installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or your processor isn't supported? Flyby11 lets you install Windows 11 24H2 anyway.
+
+After Flyby11 helped thousands install Windows 11 on unsupported hardware, one thing became clear:
+Bypassing checks is only half the battle. What we really needed was a full setup solution one that respects their choices, not Microsoft's defaults. That's why **Flyoobe** was the natural next step. 
+It’s more than just a workaround, it's a complete and customizable Out-Of-Box Experience, designed to:
+- Skip the fluff
+- Remove the junk
+- Give you full control from the very first boot
+Because your PC should work for you, not the other way around. Flyoobe is here to keep the idea alive and push it even further.
 
 ![472413640-e1686533-2f58-4686-bcf6-9d6b75beb3e3](https://github.com/user-attachments/assets/34b7fd7b-9885-4469-b8e4-1f555fc7e141)
 
