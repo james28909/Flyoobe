@@ -1,45 +1,73 @@
-# Flyoobe (Flyby11) Windows 11 for All – No Specs, No Problem!
-
+# 🐝 Flyoobe (Flyby11) – Windows 11 for All  
+_No specs? No problem!_
 
 <img width="1024" height="1024" alt="Flyoobe_mockup2" src="https://github.com/user-attachments/assets/8096fa8f-e1b5-4f88-8dfd-938327177aea" />
 
-## 🐝 Why Flyoobe?
-Flyby11 was a simple patcher that removes the annoying restrictions preventing you from installing Windows 11 (24H2) on unsupported hardware. Got an old PC? No TPM, Secure Boot, or your processor isn't supported? Flyby11 lets you install Windows 11 24H2 anyway.
+---
 
-After Flyby11 helped thousands install Windows 11 on unsupported hardware, one thing became clear:
-Bypassing checks is only half the battle. What we really needed was a full setup solution one that respects their choices, not Microsoft's defaults. That's why **Flyoobe** was the natural next step. 
-It’s more than just a workaround, it's a complete and customizable Out-Of-Box Experience, designed to:
-- Skip the fluff
-- Remove the junk
-- Give you full control from the very first boot
-Because your PC should work for you, not the other way around. Flyoobe is here to keep the idea alive and push it even further.
+## 📢 Quick Note for Returning Users
+**Flyoobe is the natural evolution of Flyby11.**  
+The classic Flyby11 upgrader still exists and is included inside Flyoobe,  
+plus it's also available as a **separate download** if you only want the minimal upgrade tool.
+
+You can now **choose**:
+
+| Version | Purpose | Features | Download |
+|---------|---------|----------|----------|
+| **Flyoobe** (New) | Upgrade + OOBE Toolkit | • Windows 10 → 11 upgrades<br>• OOBE customization<br>• Tweaks & Debloat<br>• Scriptable setup extensions | [⬇ Download Flyoobe](https://github.com/builtbybel/Flyby11/releases/latest) |
+| **Flyby11** (Classic) | Upgrade Only | • Clean Win10 → Win11 upgrade<br>• Hardware check bypass<br>• Minimal footprint | [⬇ Download Flyby11 Classic](https://github.com/builtbybel/Flyby11/releases/latest) |
+
+---
+
+## 🐝 Why Flyoobe?
+Originally, **Flyby11** was a simple patcher to remove the restrictions stopping you from installing Windows 11 (24H2) on unsupported hardware.  
+Old PC? No TPM, no Secure Boot, unsupported CPU? Flyby11 let you install Windows 11 anyway.
+
+After helping thousands upgrade, one thing became clear:  
+**Bypassing checks is only half the battle.**  
+We needed a **full setup solution** — one that respects user choices instead of Microsoft's defaults.
+
+**Flyoobe** was the next step:  
+- Skip the fluff  
+- Remove the junk  
+- Take full control from first boot  
+
+Because your PC should work for you, not the other way around.  
+Flyoobe keeps the original idea alive and pushes it even further.
+
+---
 
 ![472413640-e1686533-2f58-4686-bcf6-9d6b75beb3e3](https://github.com/user-attachments/assets/34b7fd7b-9885-4469-b8e4-1f555fc7e141)
 
-No complicated steps. 
-**Just run the tool (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest) in the right side of the page, you may need to unpack a zip file), and you'll be running Windows 11 on your outdated machine in no time.**
+No complicated steps.  
+**Just run the tool** (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest)),  
+unpack if needed, and you'll be running Windows 11 on your “unsupported” machine in no time.  
 Think of it as sneaking through the back door without anyone noticing.
 
-# Technical Overview
-Flyby11 leverages a feature of the Windows 11 setup process that uses the Windows Server variant of the installation. This variant, unlike the regular Windows 11 setup, skips most hardware compatibility checks, allowing it to run on unsupported systems. Here’s a more technical breakdown of the process:
+---
 
-Windows Server Setup: The tool uses the Windows Server variant of the setup, which avoids the usual checks for things like TPM, Secure Boot, and specific processor requirements.
-Install Regular Windows 11: Even though the setup runs in server mode, it installs the normal Windows 11 version (not the server version).
-Manual ISO Preparation: Flyby11 automates the download and mounting of the ISO, so you don’t need to manually tweak anything. You can get the ISO from official sources or the tool will handle it using the [Fido script](https://github.com/pbatard/Fido)
-This method is the same approach described in the official Windows documentation for upgrading unsupported systems, as [detailed in this article](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e)
+## 🛠 Technical Overview
+**Flyby11 method:**
+- Uses Windows Server variant of setup → skips TPM, Secure Boot, CPU checks
+- Still installs **normal Windows 11**
+- ISO download/mount handled automatically (via [Fido script](https://github.com/pbatard/Fido))
+- Matches Microsoft’s own documented workaround for upgrading unsupported devices ([source](https://support.microsoft.com/en-us/windows/ways-to-install-windows-11-e0edbbfb-cfc5-4011-868b-2ce77ac7c70e))
 
-# Why Flyby11 Makes Sense
-- Upgrade Freedom – Dont ditch a perfectly fine PC just because Microsoft says so
-- Eco-Friendly – Less forced upgrades = less e-waste
-- Save Money – No need to spend on new hardware when your current setup still works
+---
 
-# Disclaimer
-_Flyby11 offers all the currently working methods to bypass the restrictions for installing Windows 11 24H2 on unsupported hardware. The internet is full of guides showing how to get around the TPM, Secure Boot, and processor requirements, but Flyby11 does all that automatically for you._
+## 💡 Why Keep Flyby11 Alive?
+- **Upgrade freedom** – Don’t ditch a perfectly fine PC just because Microsoft says so  
+- **Eco-friendly** – Less e-waste from forced upgrades  
+- **Save money** – No need for new hardware if yours still works
 
-**Technical Note:** 
-The POPCNT requirement cannot be bypassed; it is essential for running Windows 11 (24H2), as the operating system requires this feature to be supported by the CPU. POPCNT has been included in CPUs since around 2010. However, the patch is expected to work for most users with compatible hardware. Please do not blame me; I am working within the constraints of what is technically possible.
+---
 
-**Starting from version 2.3 of Flyby11, I have introduced a compatibility checker specifically for this issue. If you see two green checkmarks, I’m happy for you! Otherwise, unfortunately, it won’t work — and as of now, there’s no way for me to bypass this limitation.**
+## ⚠ Disclaimer
+Flyby11/Flyoobe uses known, currently working methods to bypass Windows 11 24H2 restrictions.  
+**POPCNT requirement** cannot be bypassed — needed for Win11 24H2.  
+Introduced a compatibility checker in v2.3 to warn if unsupported.
+
+---
 
 ## 📚 FAQ
 
@@ -51,17 +79,19 @@ The POPCNT requirement cannot be bypassed; it is essential for running Windows 1
 Microsoft says: _"These devices aren't guaranteed to receive updates."_  
 📄 [Source – Microsoft Support](https://support.microsoft.com/en-us/windows/windows-11-on-devices-that-don-t-meet-minimum-system-requirements-0b2dc4a2-5933-4ad4-9c09-ef0a331518f1)
 
-In reality, most unsupported devices **still receive monthly security and quality updates**, just like supported ones.
+Reality: Most still get monthly security updates, but:
+- Likely no automatic major version upgrades
+- Future updates may fail if new hardware features are required
+- Microsoft could block updates anytime
 
-However:
-
-- 🔄 You likely **won’t get major version/feature updates** (like 24H2) unless you install them manually.
-- ⚙️ Future updates might depend on newer hardware features and fail to install.
-- 🛡️ Regular updates **work for now**, but Microsoft can change that anytime.
-- 🚫 There’s always a risk of updates being blocked in the future.
-
-**Bottom line:** Normal updates work today — but you’re technically on your own.  
-If you’re using unsupported hardware, you probably already know the deal. 😎
+Bottom line: Works today — but unsupported means you accept the risk. 😎
 
 </details>
 
+---
+
+## ❤️ Support Development
+If Flyby11 or Flyoobe has helped you, consider supporting its continued development.  
+Every bit helps keep the project alive and improving. 🙏💌☕
+
+👉 [**Donate here**](https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG)
