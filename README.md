@@ -15,7 +15,7 @@ You can now **choose**:
 | Version | Purpose | Features | Download |
 |---------|---------|----------|----------|
 | **Flyoobe** (New) | Upgrade + OOBE Toolkit | • Windows 10 → 11 upgrades<br>• OOBE customization<br>• Tweaks & Debloat<br>• Scriptable setup extensions | [⬇ Download Flyoobe](https://github.com/builtbybel/Flyby11/releases/latest) |
-| **Flyby11** (Classic) | Upgrade Only | • Clean Win10 → Win11 upgrade<br>• Hardware check bypass<br>• Minimal footprint | [⬇ Download Flyby11 Classic](https://github.com/builtbybel/Flyby11/releases/latest) |
+| **Flyby11** (Classic) | Upgrade Only | • Win10 → Win11 Inplace upgrade<br>• Hardware check bypass<br>• Minimal footprint | [⬇ Download Flyby11 Classic](https://github.com/builtbybel/Flyby11/releases/latest) |
 
 ---
 
