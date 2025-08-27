@@ -37,8 +37,6 @@ Flyoobe keeps the original idea alive and pushes it even further.
 
 ---
 
-![472413640-e1686533-2f58-4686-bcf6-9d6b75beb3e3](https://github.com/user-attachments/assets/34b7fd7b-9885-4469-b8e4-1f555fc7e141)
-
 No complicated steps.  
 **Just run the tool** (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest)),  
 unpack if needed, and you'll be running Windows 11 on your “unsupported” machine in no time.  
