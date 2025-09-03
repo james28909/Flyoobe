@@ -36,10 +36,8 @@ Groove
 Movies
 TV
 Phone
-Camera
 Feedback
 FeedbackHub
-GetHelp
 GetStarted
 Messaging
 Office
@@ -60,11 +58,8 @@ Copilot
 Clipchamp
 NarratorQucikStart
 OutlookForWindows
-ScreenSketch
-Calculator
-Paint
-Terminal
 MSTeams
 SoundRecorder
 HP
 Synaptics
+
