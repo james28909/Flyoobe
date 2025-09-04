@@ -180,7 +180,8 @@ namespace Flyoobe
             // Update label text
             linkAppVersion.Text = text;
 
-            // If clickable, show bold & underline and make cursor a hand
+            // If clickable,
+            // show bold ; underline ; make cursor a hand
             if (clickable)
             {
                 linkAppVersion.Font = new Font(linkAppVersion.Font, FontStyle.Bold | FontStyle.Underline);

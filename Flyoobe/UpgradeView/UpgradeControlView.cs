@@ -48,7 +48,7 @@ namespace Flyoobe
             var combo = sender as ComboBox;
             int selectedIndex = combo.SelectedIndex;
 
-            // Let user pick ISO from local disk (compatibility check is now in HandleIsoInput)
+            // Pick ISO from local disk (compatibility check is now in HandleIsoInput)
             if (selectedIndex == 1)
             {
                 await HandleIsoInput(sender, null);
@@ -63,7 +63,7 @@ namespace Flyoobe
                     break;
 
                 case 3:
-                    _isoHandler.HandleEnrollInESU();
+                   await EsuEnrollmentHandler.HandleEnrollInESU();
                     break;
             }
         }

@@ -403,81 +403,6 @@ try {{
             }
         }
 
-        /// <summary>
-        /// Keep Windows 10 secure until 2026 (Enroll in ESU) using abbodi1406's ConsumerESU scripts.
-        /// Downloads from GitHub if missing and executes.
-        /// </summary>
-        public async void HandleEnrollInESU()
-        {
-            string repoBase = "https://raw.githubusercontent.com/abbodi1406/ConsumerESU/master/";
-            string cmdFile = "Consumer_ESU_Enrollment_run.cmd";
-            string psFile = "Consumer_ESU_Enrollment.ps1";
-
-            string appDir = AppDomain.CurrentDomain.BaseDirectory;
-            string cmdPath = Path.Combine(appDir, cmdFile);
-            string psPath = Path.Combine(appDir, psFile);
-
-            // Check if scripts exist, otherwise download
-            if (!System.IO.File.Exists(cmdPath) || !System.IO.File.Exists(psPath))
-            {
-                var confirm = MessageBox.Show(
-                    "The ESU enrollment scripts are missing.\n\n" +
-                    "They will now be downloaded directly from GitHub (abbodi1406/ConsumerESU).\n\n" +
-                    "Do you want to continue?",
-                    "Download Scripts",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (confirm != DialogResult.Yes)
-                    return;
-
-                using (var wc = new System.Net.WebClient())
-                {
-                    try
-                    {
-                        if (!System.IO.File.Exists(cmdPath))
-                            await wc.DownloadFileTaskAsync(new Uri(repoBase + cmdFile), cmdPath);
-
-                        if (!System.IO.File.Exists(psPath))
-                            await wc.DownloadFileTaskAsync(new Uri(repoBase + psFile), psPath);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Failed to download ESU scripts:\n" + ex.Message,
-                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-            var result = MessageBox.Show(
-                "📦 This will now launch the Consumer ESU Enrollment Tool by abbodi1406.\n\n" +
-                "✔ Extends Windows 10 support until October 2026\n" +
-                "✔ Requires Windows 10 22H2 with KB5039299+ (19045.4598+)\n" +
-                "✔ Requires Microsoft Account + Internet access\n\n" +
-                "Do you want to continue?",
-                "Enroll in ESU",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information);
-
-            if (result != DialogResult.Yes)
-                return;
-
-            // Start the .cmd (which internally calls the PowerShell)
-            try
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = cmdPath,
-                    Verb = "runas",
-                    UseShellExecute = true
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to run ESU enrollment script:\n" + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         /// <summary>
         /// Handle unexpected exceptions by logging the error, updating the status, and optionally launching Copilot for help.
@@ -508,6 +433,7 @@ try {{
                 CopilotHelper.LaunchCopilot();
             }
         }
+
     }
 
     public static class ProcessExtensions
@@ -521,3 +447,4 @@ try {{
         }
     }
 }
+

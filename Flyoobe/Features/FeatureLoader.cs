@@ -1,6 +1,5 @@
 ﻿using Flyoobe; // for FeatureNode
 using Settings.Ads;
-using Settings.AI;
 using Settings.Edge;
 using Settings.Gaming;
 using Settings.Issues;
@@ -118,16 +117,6 @@ namespace Features
                         new FeatureNode(new WelcomeExperienceAds())
                     }
                 },
-
-                new FeatureNode("AI")
-                {
-                    Children = new List<FeatureNode>
-                    {
-                        new FeatureNode(new CopilotTaskbar()),
-                        new FeatureNode(new Recall()),
-                        new FeatureNode(new ClickToDo())
-                    }
-                }
             };
         }
     }

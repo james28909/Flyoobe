@@ -282,7 +282,7 @@ namespace Flyoobe
             return null;
         }
 
-        // Selects the provider in the combo (for UI consistency) and runs it via existing pipeline.
+        // Selects the provider in the combo (for UI consistency) and runs it via existing pipeline
         private async System.Threading.Tasks.Task RunQuickAsync(string providerId)
         {
             var p = FindProviderById(providerId);

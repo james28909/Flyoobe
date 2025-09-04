@@ -35,6 +35,7 @@ namespace Flyoobe
             _navigator.RegisterView("Device", () => new DeviceControlView());
             _navigator.RegisterView("Personalization", () => new PersonalizationControlView());
             _navigator.RegisterView("Browser", () => new DefaultsControlView());
+            _navigator.RegisterView("AI", () => new AiControlView());
             _navigator.RegisterView("Network", () => new NetworkControlView());
             _navigator.RegisterView("Account", () => new AccountControlView());
             _navigator.RegisterView("Apps", () => new AppsControlView());

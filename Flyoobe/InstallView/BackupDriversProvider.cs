@@ -5,13 +5,19 @@ using System.Windows.Forms;
 
 namespace Flyoobe
 {
-    // Native provider that exports all installed drivers to C:\DriversBackup using:
-    //   pnputil.exe /export-driver * C:\DriversBackup
+    // Provider that exports all installed drivers into a fixed subfolder named "DriversBackup"
+    // INSIDE the parent folder chosen by the user, using:
+    //   pnputil.exe /export-driver * <chosenParent>\DriversBackup
+    // Behavior:
+    // - Prompts user to choose a parent folder (defaults to C:\).
+    // - Always creates/uses "<chosenParent>\DriversBackup".
+    // - Runs pnputil elevated.
+    // - Shows a completion summary with INF package count.
 
     public sealed class BackupDriversProvider : IInstallProvider
     {
         public string Id => "drivers-backup";
-        public string DisplayName => "Backup installed drivers (exports to C:\\DriversBackup)";
+        public string DisplayName => "Backup installed drivers (choose folder)";
         public string HomepageUrl => null;
         public string DirectDownloadUrl => null;
         public string[] ExactExeNames => new[] { "pnputil.exe" };
@@ -20,18 +26,48 @@ namespace Flyoobe
         public bool IsExternalTool => false;
 
         public string Hint =>
-            "Exports all currently installed device drivers (INF + binaries) to C:\\DriversBackup. " +
-            "After a clean install, point Device Manager to this folder to restore drivers even without internet.";
+                    "Exports all currently installed device drivers (INF + binaries) to a folder you choose. " +
+            "After a clean install, point Device Manager to that folder to restore drivers even without internet.";
 
         public string ShowOptionsAndBuildArgs(IWin32Window owner, LastSelections last)
         {
-            const string target = @"C:\DriversBackup";
+            // Default suggestion for the parent, the actual export target will be <parent>\DriversBackup
+            var defaultParent = @"C:\";
+            string parentPath;
 
+            // pick the PARENT folder where the 'DriversBackup' subfolder will be created
+            using (var fbd = new FolderBrowserDialog
+            {
+                Description = "Choose the PARENT folder. A 'DriversBackup' subfolder will be created inside it.",
+                ShowNewFolderButton = true,
+                SelectedPath = defaultParent
+            })
+            {
+                var dlgResult = fbd.ShowDialog(owner);
+                if (dlgResult != DialogResult.OK || string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    return null; //user cancelled
+
+                parentPath = fbd.SelectedPath.Trim();
+                try
+                {
+                    //Normalize parent path
+                    parentPath = Path.GetFullPath(parentPath);
+                }
+                catch
+                { //Keep raw selection if normalization fails (we'll error out later if invalid)
+                     }
+            }
+
+            // Build the fixed subfolder path: <parent>\DriversBackup (always appended)
+            string target = Path.Combine(parentPath, "DriversBackup");
+
+            // Confirm before running the elevated export
             if (!ToolHelpers.Confirm(owner,
                 "Export all installed drivers to:\r\n\r\n" + target +
-                "\r\n\r\nThis runs 'pnputil /export-driver *' with administrative rights."))
+                "\r\n\r\nThis will run 'pnputil /export-driver *' with administrative rights."))
                 return null;
 
+            // Ensure the target DriversBackup folder exists
             try
             {
                 Directory.CreateDirectory(target);
@@ -47,7 +83,7 @@ namespace Flyoobe
 
             try
             {
-                // Start pnputil as elevated process
+                // Start pnputil as an elevated process targeting the 'DriversBackup' subfolder
                 var psi = new ProcessStartInfo
                 {
                     FileName = "pnputil.exe",
@@ -69,15 +105,17 @@ namespace Flyoobe
                     proc.WaitForExit();
                 }
 
-                // Now export is complete > count drivers
+                // Count exported INF files to provide a quick summary
                 int infCount = 0;
                 try
                 {
                     infCount = Directory.GetFiles(target, "*.inf", SearchOption.AllDirectories).Length;
                 }
-                catch { /* ignore */ }
+                catch
+                {  // Ignore counting errors; we can still show success without the count
+                   }
 
-                MessageBox.Show(owner,
+                    MessageBox.Show(owner,
                     "Driver export completed.\r\n\r\n" +
                     $"Target: {target}\r\n" +
                     $"Exported driver packages: {infCount}\r\n\r\n" +
@@ -94,7 +132,7 @@ namespace Flyoobe
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return null; 
+            return null;  // returning null indicates no further action needed
         }
     }
 }
