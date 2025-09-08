@@ -26,7 +26,7 @@ Copy the provided `.ps1` raw link and install it via the **Get Extensions → In
 - Disable Game DVR  
 - Clear Shader Cache  
 
-🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/main/Flyoobe.Extensions/GamingTweaks.ps1)
+🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Gaming%20tweaks.ps1)
 
 ---
 
