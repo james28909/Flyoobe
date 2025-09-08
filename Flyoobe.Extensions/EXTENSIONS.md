@@ -12,7 +12,7 @@ Copy the provided `.ps1` raw link and install it via the **Get Extensions → In
 - Repair definitions and update  
 - Show Defender status  
 
-🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/main/Flyoobe.Extensions/Microsoft Defender maintenance.ps1)
+🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Microsoft%20Defender%20maintenance.ps1)
 
 ---
 
