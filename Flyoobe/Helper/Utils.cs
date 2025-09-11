@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Security.Principal;
+using System.Windows.Forms;
 
 namespace Flyoobe
 {
@@ -40,25 +41,6 @@ namespace Flyoobe
             {
                 Logger.Log($"Registry check failed for {keyName}\\{valueName}: {ex.Message}", LogLevel.Error);
                 return false;
-            }
-        }
-
-        /// <summary>
-        /// Opens the GitHub project page in the default browser.
-        /// </summary>
-        public static void OpenGitHubPage(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = GitHubUrl,
-                    UseShellExecute = true
-                });
-            }
-            catch (Exception ex)
-            {
-                Logger.Log($"Failed to open GitHub page: {ex.Message}", LogLevel.Error);
             }
         }
 

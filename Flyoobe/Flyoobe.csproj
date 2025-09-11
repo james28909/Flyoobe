@@ -63,6 +63,10 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolHubView\ToolHubHelper.cs" />
+    <Compile Include="ToolHubView\ToolHubUrlDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helper\DonationHelper.cs" />
     <Compile Include="Helper\CopilotHelper.cs" />
     <Compile Include="InstallView\BackupDriversProvider.cs" />
@@ -77,6 +81,7 @@
     <Compile Include="InstallView\RunSetupFromIsoProvider.cs" />
     <Compile Include="InstallView\ToolHelper.cs" />
     <Compile Include="InstallView\VentoyProvider.cs" />
+    <Compile Include="UpgradeView\EsuEnrollmentHandler.cs" />
     <Compile Include="UpgradeView\IsoHandler.cs" />
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>
@@ -89,24 +94,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ToolHubView\ToolDefinition.cs" />
+    <Compile Include="ToolHubView\ToolHubDefinition.cs" />
     <Compile Include="ToolHubView\ToolHubControlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ToolHubView\ToolHubControlView.Designer.cs">
       <DependentUpon>ToolHubControlView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolHubView\ToolItemControl.cs">
+    <Compile Include="ToolHubView\ToolHubItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ToolHubView\ToolItemControl.Designer.cs">
-      <DependentUpon>ToolItemControl.cs</DependentUpon>
+    <Compile Include="ToolHubView\ToolHubItemControl.Designer.cs">
+      <DependentUpon>ToolHubItemControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AccountControlView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\AccountControlView.Designer.cs">
       <DependentUpon>AccountControlView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AiControlView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AiControlView.Designer.cs">
+      <DependentUpon>AiControlView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\AppsControlView.cs">
       <SubType>UserControl</SubType>
@@ -127,9 +138,6 @@
     <Compile Include="Features\Ads\TailoredExperiences.cs" />
     <Compile Include="Features\Ads\TipsAndSuggestions.cs" />
     <Compile Include="Features\Ads\WelcomeExperienceAds.cs" />
-    <Compile Include="Features\AI\ClickToDo.cs" />
-    <Compile Include="Features\AI\CopilotTaskbar.cs" />
-    <Compile Include="Features\AI\Recall.cs" />
     <Compile Include="Features\Edge\BrowserSignin.cs" />
     <Compile Include="Features\Edge\DefaultTopSites.cs" />
     <Compile Include="Features\Edge\DefautBrowserSetting.cs" />
@@ -137,7 +145,6 @@
     <Compile Include="Features\Edge\EdgeShoppingAssistant.cs" />
     <Compile Include="Features\Edge\FirstRunExperience.cs" />
     <Compile Include="Features\Edge\GamerMode.cs" />
-    <Compile Include="Features\Edge\HubsSidebar.cs" />
     <Compile Include="Features\Edge\ImportOnEachLaunch.cs" />
     <Compile Include="Features\Edge\StartupBoost.cs" />
     <Compile Include="Features\Edge\TabPageQuickLinks.cs" />
@@ -247,11 +254,14 @@
     <EmbeddedResource Include="ToolHubView\ToolHubControlView.resx">
       <DependentUpon>ToolHubControlView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolHubView\ToolItemControl.resx">
-      <DependentUpon>ToolItemControl.cs</DependentUpon>
+    <EmbeddedResource Include="ToolHubView\ToolHubItemControl.resx">
+      <DependentUpon>ToolHubItemControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountControlView.resx">
       <DependentUpon>AccountControlView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AiControlView.resx">
+      <DependentUpon>AiControlView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AppsControlView.resx">
       <DependentUpon>AppsControlView.cs</DependentUpon>
@@ -272,6 +282,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\HomeControlView.resx">
+      <DependentUpon>HomeControlView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\InstallerControlView.resx">
       <DependentUpon>InstallerControlView.cs</DependentUpon>

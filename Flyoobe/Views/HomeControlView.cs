@@ -7,21 +7,9 @@ namespace Flyoobe
     public partial class HomeControlView : UserControl, IView
     {
         private readonly ViewNavigator _navigator;
-        private Label _statusLabel; // bottom info label
+
 
         public string ViewTitle => "Home";
-
-        private readonly Color[] _colorPalette = new[]
-        {
-            Color.FromArgb(0, 209, 178),  // teal
-            Color.FromArgb(91, 141, 239), // blue
-            Color.FromArgb(155, 93, 229), // purple
-            Color.FromArgb(241, 91, 181), // pink
-            Color.FromArgb(0, 187, 249),  // cyan
-            Color.FromArgb(84, 220, 132), // green
-        };
-        private int _nextColorIndex = 0;
-        private Color NextAccent() => _colorPalette[_nextColorIndex++ % _colorPalette.Length];
 
         public HomeControlView(ViewNavigator navigator)
         {
@@ -29,8 +17,17 @@ namespace Flyoobe
             BuildLayout();
         }
 
+        // MDL2 glyphs 
+        private const string GLYPH_WINDOWS = "\uE9F3";  // Upgrade
+        private const string GLYPH_MEDIA = "\uE8A5";    // Install
+        private const string GLYPH_OOBE = "\uE790";    // OOBE
+        private const string GLYPH_EXT = "\uE71D";    // Extension
+
         private void BuildLayout()
         {
+            float dpi = this.CreateGraphics().DpiX / 96f;
+
+            // Root layout: tiles + status bar
             var root = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
@@ -40,159 +37,171 @@ namespace Flyoobe
             root.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
             root.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
-            var layout = new FlowLayoutPanel
+            // Tile container
+            var tiles = new FlowLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true,
                 FlowDirection = FlowDirection.LeftToRight,
                 WrapContents = true,
-                Padding = new Padding(20)
+                Padding = new Padding((int)(20 * dpi))
             };
 
-            // Upgrade tile: disable if already Windows 11
-            if (!Utils.DetectWindows11())
+            bool isWin11 = Utils.DetectWindows11();
+
+            // Get/Windows Installed tile
+            if (!isWin11)
             {
-                layout.Controls.Add(CreateTile(
-                    "🚀 Upgrade Windows",
-                    "Upgrade to Windows 11",
-                    "Here you can apply a bypass patch and upgrade to Windows 11 even if your hardware is not officially supported.",
-                    () => _navigator.ShowView("Upgrade")));
+                tiles.Controls.Add(CreateMdl2Tile(
+                    GLYPH_WINDOWS,
+                    "Get Windows 11",
+                    "Download or upgrade to Windows 11",
+                    () => _navigator.ShowView("Upgrade"),
+                    dpi));
             }
             else
             {
-                layout.Controls.Add(CreateTile(
-                    "✔ Windows 11 Installed",
-                    "Your system is already on Windows 11",
-                    "No upgrade required – you're up to date.",
-                    null, true)); // disabled tile
+                tiles.Controls.Add(CreateMdl2Tile(
+                    GLYPH_WINDOWS,
+                    "Windows 11 Installed",
+                    "You're already on Windows 11",
+                    null, // disabled
+                    dpi,
+                    disabled: true));
             }
 
-            layout.Controls.Add(CreateTile("🎨 Customize OOBE", "Personalize and streamline your Out-of-Box Experience",
-                "On the right side you will find the OOBE section. After a Windows 11 installation you can debloat, tweak and personalize your system.",
-                () => _navigator.ShowView("Personalization")));
+            // Re-Install from ISO and repair
+            tiles.Controls.Add(CreateMdl2Tile(
+                GLYPH_MEDIA,
+                "Install from image",
+                 "Install Windows from ISO, do an in-place upgrade, or repair this PC.",
+                () => _navigator.ShowView("Reinstall"),
+                dpi));
 
-            layout.Controls.Add(CreateTile("🛠 Install && Repair", "Install or repair Windows 10/11",
-                "Choose repair or reinstall options such as in-place upgrade, reset this PC, or custom installation media.",
-                () => _navigator.ShowView("Install only")));
+            // OOBE
+            tiles.Controls.Add(CreateMdl2Tile(
+                GLYPH_OOBE,
+                "Customize OOBE",
+                "Tweak and personalize after install",
+                () => _navigator.ShowView("Personalization"),
+                dpi));
 
-            layout.Controls.Add(CreateTile("🧩 Setup Extensions", "Enhance your Windows setup",
-                "Browse community-driven PowerShell scripts and extensions to automate, debloat, or customize your system after installation.",
-                () => _navigator.ShowView("Extensions")));
+            // Setup Extensions
+            tiles.Controls.Add(CreateMdl2Tile(
+                GLYPH_EXT,
+                "Setup Extensions",
+                "Enhance your setup with community tools",
+                () => _navigator.ShowView("Extensions"),
+                dpi));
 
-            // Status bar
-            float dpiScale = this.CreateGraphics().DpiX / 96f;
-            _statusLabel = new Label
-            {
-                Dock = DockStyle.Bottom,
-                Height = (int)(34 * dpiScale),
-                AutoEllipsis = true,
-                Font = new Font("Segoe UI", 9, FontStyle.Regular),
-                ForeColor = Color.Black,
-                BackColor = Color.WhiteSmoke,
-                TextAlign = ContentAlignment.MiddleLeft,
-                Padding = new Padding(8),
-                Text = "Welcome to Flyoobe"
-            };
 
-            root.Controls.Add(layout, 0, 0);
-            root.Controls.Add(_statusLabel, 0, 1);
+            root.Controls.Add(tiles, 0, 0);
+
             Controls.Add(root);
         }
+
         /// <summary>
-        /// Creates a tile with title, description and optional action.
-        /// If disabled=true, the tile is shown lighter and not clickable.
+        /// Creates a tile with a big Segoe MDL2 icon, title, subtitle and optional click action.
         /// </summary>
-        private Control CreateTile(string title, string description, string detailedDescription, Action onClick, bool disabled = false)
+        private Control CreateMdl2Tile(string mdl2Glyph, string title, string subtitle, Action onClick, float dpi, bool disabled = false)
         {
-            // Colors: normal, hover, pressed
-            var baseBack = disabled ? Color.FromArgb(245, 247, 250) : Color.FromArgb(248, 250, 252);
-            var hoverBack = Color.FromArgb(242, 245, 255);
-            var downBack = Color.FromArgb(235, 240, 255);
+            // Base colors
+            Color baseBack = disabled ? Color.FromArgb(245, 247, 250) : Color.White;
+            Color hoverBack = disabled ? baseBack : Color.FromArgb(242, 245, 255);
+            Color downBack = disabled ? baseBack : Color.FromArgb(235, 240, 255);
 
-            var accent = NextAccent();
-            float dpiScale = this.CreateGraphics().DpiX / 96f;
-
-            // Main tile panel
-            var panel = new Panel
+            // Card
+            var card = new Panel
             {
-                Width = (int)(280 * dpiScale),
-                Height = (int)(100 * dpiScale),
+                Width = (int)(280 * dpi),
+                Height = (int)(170 * dpi),
                 BackColor = baseBack,
-                Margin = new Padding(10),
+                Margin = new Padding((int)(8 * dpi)),
                 Cursor = disabled ? Cursors.Default : Cursors.Hand
             };
 
-            // Colored accent bar on the left
-            var leftBar = new Panel
+            // Icon (Segoe MDL2 Assets)
+            var icon = new Label
             {
-                Dock = DockStyle.Left,
-                Width = (int)(5 * dpiScale),
-                BackColor = accent
+                Dock = DockStyle.Top,
+                Height = (int)(74 * dpi),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Segoe MDL2 Assets", 36f * dpi, FontStyle.Regular, GraphicsUnit.Point),
+                ForeColor = disabled ? Color.Gray : Color.FromArgb(32, 56, 100),
+                Text = mdl2Glyph
             };
 
             // Title
             var lblTitle = new Label
             {
-                Text = title,
                 Dock = DockStyle.Top,
-                Font = new Font("Segoe UI", 10.5f, FontStyle.Bold),
-                Height = (int)(36 * dpiScale),
+                Height = (int)(32 * dpi),
                 TextAlign = ContentAlignment.MiddleCenter,
-                ForeColor = disabled ? Color.Gray : Color.Black
+                Font = new Font("Segoe UI", 10.5f, FontStyle.Bold),
+                ForeColor = disabled ? Color.Gray : Color.Black,
+                Text = title
             };
 
-            // Short description
-            var lblDesc = new Label
+            // Subtitle
+            var lblSub = new Label
             {
-                Text = description,
                 Dock = DockStyle.Fill,
-                Font = new Font("Segoe UI", 9, disabled ? FontStyle.Italic : FontStyle.Regular),
                 TextAlign = ContentAlignment.TopCenter,
-                Padding = new Padding(6, 4, 6, 6),
-                ForeColor = disabled ? Color.DarkGray : Color.Black
+                Font = new Font("Segoe UI", 9f, disabled ? FontStyle.Italic : FontStyle.Regular),
+                ForeColor = disabled ? Color.DarkGray : Color.Black,
+                Padding = new Padding((int)(10 * dpi), (int)(2 * dpi), (int)(10 * dpi), (int)(8 * dpi)),
+                AutoEllipsis = true,
+                Text = subtitle
             };
 
-            // Compose tile
-            panel.Controls.Add(lblDesc);
-            panel.Controls.Add(lblTitle);
-            panel.Controls.Add(leftBar);
+            // Compose
+            card.Controls.Add(lblSub);
+            card.Controls.Add(lblTitle);
+            card.Controls.Add(icon);
 
             if (!disabled)
             {
-                // Make tile clickable
-                void WireClick(Control c) => c.Click += (s, e) => onClick?.Invoke();
-                WireClick(panel); WireClick(lblTitle); WireClick(lblDesc);
+                // Click = navigate
+                void WireClick(Control c) { c.Click += (s, e) => onClick?.Invoke(); }
+                WireClick(card); WireClick(icon); WireClick(lblTitle); WireClick(lblSub);
 
-                // Hover effect + update bottom label
+                // Hover/press feedback + status text
                 void SetHover(bool on)
                 {
-                    panel.BackColor = on ? hoverBack : baseBack;
-                    leftBar.Width = on ? 7 : 5;
-                    _statusLabel.Text = on ? detailedDescription : "Welcome to Flyoobe";
+                    card.BackColor = on ? hoverBack : baseBack;
+
                 }
 
                 void WireHover(Control c)
-                {// Hover/press visual feedback (bar grows a bit on hover)
+                {
                     c.MouseEnter += (s, e) => SetHover(true);
                     c.MouseLeave += (s, e) =>
-                    {// Only reset if pointer actually left the tile area
-                        var inside = panel.ClientRectangle.Contains(panel.PointToClient(Cursor.Position));
+                    {
+                        var inside = card.ClientRectangle.Contains(card.PointToClient(Cursor.Position));
                         if (!inside) SetHover(false);
                     };
-                    c.MouseDown += (s, e) => panel.BackColor = downBack;
+                    c.MouseDown += (s, e) => card.BackColor = downBack;
                     c.MouseUp += (s, e) =>
                     {
-                        var inside = panel.ClientRectangle.Contains(panel.PointToClient(Cursor.Position));
-                        panel.BackColor = inside ? hoverBack : baseBack;
+                        var inside = card.ClientRectangle.Contains(card.PointToClient(Cursor.Position));
+                        card.BackColor = inside ? hoverBack : baseBack;
                     };
                 }
 
-                WireHover(panel); WireHover(lblTitle); WireHover(lblDesc);
+                WireHover(card); WireHover(icon); WireHover(lblTitle); WireHover(lblSub);
             }
 
-            return panel;
-        }
+            // Light border for card look
+            card.Paint += (s, e) =>
+            {
+                using (var pen = new Pen(Color.FromArgb(225, 228, 232)))
+                {
+                    e.Graphics.DrawRectangle(pen, 0, 0, card.Width - 1, card.Height - 1);
+                }
+            };
 
+            return card;
+        }
 
         public void RefreshView() { }
     }

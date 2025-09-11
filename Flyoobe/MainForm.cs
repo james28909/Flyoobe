@@ -21,17 +21,20 @@ namespace Flyoobe
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitializeButtons();
+            // Calculate DPI scaling factor once for this form.
+            // Used to build navigation buttons and badges in a size
+            float dpiScale = GetDpiScale();
 
-            _navigator = new ViewNavigator(panelHost, treeNavigation, title =>
+            // Initialize ViewNavigator, which manages loading and switching between different views inside host panel
+            _navigator = new ViewNavigator(panelHost, navPanel, btnNext, title =>
             {
-                // lblHeader.Text = title;
                 linkSubHeader.Text = $"Running - {title} - {Program.GetAppVersion()}";
             });
 
             // Register views
             _navigator.RegisterView("Home", () => new HomeControlView(_navigator));
             _navigator.RegisterView("Upgrade", () => new UpgradeControlView());
-            _navigator.RegisterView("Install only", () => new InstallControlView());
+            _navigator.RegisterView("Reinstall", () => new InstallControlView());
             _navigator.RegisterView("Device", () => new DeviceControlView());
             _navigator.RegisterView("Personalization", () => new PersonalizationControlView());
             _navigator.RegisterView("Browser", () => new DefaultsControlView());
@@ -45,7 +48,7 @@ namespace Flyoobe
             _navigator.RegisterView("Extensions", () => new ToolHub.ToolHubControlView());
 
             // Load OOBE navigation with system status
-            _navigator.LoadDefaultNavigation();
+            _navigator.BuildBottomNavigation(dpiScale);
 
             // Show initial view
             _navigator.ShowView("Home");
@@ -55,9 +58,9 @@ namespace Flyoobe
         {
             CopilotHelper.SetupCopilotButton(btnAskCopilot, 20);
 
+            btnExtensions.Text = "\uEA86";
             btnAbout.Text = "\uE946";
             btnRefresh.Text = "\uE72C";
-            btnToolSpot.Text = "\uE721";
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
@@ -155,52 +158,53 @@ namespace Flyoobe
             if (_navigator.CurrentView is IView view)
             {
                 view.RefreshView();
-                btnNotification.Visible = false; // Hide notification button after refresh
+                btnNotification.Visible = false; 
             }
         }
 
-        private void btnToolSpot_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Calculates the current DPI scale factor of the main form.
+        /// This is used to size navigation buttons and UI elements consistently
+        /// across different display scaling settings (100%, 125%, 150%, ...).
+        /// Returns 1.0f at 96 DPI (default baseline).
+        /// </summary>
+        private float GetDpiScale()
         {
-            // Path: <AppBase>\app\Foobe.Toolspot.exe
-            string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "app", "spot.exe");
-
-            if (!File.Exists(exePath))
+            using (Graphics g = this.CreateGraphics())
             {
-                MessageBox.Show("Toolspot not found:\n" + exePath, "Flyoobe",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                // Make MainForm dim (semi-transparent)
-                this.Opacity = 0.85;
-
-                var proc = new Process();
-                proc.StartInfo.FileName = exePath;
-                proc.EnableRaisingEvents = true;
-                proc.Exited += (s, ev) =>
-                {
-                    // Restore opacity on UI thread
-                    if (this.IsHandleCreated)
-                    {
-                        this.BeginInvoke((Action)(() => this.Opacity = 1.0));
-                    }
-                };
-
-                proc.Start();
-            }
-            catch (Exception ex)
-            {
-                this.Opacity = 1.0; // safety reset
-                MessageBox.Show("Could not start Toolspot:\n" + ex.Message, "Flyoobe",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return g.DpiX / 96f;   // 96 dpi = baseline (100% scaling)
             }
         }
 
-        private void linkHome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btnExtensions_Click(object sender, EventArgs e)
         {
-            _navigator.ShowView("Home");
+            var location = btnExtensions.PointToScreen(new Point(0, btnExtensions.Height));
+            contextDropDown.Show(location);
+        }
+
+        private async void toolStripAddExtensionUrl_Click(object sender, EventArgs e)
+        {
+            await ToolHub.ExtensionsHelper.InstallFromUrlAsync(this, _navigator);
+        }
+
+        private void toolStripAddExtensionLocal_Click(object sender, EventArgs e)
+        {
+            ToolHub.ExtensionsHelper.ImportLocalFile(this, _navigator);
+        }
+
+        private void toolStripExtensionGuide_Click(object sender, EventArgs e)
+        {
+            ToolHub.ExtensionsHelper.OpenExtensionGuide();
+        }
+
+        private void toolStripExtensionSource_Click(object sender, EventArgs e)
+        {
+            ToolHub.ExtensionsHelper.OpenScriptsFolder(this);
+        }
+
+        private void toolStripExtensions_Click(object sender, EventArgs e)
+        {
+            ToolHub.ExtensionsHelper.SwitchToExtensionsView(_navigator);
         }
     }
 }

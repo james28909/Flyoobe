@@ -7,9 +7,9 @@ namespace Settings.Privacy
 {
     internal class LocationTracking : FeatureBase
     {
-        private const string keyName = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\LocationAndSensors";
-        private const string valueName = "LocationEnabled";
-        private const int recommendedValue = 0;
+        private const string keyName = @"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors";
+        private const string valueName = "DisableLocation";
+        private const int recommendedValue = 1;
 
         public override string GetFeatureDetails()
         {
@@ -38,7 +38,7 @@ namespace Settings.Privacy
         {
             try
             {
-                Registry.SetValue(keyName, valueName, 0, RegistryValueKind.DWord);
+                Registry.SetValue(keyName, valueName, recommendedValue, RegistryValueKind.DWord);
                 return Task.FromResult(true);
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace Settings.Privacy
         {
             try
             {
-                Registry.SetValue(keyName, valueName, 1, RegistryValueKind.DWord);
+                Registry.SetValue(keyName, valueName, 0, RegistryValueKind.DWord);
 
                 return true;
             }

@@ -40,7 +40,7 @@
             // panelDragDrop
             // 
             this.panelDragDrop.AllowDrop = true;
-            this.panelDragDrop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelDragDrop.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelDragDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(244)))), ((int)(((byte)(242)))));
             this.panelDragDrop.Controls.Add(this.flowLayoutPanelTiles);
             this.panelDragDrop.Controls.Add(this.dropdownOptions);
@@ -120,7 +120,7 @@
             // 
             // chkAdvancedMode
             // 
-            this.chkAdvancedMode.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chkAdvancedMode.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkAdvancedMode.AutoSize = true;
             this.chkAdvancedMode.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.chkAdvancedMode.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -28,31 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControls = new System.Windows.Forms.Panel();
-            this.linkHome = new System.Windows.Forms.LinkLabel();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.navPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.linkSubHeader = new System.Windows.Forms.LinkLabel();
             this.btnNotification = new System.Windows.Forms.Button();
             this.panelHost = new System.Windows.Forms.Panel();
-            this.treeNavigation = new System.Windows.Forms.TreeView();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnToolSpot = new System.Windows.Forms.Button();
+            this.btnExtensions = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnAskCopilot = new System.Windows.Forms.Button();
+            this.contextDropDown = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripExtensions = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripAddExtensionUrl = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripAddExtensionLocal = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripExtensionGuide = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripExtensionSource = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControls.SuspendLayout();
             this.panelContainer.SuspendLayout();
+            this.contextDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControls
             // 
             this.panelControls.AutoScroll = true;
             this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(247)))), ((int)(((byte)(242)))));
-            this.panelControls.Controls.Add(this.linkHome);
+            this.panelControls.Controls.Add(this.btnNext);
+            this.panelControls.Controls.Add(this.navPanel);
             this.panelControls.Controls.Add(this.linkSubHeader);
             this.panelControls.Controls.Add(this.btnNotification);
             this.panelControls.Controls.Add(this.panelHost);
-            this.panelControls.Controls.Add(this.treeNavigation);
             this.panelControls.Controls.Add(this.btnRefresh);
             this.panelControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControls.Location = new System.Drawing.Point(0, 0);
@@ -60,22 +69,36 @@
             this.panelControls.Size = new System.Drawing.Size(883, 503);
             this.panelControls.TabIndex = 3;
             // 
-            // linkHome
+            // btnNext
             // 
-            this.linkHome.ActiveLinkColor = System.Drawing.Color.DeepPink;
-            this.linkHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkHome.AutoSize = true;
-            this.linkHome.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 11.5F, System.Drawing.FontStyle.Bold);
-            this.linkHome.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkHome.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
-            this.linkHome.Location = new System.Drawing.Point(695, 35);
-            this.linkHome.Name = "linkHome";
-            this.linkHome.Size = new System.Drawing.Size(48, 26);
-            this.linkHome.TabIndex = 338;
-            this.linkHome.TabStop = true;
-            this.linkHome.Text = "Setup";
-            this.linkHome.UseCompatibleTextRendering = true;
-            this.linkHome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHome_LinkClicked);
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe MDL2 Assets", 25.25F);
+            this.btnNext.ForeColor = System.Drawing.Color.Gray;
+            this.btnNext.Location = new System.Drawing.Point(835, 429);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 57);
+            this.btnNext.TabIndex = 340;
+            this.btnNext.TabStop = false;
+            this.btnNext.UseVisualStyleBackColor = false;
+            // 
+            // navPanel
+            // 
+            this.navPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.navPanel.AutoScroll = true;
+            this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
+            this.navPanel.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navPanel.Location = new System.Drawing.Point(0, 429);
+            this.navPanel.Name = "navPanel";
+            this.navPanel.Size = new System.Drawing.Size(834, 75);
+            this.navPanel.TabIndex = 339;
+            this.navPanel.WrapContents = false;
             // 
             // linkSubHeader
             // 
@@ -102,7 +125,7 @@
             this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotification.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.Location = new System.Drawing.Point(748, 34);
+            this.btnNotification.Location = new System.Drawing.Point(729, 0);
             this.btnNotification.Name = "btnNotification";
             this.btnNotification.Size = new System.Drawing.Size(123, 22);
             this.btnNotification.TabIndex = 337;
@@ -117,30 +140,10 @@
             this.panelHost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelHost.Location = new System.Drawing.Point(7, 22);
+            this.panelHost.Location = new System.Drawing.Point(7, 29);
             this.panelHost.Name = "panelHost";
-            this.panelHost.Size = new System.Drawing.Size(682, 468);
+            this.panelHost.Size = new System.Drawing.Size(873, 400);
             this.panelHost.TabIndex = 333;
-            // 
-            // treeNavigation
-            // 
-            this.treeNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(247)))), ((int)(((byte)(242)))));
-            this.treeNavigation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeNavigation.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeNavigation.HideSelection = false;
-            this.treeNavigation.HotTracking = true;
-            this.treeNavigation.Location = new System.Drawing.Point(695, 75);
-            this.treeNavigation.Name = "treeNavigation";
-            this.treeNavigation.Scrollable = false;
-            this.treeNavigation.ShowLines = false;
-            this.treeNavigation.ShowNodeToolTips = true;
-            this.treeNavigation.ShowPlusMinus = false;
-            this.treeNavigation.ShowRootLines = false;
-            this.treeNavigation.Size = new System.Drawing.Size(186, 416);
-            this.treeNavigation.TabIndex = 3;
-            this.treeNavigation.TabStop = false;
             // 
             // btnRefresh
             // 
@@ -162,26 +165,26 @@
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnToolSpot
+            // btnExtensions
             // 
-            this.btnToolSpot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnToolSpot.AutoSize = true;
-            this.btnToolSpot.BackColor = System.Drawing.Color.Transparent;
-            this.btnToolSpot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
-            this.btnToolSpot.FlatAppearance.BorderSize = 0;
-            this.btnToolSpot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            this.btnToolSpot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
-            this.btnToolSpot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToolSpot.Font = new System.Drawing.Font("Segoe MDL2 Assets", 10.25F);
-            this.btnToolSpot.ForeColor = System.Drawing.Color.Black;
-            this.btnToolSpot.Location = new System.Drawing.Point(916, 1);
-            this.btnToolSpot.Name = "btnToolSpot";
-            this.btnToolSpot.Size = new System.Drawing.Size(26, 25);
-            this.btnToolSpot.TabIndex = 338;
-            this.btnToolSpot.TabStop = false;
-            this.btnToolSpot.Text = "...";
-            this.btnToolSpot.UseVisualStyleBackColor = false;
-            this.btnToolSpot.Click += new System.EventHandler(this.btnToolSpot_Click);
+            this.btnExtensions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExtensions.AutoSize = true;
+            this.btnExtensions.BackColor = System.Drawing.Color.Transparent;
+            this.btnExtensions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(211)))));
+            this.btnExtensions.FlatAppearance.BorderSize = 0;
+            this.btnExtensions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.btnExtensions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
+            this.btnExtensions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExtensions.Font = new System.Drawing.Font("Segoe MDL2 Assets", 11.5F, System.Drawing.FontStyle.Bold);
+            this.btnExtensions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExtensions.Location = new System.Drawing.Point(913, 1);
+            this.btnExtensions.Name = "btnExtensions";
+            this.btnExtensions.Size = new System.Drawing.Size(29, 27);
+            this.btnExtensions.TabIndex = 338;
+            this.btnExtensions.TabStop = false;
+            this.btnExtensions.Text = "...";
+            this.btnExtensions.UseVisualStyleBackColor = false;
+            this.btnExtensions.Click += new System.EventHandler(this.btnExtensions_Click);
             // 
             // panelContainer
             // 
@@ -249,13 +252,73 @@
             this.btnAskCopilot.UseVisualStyleBackColor = false;
             this.btnAskCopilot.Click += new System.EventHandler(this.btnAskCopilot_Click);
             // 
+            // contextDropDown
+            // 
+            this.contextDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(247)))), ((int)(((byte)(242)))));
+            this.contextDropDown.Font = new System.Drawing.Font("Segoe UI Variable Small Semilig", 10.5F);
+            this.contextDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripExtensions,
+            this.toolStripAddExtensionUrl,
+            this.toolStripAddExtensionLocal,
+            this.toolStripExtensionGuide,
+            this.toolStripSeparator1,
+            this.toolStripExtensionSource});
+            this.contextDropDown.Name = "contextDropDown";
+            this.contextDropDown.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextDropDown.Size = new System.Drawing.Size(200, 176);
+            // 
+            // toolStripExtensions
+            // 
+            this.toolStripExtensions.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.toolStripExtensions.Name = "toolStripExtensions";
+            this.toolStripExtensions.Size = new System.Drawing.Size(199, 24);
+            this.toolStripExtensions.Text = "Manage extensions";
+            this.toolStripExtensions.Click += new System.EventHandler(this.toolStripExtensions_Click);
+            // 
+            // toolStripAddExtensionUrl
+            // 
+            this.toolStripAddExtensionUrl.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.toolStripAddExtensionUrl.Name = "toolStripAddExtensionUrl";
+            this.toolStripAddExtensionUrl.Size = new System.Drawing.Size(199, 24);
+            this.toolStripAddExtensionUrl.Text = "Install from Url...";
+            this.toolStripAddExtensionUrl.Click += new System.EventHandler(this.toolStripAddExtensionUrl_Click);
+            // 
+            // toolStripAddExtensionLocal
+            // 
+            this.toolStripAddExtensionLocal.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.toolStripAddExtensionLocal.Name = "toolStripAddExtensionLocal";
+            this.toolStripAddExtensionLocal.Size = new System.Drawing.Size(199, 24);
+            this.toolStripAddExtensionLocal.Text = "Import from file...";
+            this.toolStripAddExtensionLocal.Click += new System.EventHandler(this.toolStripAddExtensionLocal_Click);
+            // 
+            // toolStripExtensionGuide
+            // 
+            this.toolStripExtensionGuide.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.toolStripExtensionGuide.Name = "toolStripExtensionGuide";
+            this.toolStripExtensionGuide.Size = new System.Drawing.Size(199, 24);
+            this.toolStripExtensionGuide.Text = "Write an extension";
+            this.toolStripExtensionGuide.Click += new System.EventHandler(this.toolStripExtensionGuide_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(196, 6);
+            // 
+            // toolStripExtensionSource
+            // 
+            this.toolStripExtensionSource.Margin = new System.Windows.Forms.Padding(0, 5, 0, 2);
+            this.toolStripExtensionSource.Name = "toolStripExtensionSource";
+            this.toolStripExtensionSource.Size = new System.Drawing.Size(199, 24);
+            this.toolStripExtensionSource.Text = "Extension folder...";
+            this.toolStripExtensionSource.Click += new System.EventHandler(this.toolStripExtensionSource_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
             this.ClientSize = new System.Drawing.Size(945, 565);
-            this.Controls.Add(this.btnToolSpot);
+            this.Controls.Add(this.btnExtensions);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnAskCopilot);
             this.Controls.Add(this.panelContainer);
@@ -271,6 +334,7 @@
             this.panelControls.ResumeLayout(false);
             this.panelControls.PerformLayout();
             this.panelContainer.ResumeLayout(false);
+            this.contextDropDown.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,11 +348,18 @@
         private System.Windows.Forms.Button btnAskCopilot;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnNotification;
-        private System.Windows.Forms.TreeView treeNavigation;
         private System.Windows.Forms.Panel panelHost;
         private System.Windows.Forms.LinkLabel linkSubHeader;
-        private System.Windows.Forms.Button btnToolSpot;
-        private System.Windows.Forms.LinkLabel linkHome;
+        private System.Windows.Forms.FlowLayoutPanel navPanel;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.ContextMenuStrip contextDropDown;
+        private System.Windows.Forms.ToolStripMenuItem toolStripAddExtensionUrl;
+        private System.Windows.Forms.ToolStripMenuItem toolStripAddExtensionLocal;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExtensionGuide;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExtensionSource;
+        private System.Windows.Forms.Button btnExtensions;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExtensions;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

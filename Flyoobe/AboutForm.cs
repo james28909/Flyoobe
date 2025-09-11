@@ -28,7 +28,7 @@ namespace Flyoobe
         {
             await Task.Delay(1000);
             // Call update check when form loads
-            await CheckForUpdateAsync();
+            await CheckForUpdate();
         }
 
         private void ApplyRoundedCorners()
@@ -75,25 +75,6 @@ namespace Flyoobe
             this.Region = new Region(path); // apply rounded region
         }
 
-        private void btnGitHub_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://github.com/builtbybel/Flyby11");
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnDonate_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG",
-                UseShellExecute = true
-            });
-        }
-
         private void chkDonated_CheckedChanged(object sender, EventArgs e)
         {
             DonationHelper.SetDonationStatus(chkDonated.Checked);
@@ -112,9 +93,9 @@ namespace Flyoobe
             return Version.Parse(version);
         }
 
-        private async Task CheckForUpdateAsync()
+        private async Task CheckForUpdate()
         {
-            const string githubApiUrl = "https://api.github.com/repos/builtbybel/Flyby11/releases/latest";
+            const string githubApiUrl = "https://api.github.com/repos/builtbybel/Flyoobe/releases/latest";
 
             try
             {
@@ -163,7 +144,7 @@ namespace Flyoobe
                     }
                     else
                     {
-                        // User has a dev or newer version
+                        // User has a nightly/dev or newer version
                         UpdateLabel($"Flyoobe version {currentVersion} (dev version?)");
                     }
                 }
@@ -202,11 +183,28 @@ namespace Flyoobe
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "https://github.com/builtbybel/Flyby11/releases/latest",
+                FileName = "https://github.com/builtbybel/Flyoobe/releases/latest",
                 UseShellExecute = true
             });
         }
 
-      
+        private void btnGitHub_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/builtbybel/Flyoobe");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDonate_Click(object sender, EventArgs e)
+        {
+         Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.paypal.com/donate?hosted_button_id=MY7HX4QLYR4KG",
+                UseShellExecute = true
+            });
+        }
     }
 }

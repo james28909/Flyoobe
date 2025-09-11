@@ -56,7 +56,6 @@ namespace Features
                         new FeatureNode(new EdgeShoppingAssistant()),
                         new FeatureNode(new FirstRunExperience()),
                         new FeatureNode(new GamerMode()),
-                        new FeatureNode(new HubsSidebar()),
                         new FeatureNode(new ImportOnEachLaunch()),
                         new FeatureNode(new StartupBoost()),
                         new FeatureNode(new TabPageQuickLinks()),

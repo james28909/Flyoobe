@@ -169,7 +169,7 @@ namespace Flyoobe
             {
                 Text = title,
                 AutoEllipsis = true,
-                Font = new Font("Segoe UI", 11f * dpiScale, FontStyle.Bold),
+                Font = new Font("Segoe UI", 10.5f * dpiScale, FontStyle.Regular),
                 Height = (int)(40 * dpiScale),
                 ForeColor = Color.FromArgb(80, 60, 40),
                 Dock = DockStyle.Top,
