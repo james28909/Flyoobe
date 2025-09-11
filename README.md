@@ -1,4 +1,4 @@
-# 🐝 Flyoobe (Flyby11) – Windows 11 for All  
+# 🐝 Flyoobe (ex-Flyby11) – Windows Setup Assistant
 _No specs? No problem!_
 
 <img width="1024" height="1024" alt="Flyoobe_mockup2" src="https://github.com/user-attachments/assets/8096fa8f-e1b5-4f88-8dfd-938327177aea" />
