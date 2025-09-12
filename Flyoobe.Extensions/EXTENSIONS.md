@@ -17,6 +17,28 @@ Copy the provided `.ps1` raw link and install it via the **Get Extensions → In
 🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Power%20Actions.ps1)
 
 ---
+## 🛠 Developer Essentials
+**Description:** Quick access to developer tools and features (Dev Mode, WSL, Windows Features, Device Manager).  
+**Options:**  
+- Enable Developer Mode  
+- Install WSL  
+- Open Windows Features  
+- Open Device Manager  
+
+🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Developer%20Essentials.ps1)
+
+## 🌐 Network Tools
+**Description:** Common network troubleshooting actions (DNS flush, Winsock reset, connections, ping).  
+**Options:**  
+- Flush DNS  
+- Reset Winsock  
+- Show active connections  
+- Test Ping (8.8.8.8)  
+
+🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Network%20Tools.ps1)
+
+---
+
 ## 🛡 Microsoft Defender Maintenance
 **Description:** Update Defender signatures, repair definitions, or check Defender status.  
 **Options:**  
