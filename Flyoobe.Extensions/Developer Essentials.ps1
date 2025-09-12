@@ -1,6 +1,6 @@
 ﻿# Developer Essentials – Quick access to developer tools and features
 # Host: console
-# Options: Enable Developer Mode; Install WSL; Open Windows Features; Open Device Manager
+# Options: Enable Developer Mode; Install WSL; Open Windows Features (silent); Open Device Manager (silent)
 
 param([string]$choice)
 
@@ -30,3 +30,4 @@ switch ($choice) {
         Write-Output "Unknown option: $choice"
     }
 }
+
