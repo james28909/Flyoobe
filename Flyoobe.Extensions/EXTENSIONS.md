@@ -4,7 +4,19 @@ Here you can find community extensions for Flyoobe.
 Copy the provided `.ps1` raw link and install it via the **Get Extensions → Install from URL** option in the app.
 
 ---
+## ⚡ Power Actions
+**Description:** Control Windows power and session actions directly from Flyoobe.  
+**Options:**  
+- Restart Explorer  
+- Restart PC  
+- Shutdown PC  
+- Log off  
+- Sleep  
+- Hibernate  
 
+🔗 [Raw script link](https://raw.githubusercontent.com/builtbybel/Flyoobe/refs/heads/main/Flyoobe.Extensions/Power%20Actions.ps1)
+
+---
 ## 🛡 Microsoft Defender Maintenance
 **Description:** Update Defender signatures, repair definitions, or check Defender status.  
 **Options:**  
