@@ -14,9 +14,8 @@ You can now **choose**:
 
 | Version | Purpose | Features | Download |
 |---------|---------|----------|----------|
-| **Flyoobe** (New) | Upgrade + OOBE Toolkit | • Windows 10 → 11 upgrades<br>• OOBE customization<br>• Tweaks & Debloat<br>• Scriptable setup extensions | [⬇ Download Flyoobe](https://github.com/builtbybel/Flyby11/releases/latest) |
-| **Flyby11** (Classic) | Upgrade Only | • Win10 → Win11 Inplace upgrade<br>• Hardware check bypass<br>• Minimal footprint | [⬇ Download Flyby11 Classic](https://github.com/builtbybel/Flyby11/releases/latest) |
-
+| **Flyoobe** (New) | Upgrade + OOBE Toolkit | • Windows 10 → 11 upgrades<br>• OOBE customization<br>• Tweaks & Debloat<br>• Scriptable setup extensions | [⬇ Download Flyoobe](https://github.com/builtbybel/Flyoobe/releases/latest) |
+| **Flyby11** (Classic) | Upgrade Only | • Win10 → Win11 Inplace upgrade<br>• Hardware check bypass<br>• Minimal footprint | [⬇ Download Flyby11 Classic](https://github.com/builtbybel/Flyoobe/releases/latest) |
 ---
 
 ## 🐝 Why Flyoobe?
@@ -38,14 +37,14 @@ Flyoobe keeps the original idea alive and pushes it even further.
 ---
 
 No complicated steps.  
-**Just run the tool** (see ["Releases"](https://github.com/builtbybel/Flyby11/releases/latest)),  
+**Just run the tool** (see ["Releases"](https://github.com/builtbybel/Flyoobe/releases/latest)),  
 unpack if needed, and you'll be running Windows 11 on your “unsupported” machine in no time.  
 Think of it as sneaking through the back door without anyone noticing.
 
 ---
 
 ## 🛠 Technical Overview
-**Flyby11 method:**
+**Flyoobe method:**
 - Uses Windows Server variant of setup → skips TPM, Secure Boot, CPU checks
 - Still installs **normal Windows 11**
 - ISO download/mount handled automatically (via [Fido script](https://github.com/pbatard/Fido))
@@ -53,7 +52,7 @@ Think of it as sneaking through the back door without anyone noticing.
 
 ---
 
-## 💡 Why Keep Flyby11 Alive?
+## 💡 Why Keep Flyoobe Alive?
 - **Upgrade freedom** – Don’t ditch a perfectly fine PC just because Microsoft says so  
 - **Eco-friendly** – Less e-waste from forced upgrades  
 - **Save money** – No need for new hardware if yours still works
