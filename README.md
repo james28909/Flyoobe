@@ -1,6 +1,7 @@
 # 🐝 Flyoobe (ex-Flyby11) – Windows Setup Assistant
 
-<img width="1536" height="1024" alt="IllustrationBranding-Visual" src="https://github.com/user-attachments/assets/2e8c1410-e243-4f36-a8f5-6b9f641db82d" />
+<img width="1536" height="1024" alt="IllustrationBranding-Visual-Flyoobe" src="https://github.com/user-attachments/assets/6cd93d24-b7e9-47fe-874f-e99b78e0a94e" />
+
 
 ---
 
