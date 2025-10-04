@@ -11,9 +11,10 @@ This allows script authors to define dropdown menus and control how the script i
 - Short, user-friendly description of what the script does.
 - Displayed in the Extensions page below the title.
 
-### `# Host: embedded | console`
+### `# Host: embedded | console | log`
 - **embedded** = run inside OOBE, output is captured and shown in the app.  
-- **console** = run in an external PowerShell window with `-NoExit`.  
+- **console** = run in an external PowerShell window with `-NoExit`.
+- **log** = Runs inside Flyoobe's live Log Viewer (App-Settings > Notifications) and writes messages to the internal notification logger.
 - **Default:** `embedded` (if not specified).
 
 ### `# Options: value1; value2; value3; ...`
