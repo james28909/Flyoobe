@@ -67,7 +67,7 @@
     <Compile Include="ToolHubView\ToolHubUrlDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helper\DonationHelper.cs" />
+   <!-- <Compile Include="Helper\DonationHelper.cs" /> -->
     <Compile Include="Helper\CopilotHelper.cs" />
     <Compile Include="InstallView\BackupDriversProvider.cs" />
     <Compile Include="InstallView\BootMenuInfoProvider.cs" />
